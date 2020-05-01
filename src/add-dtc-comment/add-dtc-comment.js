@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./add-dtc-comment.css";
 
 class addDTCComment extends Component {
@@ -6,48 +7,48 @@ class addDTCComment extends Component {
     return (
       <body>
         <header role="banner">
-          <div class="header-primary-sub">
+          <div className="logo">
+            <img id="gear" src={require("../gear.png")} alt="gear" />
+          </div>
+          <div className="keep-driving">
             Keep driving.
           </div>
         </header>
         <main role="main">
           <section id="home-screen">
-            <div class="vin-dtc-section">
+            <div className="vin-dtc-section">
               <h2>Your Car</h2>
-              <div class="vin">VIN: JTDKN3DU8D0355402</div>
-              <div class="make">Make: Toyota</div>
-              <div class="made-in">Made In: Japan</div>
-              <div class="button-wrapper">
-                <input id="vin-clear" class="button" type="submit" value="Clear" />
+              <div className="vin">VIN: JTDKN3DU8D0355402</div>
+              <div className="make">Make: Toyota</div>
+              <div className="made-in">Made In: Japan</div>
+              <div className="button-wrapper">
+                <input id="vin-clear" className="button" type="submit" value="Clear" />
               </div>
             </div>
             <hr />
-            <div class="vin-dtc-section">
+            <div className="vin-dtc-section">
               <h2>Your Trouble Code</h2>
-              <div class="dtc">DTC: P1100</div>
-              <div class="dtc-description">
+              <div className="dtc">DTC: P1100</div>
+              <div className="dtc-description">
                 Description: BARO Sensor Circuit.
               </div>
-              <label class="comment">Comment:</label>
-              <div class="comment">
+              <label className="comment">Comment:</label>
+              <div className="comment">
                 <textarea id="comment"></textarea>
               </div>
-              <div class="button-wrapper">
-                <input
-                  id="comment-submit"
-                  class="button"
-                  type="submit"
-                  value="Submit"
-                />
+              <div className="button-wrapper">
+                <Link to={"/display-vin-dtc-full"}>
+                  <input id="comment-submit" className="button" type="submit" value="Submit" />
+                </Link>
               </div>
             </div>
           </section>
         </main>
         <footer>
-          <div class="footer-contact-info">Beep beep.</div>
-          <div class="footer-contact-info">
-            Contact Us:
-            <a class="email-connect" href="mailto:peteryyoon@gmail.com">
+          <div className="footer-contact-info">Beep beep.</div>
+          <div className="footer-contact-info">
+            Contact Us:&nbsp;
+            <a className="email-connect" href="mailto:peteryyoon@gmail.com">
               Email
             </a>
           </div>

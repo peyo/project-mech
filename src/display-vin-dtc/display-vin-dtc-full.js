@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./display-vin-dtc.css";
 
-class displayVINDTC extends Component {
+class displayVINDTCFull extends Component {
   render() {
     return (
       <body>
@@ -22,7 +22,7 @@ class displayVINDTC extends Component {
               <div className="make">Make: Toyota</div>
               <div className="made-in">Made In: Japan</div>
               <div className="button-wrapper">
-                <Link to={"/home"}>
+                <Link to={'/home'}>
                   <input className="button" type="submit" value="Clear" />
                 </Link>
               </div>
@@ -35,14 +35,30 @@ class displayVINDTC extends Component {
                 Description: BARO Sensor Circuit.
               </div>
               <div className="button-wrapper">
-                <Link to={"/display-vin-dtc-vinOnly"}>
+                <Link to={'/display-vin-dtc-vinOnly'}>
                   <input className="button" type="submit" value="Clear" />
                 </Link>
               </div>
-              <div className="button-wrapper">
-                <Link to={"/add-dtc-comment"}>
-                  <input className="button" type="submit" value="Add Comment" />
+              <div className="dtc-comment-date">April 30, 2020 - 11:46 AM</div>
+              <div className="dtc-comment">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </div>
+              <div className="dtc-comment-edit-delete">
+                <Link to={"/edit-dtc-comment"}>
+                  <a href="...">edit</a>
                 </Link>
+                <Link to={"/delete-dtc-comment"}>
+                  <a id="delete-link" href="...">delete</a>
+                </Link>
+              </div>
+              <div className="button-wrapper">
+                <input className="button" type="submit" value="Add Comment" />
               </div>
             </div>
           </section>
@@ -61,4 +77,4 @@ class displayVINDTC extends Component {
   }
 }
 
-export default displayVINDTC;
+export default displayVINDTCFull;

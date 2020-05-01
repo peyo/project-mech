@@ -7,13 +7,18 @@ class welcome extends Component {
     return (
       <body>
         <header role="banner">
-          <h1 className="header-primary">Mech</h1>
+          <div>
+            <img id="gear" src={require("../gear.png")} alt="gear" />
+          </div>
         </header>
         <main className="main">
           <div className="welcome-section">
-            <h2 id="welcome-welcome">Welcome!</h2>
+            <h2 id="welcome-welcome">Welcome to Mech.</h2>
             <div id="home-link">
-              <Link to={"/home"}>Keep driving.</Link>
+              <Link to={"/home"}>Rev!</Link>
+            </div>
+            <div id="intro">
+              Enter your VIN.<br />Enter your DTC.<br />Find solutions.<br />Chat with car owners and mechanics.
             </div>
           </div>
         </main>
@@ -21,7 +26,7 @@ class welcome extends Component {
           <div className="footer-contact-info">Beep beep.</div>
           <br />
           <div className="footer-contact-info">
-            Contact Us:
+            Contact Us:&nbsp;
             <a className="email-connect" href="mailto:peteryyoon@gmail.com">
               Email
             </a>

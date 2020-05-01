@@ -10,6 +10,14 @@ body {
   flex-direction: column;
 }
 
+a, a:visited {
+  color: #00acdf;
+}
+
+a:hover {
+  color: #32527B;
+}
+
 header, footer {
   width: 100%;
   display: flex;
@@ -34,34 +42,56 @@ main {
   align-items: center;
 }
 
+#home-screen {
+  width: 36%;
+}
+
 .vin-dtc-section {
   margin: 72px 0 72px 0;
 }
 
-.vin-dtc-description {
+.dtc-comment-date {
+  margin: 0 0 12px 0;
+}
+
+.dtc-comment-edit-delete {
+  margin: 12px 0 0 0;
+  text-align: right;
+}
+
+.vin, .make, .made-in, .dtc, .dtc-description {
   margin: 12px 0 12px 0;
+}
+
+.button-wrapper {
+  margin: 24px 0 24px 0;
 }
 
 #vin, #dtc {
   border: 1px solid;
   border-radius: .3em;
   border-color: #686868;
-  font-size: medium;
-  margin: 0 9px 0 0;
-}
-
-.dtc-error {
-  margin: 12px 0 12px 0;
-  color: #f47209;
-  font-weight: bold;
 }
 
 .button {
   background-color: #E8E8E8;
   border-radius: .3em;
-  font-size: medium;
 }
 
 .button:hover {
   border-color: #505050;
+}
+
+#delete-link {
+  margin: 0 0 0 9px;
+}
+
+.dtc-comment-delete-message {
+  margin: 24px 0 12px 0;
+  color: #296e01;
+  font-weight: bold;
+}
+
+.footer-contact-info {
+  margin: 6px;
 }

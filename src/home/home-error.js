@@ -2,15 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
 
-class home extends Component {
+class homeError extends Component {
   render() {
     return (
       <body>
         <header role="banner">
-          <div className="logo">
-            <img id="gear" src={require("../gear.png")} alt="gear" />
-          </div>
-          <div className="keep-driving">
+          <div className="header-primary-sub">
             Keep driving.
           </div>
         </header>
@@ -38,6 +35,7 @@ class home extends Component {
                   <input className="button" type="submit" value="Submit" />
                 </Link>
               </form>
+              <div className="dtc-error">You must enter your VIN first.</div>
             </div>
           </section>
         </main>
@@ -56,4 +54,4 @@ class home extends Component {
   }
 }
 
-export default home;
+export default homeError;

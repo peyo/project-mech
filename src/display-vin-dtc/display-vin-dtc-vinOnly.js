@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./home.css";
+import "./display-vin-dtc.css";
 
-class home extends Component {
+class displayVINDTCVINOnly extends Component {
   render() {
     return (
       <body>
@@ -15,18 +15,17 @@ class home extends Component {
           </div>
         </header>
         <main role="main">
-          <section className="vin-dtc-wrapper">
+          <section id="home-screen">
             <div className="vin-dtc-section">
               <h2>Your Car</h2>
-              <div className="vin-dtc-description">
-                Vehicle Identification Number (VIN)
-              </div>
-              <form className="vin-input">
-                <input tye="text" id="vin" value="17 characters" />
-                <Link to={"/display-vin-dtc-vinOnly"}>
-                  <input className="button" type="submit" value="Submit" />
+              <div className="vin">VIN: JTDKN3DU8D0355402</div>
+              <div className="make">Make: Toyota</div>
+              <div className="made-in">Made In: Japan</div>
+              <div className="button-wrapper">
+                <Link to={"/home"}>
+                  <input className="button" type="submit" value="Clear" />
                 </Link>
-              </form>
+              </div>
             </div>
             <hr />
             <div className="vin-dtc-section">
@@ -34,7 +33,7 @@ class home extends Component {
               <div className="vin-dtc-description">Diagnostic Trouble Code (DTC)</div>
               <form className="dtc-input">
                 <input tye="text" id="dtc" value="5 characters" />
-                <Link to={"/home-error"}>
+                <Link to={"/display-vin-dtc"}>
                   <input className="button" type="submit" value="Submit" />
                 </Link>
               </form>
@@ -43,7 +42,6 @@ class home extends Component {
         </main>
         <footer>
           <div className="footer-contact-info">Beep beep.</div>
-          <br />
           <div className="footer-contact-info">
             Contact Us:&nbsp;
             <a className="email-connect" href="mailto:peteryyoon@gmail.com">
@@ -56,4 +54,4 @@ class home extends Component {
   }
 }
 
-export default home;
+export default displayVINDTCVINOnly;

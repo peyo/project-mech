@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./edit-dtc-comment.css";
+import "./delete-dtc-comment.css";
 
-class editDTCComment extends Component {
+class deleteDTCComment extends Component {
   render() {
     return (
       <body>
@@ -29,22 +29,29 @@ class editDTCComment extends Component {
               <div className="dtc-description">
                 Description: BARO Sensor Circuit.
               </div>
-              <label className="comment">Comment:</label>
-              <div className="comment">
-                <textarea id="comment">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </textarea>
+              <div className="dtc-comment-date">April 30, 2020 - 11:46 AM</div>
+              <div className="dtc-comment">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
               </div>
-              <div className="button-wrapper">
+              <div className="dtc-comment-edit-delete">
+                <Link to={"/edit-dtc-comment"}>
+                  <a href="...">edit</a>
+                </Link>
+                <a id="delete-link" href="...">delete</a>
+                <div className="dtc-comment-delete-message">
+                  Would you like to delete this comment?
+                </div>
+                <Link to={"/display-vin-dtc"}>
+                  <a id="delete-link" href="...">Y</a>
+                </Link>
                 <Link to={"/display-vin-dtc-full"}>
-                  <input id="comment-submit" className="button" type="submit" value="Submit" />
+                  <a id="delete-link" href="...">N</a>
                 </Link>
               </div>
             </div>
@@ -64,4 +71,4 @@ class editDTCComment extends Component {
   }
 }
 
-export default editDTCComment;
+export default deleteDTCComment;

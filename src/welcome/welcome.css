@@ -13,8 +13,6 @@ body {
 header, footer {
   width: 100%;
   padding: 3%;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #296e01;
@@ -27,31 +25,25 @@ main {
   align-items: center;
 }
 
+#gear {
+  height: 57px;
+  width: 57px;
+}
+
+.welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #home-link {
   text-align: center;
+  font-size: larger;
 }
 
-.vin-dtc-section {
-  margin: 72px 0 72px 0;
-}
-
-.vin-dtc-description {
-  margin: 12px 0 12px 0;
-}
-
-#vin, #dtc {
-  border: 1px solid;
-  border-radius: .3em;
-  border-color: #686868;
-}
-
-.button {
-  background-color: #E8E8E8;
-  border-radius: .3em;
-}
-
-.button:hover {
-  border-color: #505050;
+#intro {
+  margin: 24px 0 0 0;
+  text-align: center;
 }
 
 .footer-contact-info {
