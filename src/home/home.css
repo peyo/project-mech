@@ -12,12 +12,19 @@ body {
 
 header, footer {
   width: 100%;
-  padding: 3%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   background-color: #296e01;
+}
+
+header {
+  align-items: baseline;
+}
+
+footer {
+  flex-direction: column;
+  padding: 3%;
+  align-items: center;
 }
 
 main {
@@ -25,10 +32,6 @@ main {
   flex: 1;
   justify-content: center;
   align-items: center;
-}
-
-#home-link {
-  text-align: center;
 }
 
 .vin-dtc-section {
@@ -43,17 +46,16 @@ main {
   border: 1px solid;
   border-radius: .3em;
   border-color: #686868;
+  font-size: medium;
+  margin: 0 9px 0 0;
 }
 
 .button {
   background-color: #E8E8E8;
   border-radius: .3em;
+  font-size: medium;
 }
 
 .button:hover {
   border-color: #505050;
-}
-
-.footer-contact-info {
-  margin: 6px;
 }

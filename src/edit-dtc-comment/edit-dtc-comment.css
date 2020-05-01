@@ -12,12 +12,23 @@ body {
 
 header, footer {
   width: 100%;
-  padding: 3%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   background-color: #296e01;
+}
+
+header {
+  align-items: baseline;
+}
+
+footer {
+  flex-direction: column;
+  padding: 3%;
+  align-items: center;
+}
+
+.footer-contact-info {
+  margin-bottom: 24px;
 }
 
 main {
@@ -27,22 +38,30 @@ main {
   align-items: center;
 }
 
-#home-link {
-  text-align: center;
+#home-screen {
+  width: 36%;
 }
 
 .vin-dtc-section {
   margin: 72px 0 72px 0;
 }
 
-.vin-dtc-description {
+.vin, .make, .made-in, .dtc, .dtc-description {
   margin: 12px 0 12px 0;
+}
+
+.button-wrapper {
+  margin: 24px 0 24px 0;
 }
 
 #vin, #dtc {
   border: 1px solid;
   border-radius: .3em;
   border-color: #686868;
+}
+
+textarea {
+  font-size: medium;
 }
 
 .button {
@@ -52,6 +71,10 @@ main {
 
 .button:hover {
   border-color: #505050;
+}
+
+#delete {
+  margin: 0 0 0 9px;
 }
 
 .footer-contact-info {
