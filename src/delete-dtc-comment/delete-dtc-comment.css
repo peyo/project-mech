@@ -42,8 +42,8 @@ main {
   align-items: center;
 }
 
-#home-screen {
-  width: 36%;
+#vin-dtc-wrapper {
+  width: 72%;
 }
 
 .vin-dtc-section {

@@ -15,7 +15,7 @@ class displayVINDTCFull extends Component {
           </div>
         </header>
         <main role="main">
-          <section id="home-screen">
+          <section id="vin-dtc-wrapper">
             <div className="vin-dtc-section">
               <h2>Your Car</h2>
               <div className="vin">VIN: JTDKN3DU8D0355402</div>
