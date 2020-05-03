@@ -12,9 +12,11 @@ body {
 
 header, footer {
   width: 100%;
+  display: flex;
   padding: 3%;
   justify-content: center;
   align-items: center;
+  text-align: center;
   background-color: #296e01;
 }
 
@@ -48,8 +50,4 @@ main {
 #intro {
   margin: 24px 0 0 0;
   text-align: center;
-}
-
-.footer-contact-info {
-  margin: 6px;
 }

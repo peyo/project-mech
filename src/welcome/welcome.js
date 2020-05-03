@@ -23,13 +23,17 @@ class Welcome extends Component {
           </div>
         </main>
         <footer>
-          <div className="footer-contact-info">Beep beep.</div>
-          <br />
           <div className="footer-contact-info">
-            Contact Us:&nbsp;
-            <a className="email-connect" href="mailto:peteryyoon@gmail.com">
-              Email
-            </a>
+            <div id="beep-beep">
+              Beep beep.
+            </div>
+            <br />
+            <div className="contact-us">
+              Contact Us:&nbsp;
+              <a className="email-connect" href="mailto:peteryyoon@gmail.com">
+                Email
+              </a>
+            </div>
           </div>
         </footer>
       </body>

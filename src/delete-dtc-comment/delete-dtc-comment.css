@@ -21,12 +21,11 @@ a:hover {
 header, footer {
   width: 100%;
   display: flex;
+  padding: 3%;
   justify-content: center;
-  background-color: #296e01;
-}
-
-header {
   align-items: center;
+  text-align: center;
+  background-color: #296e01;
 }
 
 .gear-keep-driving {
@@ -41,17 +40,6 @@ header {
 
 .user-info-ul {
   list-style-type: none;
-}
-
-footer {
-  flex-direction: column;
-  padding: 3%;
-  align-items: center;
-}
-
-.footer-contact-info {
-  margin: 6px;
-  margin-bottom: 24px;
 }
 
 main {
