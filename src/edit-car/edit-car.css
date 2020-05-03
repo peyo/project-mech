@@ -57,11 +57,11 @@ main {
   width: 72%;
 }
 
-.vin-dtc-section {
+.car-section {
   margin: 72px 0 72px 0;
 }
 
-.vin, .make, .made-in, .dtc, .dtc-description {
+.vin, .make, .model, .made-in {
   margin: 12px 0 12px 0;
 }
 
@@ -75,10 +75,6 @@ main {
   border-color: #686868;
 }
 
-textarea {
-  font-size: medium;
-}
-
 .button {
   background-color: #E8E8E8;
   border-radius: .3em;
@@ -88,6 +84,6 @@ textarea {
   border-color: #505050;
 }
 
-#delete {
+#delete-link {
   margin: 0 0 0 9px;
 }

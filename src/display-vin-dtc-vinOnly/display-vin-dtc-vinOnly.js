@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./edit-dtc-comment.css";
+import "./display-vin-dtc.css";
 
-class editDTCComment extends Component {
+class displayVINDTCVINOnly extends Component {
   render() {
     return (
       <body>
@@ -36,28 +36,13 @@ class editDTCComment extends Component {
           <section id="screen-wrapper">
             <div className="vin-dtc-section">
               <h2>Your Trouble Code</h2>
-              <div className="dtc">DTC: P1100</div>
-              <div className="dtc-description">
-                Description: BARO Sensor Circuit.
-              </div>
-              <label className="comment">Comment:</label>
-              <div className="comment">
-                <textarea id="comment">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
-                </textarea>
-              </div>
-              <div className="button-wrapper">
-                <Link to={"/display-vin-dtc-full"}>
-                  <input id="comment-submit" className="button" type="submit" value="Submit" />
-                </Link>
-              </div>
+              <form className="dtc-input">
+                <div className="dtc-description">Diagnostic Trouble Code (DTC)</div>
+                  <input tye="text" id="dtc-input" value="P1100" />
+                  <Link to={"/display-vin-dtc"}>
+                    <input className="button" type="submit" value="Submit" />
+                  </Link>
+              </form>
             </div>
           </section>
         </main>
@@ -75,4 +60,4 @@ class editDTCComment extends Component {
   }
 }
 
-export default editDTCComment;
+export default displayVINDTCVINOnly;

@@ -18,13 +18,32 @@ header, footer {
 }
 
 header {
-  align-items: baseline;
+  align-items: center;
+}
+
+.gear-keep-driving {
+  display: flex;
+  align-items: center;
+}
+
+.user-info-div {
+  text-align: right;
+  margin-left: auto;
+}
+
+.user-info-ul {
+  list-style-type: none;
 }
 
 footer {
   flex-direction: column;
   padding: 3%;
   align-items: center;
+}
+
+.footer-contact-info {
+  margin: 6px;
+  margin-bottom: 24px;
 }
 
 main {
@@ -34,7 +53,7 @@ main {
   align-items: center;
 }
 
-#vin-dtc-wrapper {
+#screen-wrapper {
   width: 72%;
 }
 
@@ -65,6 +84,14 @@ main {
   border-color: #686868;
 }
 
+#dtc-input {
+  border: 1px solid;
+  border-radius: .3em;
+  border-color: #686868;
+  font-size: medium;
+  margin: 0 9px 0 0;
+}
+
 .button {
   background-color: #E8E8E8;
   border-radius: .3em;
@@ -76,8 +103,4 @@ main {
 
 #delete-link {
   margin: 0 0 0 9px;
-}
-
-.footer-contact-info {
-  margin: 6px;
 }

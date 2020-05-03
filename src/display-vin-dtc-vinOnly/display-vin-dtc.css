@@ -21,20 +21,6 @@ header {
   align-items: center;
 }
 
-.gear-keep-driving {
-  display: flex;
-  align-items: center;
-}
-
-.user-info-div {
-  text-align: right;
-  margin-left: auto;
-}
-
-.user-info-ul {
-  list-style-type: none;
-}
-
 footer {
   flex-direction: column;
   padding: 3%;
@@ -61,6 +47,15 @@ main {
   margin: 72px 0 72px 0;
 }
 
+.dtc-comment-date {
+  margin: 0 0 12px 0;
+}
+
+.dtc-comment-edit-delete {
+  margin: 12px 0 0 0;
+  text-align: right;
+}
+
 .vin, .make, .made-in, .dtc, .dtc-description {
   margin: 12px 0 12px 0;
 }
@@ -75,8 +70,12 @@ main {
   border-color: #686868;
 }
 
-textarea {
+#dtc-input {
+  border: 1px solid;
+  border-radius: .3em;
+  border-color: #686868;
   font-size: medium;
+  margin: 0 9px 0 0;
 }
 
 .button {
@@ -88,6 +87,6 @@ textarea {
   border-color: #505050;
 }
 
-#delete {
+#delete-link {
   margin: 0 0 0 9px;
 }

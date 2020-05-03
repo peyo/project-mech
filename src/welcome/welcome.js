@@ -15,7 +15,7 @@ class welcome extends Component {
           <div className="welcome-section">
             <h2 id="welcome-welcome">Welcome to Mech.</h2>
             <div id="home-link">
-              <Link to={"/home"}>Rev!</Link>
+              <Link to={"/login-register"}>Rev!</Link>
             </div>
             <div id="intro">
               Enter your VIN.<br />Enter your DTC.<br />Find solutions.<br />Chat with car owners and mechanics.

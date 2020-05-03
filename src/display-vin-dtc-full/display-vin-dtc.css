@@ -18,13 +18,18 @@ header, footer {
 }
 
 header {
-  align-items: baseline;
+  align-items: center;
 }
 
 footer {
   flex-direction: column;
   padding: 3%;
   align-items: center;
+}
+
+.footer-contact-info {
+  margin: 6px;
+  margin-bottom: 24px;
 }
 
 main {
@@ -34,15 +39,38 @@ main {
   align-items: center;
 }
 
+#screen-wrapper {
+  width: 72%;
+}
+
 .vin-dtc-section {
   margin: 72px 0 72px 0;
 }
 
-.vin-dtc-description {
+.dtc-comment-date {
+  margin: 0 0 12px 0;
+}
+
+.dtc-comment-edit-delete {
+  margin: 12px 0 0 0;
+  text-align: right;
+}
+
+.vin, .make, .made-in, .dtc, .dtc-description {
   margin: 12px 0 12px 0;
 }
 
+.button-wrapper {
+  margin: 24px 0 24px 0;
+}
+
 #vin, #dtc {
+  border: 1px solid;
+  border-radius: .3em;
+  border-color: #686868;
+}
+
+#dtc-input {
   border: 1px solid;
   border-radius: .3em;
   border-color: #686868;
@@ -50,18 +78,15 @@ main {
   margin: 0 9px 0 0;
 }
 
-.dtc-error {
-  margin: 12px 0 12px 0;
-  color: #f47209;
-  font-weight: bold;
-}
-
 .button {
   background-color: #E8E8E8;
   border-radius: .3em;
-  font-size: medium;
 }
 
 .button:hover {
   border-color: #505050;
+}
+
+#delete-link {
+  margin: 0 0 0 9px;
 }

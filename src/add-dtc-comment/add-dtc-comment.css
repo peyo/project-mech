@@ -18,7 +18,21 @@ header, footer {
 }
 
 header {
-  align-items: baseline;
+  align-items: center;
+}
+
+.gear-keep-driving {
+  display: flex;
+  align-items: center;
+}
+
+.user-info-div {
+  text-align: right;
+  margin-left: auto;
+}
+
+.user-info-ul {
+  list-style-type: none;
 }
 
 footer {
@@ -28,6 +42,7 @@ footer {
 }
 
 .footer-contact-info {
+  margin: 6px;
   margin-bottom: 24px;
 }
 
@@ -38,7 +53,7 @@ main {
   align-items: center;
 }
 
-#vin-dtc-wrapper {
+#screen-wrapper {
   width: 72%;
 }
 
@@ -67,8 +82,4 @@ main {
 
 .button:hover {
   border-color: #505050;
-}
-
-.footer-contact-info {
-  margin: 6px;
 }

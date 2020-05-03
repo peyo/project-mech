@@ -25,6 +25,10 @@ main {
   align-items: center;
 }
 
+#screen-wrapper {
+  width: 72%;
+}
+
 #gear {
   height: 57px;
   width: 57px;

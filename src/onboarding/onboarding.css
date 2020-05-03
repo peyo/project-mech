@@ -21,29 +21,10 @@ header {
   align-items: center;
 }
 
-.gear-keep-driving {
-  display: flex;
-  align-items: center;
-}
-
-.user-info-div {
-  text-align: right;
-  margin-left: auto;
-}
-
-.user-info-ul {
-  list-style-type: none;
-}
-
 footer {
   flex-direction: column;
   padding: 3%;
   align-items: center;
-}
-
-.footer-contact-info {
-  margin: 6px;
-  margin-bottom: 24px;
 }
 
 main {
@@ -57,37 +38,28 @@ main {
   width: 72%;
 }
 
-.vin-dtc-section {
+.car-section {
   margin: 72px 0 72px 0;
 }
 
-.vin, .make, .made-in, .dtc, .dtc-description {
+.make, .model {
   margin: 12px 0 12px 0;
 }
 
-.button-wrapper {
-  margin: 24px 0 24px 0;
-}
-
-#vin, #dtc {
+#model-input {
   border: 1px solid;
   border-radius: .3em;
   border-color: #686868;
-}
-
-textarea {
   font-size: medium;
+  margin: 0 9px 0 0;
 }
 
 .button {
   background-color: #E8E8E8;
   border-radius: .3em;
+  font-size: medium;
 }
 
 .button:hover {
   border-color: #505050;
-}
-
-#delete {
-  margin: 0 0 0 9px;
 }

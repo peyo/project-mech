@@ -7,27 +7,33 @@ class displayVINDTCFull extends Component {
     return (
       <body>
         <header role="banner">
-          <div className="logo">
+          <div className="gear-keep-driving">
             <img id="gear" src={require("../gear.png")} alt="gear" />
+            <div className="keep-driving">
+              Keep driving.
+            </div>
           </div>
-          <div className="keep-driving">
-            Keep driving.
+          <div className="user-info-div">
+            <ul className="user-info-ul">
+              <li className="user-item">
+                <Link to={"/edit-car"}>
+                  peyo
+                </Link>
+              </li>
+              <li className="vin-item">
+                JTDKN3DU8D0355402
+              </li>
+              <li className="make-model-item">
+                Toyota Prius
+              </li>
+              <li className="made-in-item">
+                Made in Japan
+              </li>
+            </ul>
           </div>
         </header>
         <main role="main">
-          <section id="vin-dtc-wrapper">
-            <div className="vin-dtc-section">
-              <h2>Your Car</h2>
-              <div className="vin">VIN: JTDKN3DU8D0355402</div>
-              <div className="make">Make: Toyota</div>
-              <div className="made-in">Made In: Japan</div>
-              <div className="button-wrapper">
-                <Link to={'/home'}>
-                  <input className="button" type="submit" value="Clear" />
-                </Link>
-              </div>
-            </div>
-            <hr />
+          <section id="screen-wrapper">
             <div className="vin-dtc-section">
               <h2>Your Trouble Code</h2>
               <div className="dtc">DTC: P1100</div>
@@ -36,7 +42,7 @@ class displayVINDTCFull extends Component {
               </div>
               <div className="button-wrapper">
                 <Link to={'/display-vin-dtc-vinOnly'}>
-                  <input className="button" type="submit" value="Clear" />
+                  <input className="button" type="submit" value="Edit DTC" />
                 </Link>
               </div>
               <div className="dtc-comment-date">April 30, 2020 - 11:46 AM</div>
