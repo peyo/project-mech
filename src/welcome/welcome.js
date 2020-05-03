@@ -18,7 +18,7 @@ class Welcome extends Component {
               <Link to={"/login-register"}>Rev!</Link>
             </div>
             <div id="intro">
-              Enter your VIN.<br />Enter your DTC.<br />Find solutions.<br />Chat with car owners and mechanics.
+              Enter your VIN or Make and Model.<br />Enter your DTC.<br />Find solutions.<br />Chat with car owners and mechanics.
             </div>
           </div>
         </main>
