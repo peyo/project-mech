@@ -57,7 +57,7 @@ class Home extends Component {
                   P1100
                 </Link>&nbsp;&nbsp;&nbsp;
                 <div className="dtc-comment">
-                  April 30, 2020 - 11:46 AM
+                  4/30/2020 - 11:46 AM
                 </div>
               </div>
             </div>
