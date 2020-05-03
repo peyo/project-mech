@@ -37,7 +37,7 @@ class EditCar extends Component {
         <main role="main">
           <section id="screen-wrapper">
             <div className="car-section">
-              <h2>Car</h2>
+              <h2>Change Your Car</h2>
               <div className="vin">VIN</div>
               <input tye="text" id="vin-input" value="JTDKN3DU8D0355402" />
               <div className="make">Make</div>
