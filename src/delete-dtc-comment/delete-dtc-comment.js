@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./delete-dtc-comment.css";
 
-class deleteDTCComment extends Component {
+class DeleteDTCComment extends Component {
   render() {
     return (
       <body>
         <header role="banner">
           <div className="gear-keep-driving">
-            <img id="gear" src={require("../gear.png")} alt="gear" />
+            <Link to={"/home"}>
+              <img id="gear" src={require("../gear.png")} alt="gear" />
+            </Link>
             <div className="keep-driving">
               Keep driving.
             </div>
@@ -35,7 +37,7 @@ class deleteDTCComment extends Component {
         <main role="main">
           <section id="screen-wrapper">
             <div className="vin-dtc-section">
-              <h2>Your Trouble Code</h2>
+              <h2>Trouble Code</h2>
               <div className="dtc">DTC: P1100</div>
               <div className="dtc-description">
                 Description: BARO Sensor Circuit.
@@ -52,17 +54,17 @@ class deleteDTCComment extends Component {
               </div>
               <div className="dtc-comment-edit-delete">
                 <Link to={"/edit-dtc-comment"}>
-                  <a href="...">edit</a>
+                  edit
                 </Link>
                 <a id="delete-link" href="...">delete</a>
                 <div className="dtc-comment-delete-message">
                   Would you like to delete this comment?
                 </div>
                 <Link to={"/display-vin-dtc"}>
-                  <a id="delete-link" href="...">Y</a>
-                </Link>
+                  Y
+                </Link>&nbsp;
                 <Link to={"/display-vin-dtc-full"}>
-                  <a id="delete-link" href="...">N</a>
+                  N
                 </Link>
               </div>
             </div>
@@ -82,4 +84,4 @@ class deleteDTCComment extends Component {
   }
 }
 
-export default deleteDTCComment;
+export default DeleteDTCComment;

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./onboarding.css";
 
-class onboarding extends Component {
+class Onboarding extends Component {
   render() {
     return (
       <body>
@@ -44,4 +44,4 @@ class onboarding extends Component {
   }
 }
 
-export default onboarding;
+export default Onboarding;

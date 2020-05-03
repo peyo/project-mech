@@ -1,66 +1,71 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import welcome from "./welcome/welcome";
-import loginRegister from "./login-register/login-register";
-import onboarding from "./onboarding/onboarding";
-import addDTC from "./add-dtc/add-dtc";
-import displayVINDTC from "./display-vin-dtc/display-vin-dtc";
-import displayVINDTCFull from "./display-vin-dtc-full/display-vin-dtc-full";
-import displayVINDTCVINOnly from "./display-vin-dtc-vinOnly/display-vin-dtc-vinOnly";
-import editCar from "./edit-car/edit-car";
-import addDTCComment from "./add-dtc-comment/add-dtc-comment";
-import editDTCComment from "./edit-dtc-comment/edit-dtc-comment";
-import deleteDTCComment from "./delete-dtc-comment/delete-dtc-comment";
+import Welcome from "./welcome/welcome";
+import Home from "./home/home";
+import LoginRegister from "./login-register/login-register";
+import Onboarding from "./onboarding/onboarding";
+import AddDTC from "./add-dtc/add-dtc";
+import DisplayVINDTC from "./display-vin-dtc/display-vin-dtc";
+import DisplayVINDTCFull from "./display-vin-dtc-full/display-vin-dtc-full";
+import DisplayVINDTCVINOnly from "./display-vin-dtc-vinOnly/display-vin-dtc-vinOnly";
+import EditCar from "./edit-car/edit-car";
+import AddDTCComment from "./add-dtc-comment/add-dtc-comment";
+import EditDTCComment from "./edit-dtc-comment/edit-dtc-comment";
+import DeleteDTCComment from "./delete-dtc-comment/delete-dtc-comment";
 
 class App extends Component {
   render() {
     return (
-      <div className="mech-app" aria-live="polite">
+      <html className="mech-app">
         <Route
           exact path="/"
-          component={welcome}
+          component={Welcome}
+        />
+        <Route
+          path="/home"
+          component={Home}
         />
         <Route
           path="/login-register"
-          component={loginRegister}
+          component={LoginRegister}
         />
         <Route
           path="/onboarding"
-          component={onboarding}
+          component={Onboarding}
         />
         <Route
           path="/add-dtc"
-          component={addDTC}
+          component={AddDTC}
         />
         <Route
           path="/display-vin-dtc"
-          component={displayVINDTC}
+          component={DisplayVINDTC}
         />
         <Route
           path="/display-vin-dtc-full"
-          component={displayVINDTCFull}
+          component={DisplayVINDTCFull}
         />
         <Route
           path="/display-vin-dtc-vinOnly"
-          component={displayVINDTCVINOnly}
+          component={DisplayVINDTCVINOnly}
         />
         <Route
           path="/edit-car"
-          component={editCar}
+          component={EditCar}
         />
         <Route
           path="/add-dtc-comment"
-          component={addDTCComment}
+          component={AddDTCComment}
         />
         <Route
           path="/edit-dtc-comment"
-          component={editDTCComment}
+          component={EditDTCComment}
         />
         <Route
           path="/delete-dtc-comment"
-          component={deleteDTCComment}
+          component={DeleteDTCComment}
         />
-      </div>
+      </html>
     );
   }
 }

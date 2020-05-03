@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./login-register.css";
 
-class loginRegister extends Component {
+class LoginRegister extends Component {
   render() {
     return (
       <body>
@@ -54,7 +54,7 @@ class loginRegister extends Component {
                 <input tye="text" id="username-input" />
                 <div className="password">Password</div>
                 <input tye="text" id="password-input" />
-                <Link to={"/onboarding"}>
+                <Link to={"/home"}>
                   <input className="button" type="submit" value="Submit" />
                 </Link>
               </form>
@@ -76,4 +76,4 @@ class loginRegister extends Component {
   }
 }
 
-export default loginRegister;
+export default LoginRegister;

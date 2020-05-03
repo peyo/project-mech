@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./add-dtc.css";
 
-class addDTC extends Component {
+class AddDTC extends Component {
   render() {
     return (
       <body>
         <header role="banner">
           <div className="gear-keep-driving">
-            <img id="gear" src={require("../gear.png")} alt="gear" />
+            <Link to={"/home"}>
+              <img id="gear" src={require("../gear.png")} alt="gear" />
+            </Link>
             <div className="keep-driving">
               Keep driving.
             </div>
@@ -17,7 +19,7 @@ class addDTC extends Component {
         <main role="main">
           <section id="screen-wrapper">
             <div className="dtc-section">
-              <h2>Your Trouble Code</h2>
+              <h2>Trouble Code</h2>
               <form className="username-form">
                 <div className="dtc">Your DTC</div>
                 <input tye="text" id="dtc-input" />
@@ -43,4 +45,4 @@ class addDTC extends Component {
   }
 }
 
-export default addDTC;
+export default AddDTC;

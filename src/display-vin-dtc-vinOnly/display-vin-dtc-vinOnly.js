@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./display-vin-dtc.css";
 
-class displayVINDTCVINOnly extends Component {
+class DisplayVINDTCVINOnly extends Component {
   render() {
     return (
       <body>
         <header role="banner">
           <div className="gear-keep-driving">
-            <img id="gear" src={require("../gear.png")} alt="gear" />
+            <Link to={"/home"}>
+              <img id="gear" src={require("../gear.png")} alt="gear" />
+            </Link>
             <div className="keep-driving">
               Keep driving.
             </div>
@@ -35,7 +37,7 @@ class displayVINDTCVINOnly extends Component {
         <main role="main">
           <section id="screen-wrapper">
             <div className="vin-dtc-section">
-              <h2>Your Trouble Code</h2>
+              <h2>Trouble Code</h2>
               <form className="dtc-input">
                 <div className="dtc-description">Diagnostic Trouble Code (DTC)</div>
                   <input tye="text" id="dtc-input" value="P1100" />
@@ -60,4 +62,4 @@ class displayVINDTCVINOnly extends Component {
   }
 }
 
-export default displayVINDTCVINOnly;
+export default DisplayVINDTCVINOnly;

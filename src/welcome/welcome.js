@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./welcome.css";
 
-class welcome extends Component {
+class Welcome extends Component {
   render() {
     return (
       <body>
@@ -37,4 +37,4 @@ class welcome extends Component {
   }
 }
 
-export default welcome;
+export default Welcome;

@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import LoginRegister from './login-register';
 import { BrowserRouter } from 'react-router-dom';
-import App from './app';
 
 it('renders without crashing', () => {
   const html = document.createElement('html');
   ReactDOM.render(
     <BrowserRouter>
-      <App />
+      <LoginRegister />
     </BrowserRouter>,
     html
   );

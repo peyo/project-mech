@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./edit-car.css";
 
-class editCar extends Component {
+class EditCar extends Component {
   render() {
     return (
       <body>
         <header role="banner">
           <div className="gear-keep-driving">
-            <img id="gear" src={require("../gear.png")} alt="gear" />
+            <Link to={"/home"}>
+              <img id="gear" src={require("../gear.png")} alt="gear" />
+            </Link>
             <div className="keep-driving">
               Keep driving.
             </div>
@@ -35,7 +37,7 @@ class editCar extends Component {
         <main role="main">
           <section id="screen-wrapper">
             <div className="car-section">
-              <h2>Your Car</h2>
+              <h2>Car</h2>
               <div className="vin">VIN</div>
               <input tye="text" id="vin-input" value="JTDKN3DU8D0355402" />
               <div className="make">Make</div>
@@ -65,4 +67,4 @@ class editCar extends Component {
   }
 }
 
-export default editCar;
+export default EditCar;

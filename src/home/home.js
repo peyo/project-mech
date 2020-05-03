@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./add-dtc-comment.css";
+import "./home.css";
 
-class AddDTCComment extends Component {
+class Home extends Component {
   render() {
     return (
       <body>
@@ -12,7 +12,7 @@ class AddDTCComment extends Component {
               <img id="gear" src={require("../gear.png")} alt="gear" />
             </Link>
             <div className="keep-driving">
-                Keep driving.
+              Keep driving.
             </div>
           </div>
           <div className="user-info-div">
@@ -23,10 +23,10 @@ class AddDTCComment extends Component {
                 </Link>
               </li>
               <li className="vin-item">
-                  JTDKN3DU8D0355402
+                JTDKN3DU8D0355402
               </li>
               <li className="make-model-item">
-                  Toyota Prius
+                Toyota Prius
               </li>
               <li className="made-in-item">
                 Made in Japan
@@ -36,26 +36,36 @@ class AddDTCComment extends Component {
         </header>
         <main role="main">
           <section id="screen-wrapper">
-            <div className="vin-dtc-section">
+            <div className="dtc-section">
               <h2>Trouble Code</h2>
-              <div className="dtc">DTC: P1100</div>
-              <div className="dtc-description">
-                Description: BARO Sensor Circuit.
-              </div>
-              <label className="comment">Comment:</label>
-              <div className="comment">
-                <textarea id="comment"></textarea>
-              </div>
-              <div className="button-wrapper">
-                <Link to={"/display-vin-dtc-full"}>
-                  <input id="comment-submit" className="button" type="submit" value="Submit" />
+              <form className="username-form">
+                <div className="dtc">Your DTC</div>
+                <input tye="text" id="dtc-input" />
+                <Link to={"/display-vin-dtc"}>
+                  <input className="button" type="submit" value="Submit" />
                 </Link>
+              </form>
+            </div>
+            <div className="garage-section">
+              <h2>Garage</h2>
+              <div className="comments">Your Comments</div>
+              <div className="comments">
+                <div className="dtc-comment">
+                  DTC
+                </div>&nbsp;
+                <Link to={"/display-vin-dtc-full"}>
+                  P1100
+                </Link>&nbsp;&nbsp;&nbsp;
+                <div className="dtc-comment">
+                  Commented: April 30, 2020 - 11:46 AM
+                </div>
               </div>
             </div>
           </section>
         </main>
         <footer>
           <div className="footer-contact-info">Beep beep.</div>
+          <br />
           <div className="footer-contact-info">
             Contact Us:&nbsp;
             <a className="email-connect" href="mailto:peteryyoon@gmail.com">
@@ -68,4 +78,4 @@ class AddDTCComment extends Component {
   }
 }
 
-export default AddDTCComment;
+export default Home;

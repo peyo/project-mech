@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./display-vin-dtc.css";
 
-class displayVINDTC extends Component {
+class DisplayVINDTC extends Component {
   render() {
     return (
       <body>
         <header role="banner">
           <div className="gear-keep-driving">
-            <img id="gear" src={require("../gear.png")} alt="gear" />
+            <Link to={"/home"}>
+              <img id="gear" src={require("../gear.png")} alt="gear" />
+            </Link>
             <div className="keep-driving">
               Keep driving.
             </div>
@@ -35,7 +37,7 @@ class displayVINDTC extends Component {
         <main role="main">
           <section id="screen-wrapper">
             <div className="vin-dtc-section">
-              <h2>Your Trouble Code</h2>
+              <h2>Trouble Code</h2>
               <div className="dtc">DTC: P1100</div>
               <div className="dtc-description">
                 Description: BARO Sensor Circuit.
@@ -67,4 +69,4 @@ class displayVINDTC extends Component {
   }
 }
 
-export default displayVINDTC;
+export default DisplayVINDTC;
