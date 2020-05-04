@@ -38,11 +38,11 @@ class EditCar extends Component {
           <section id="screen-wrapper">
             <div className="car-section">
               <h2>Change Your Car</h2>
-              <div className="vin">VIN</div>
+              <div className="vin-edit">VIN</div>
               <input tye="text" id="vin-input" value="JTDKN3DU8D0355402" />
-              <div className="make">Make</div>
+              <div className="make-edit">Manufacturer</div>
               <input tye="text" id="make-input" value="Toyota"/>
-              <div className="model">Model</div>
+              <div className="model-edit">Model</div>
               <input tye="text" id="model-input" value="Prius" />
               <div className="made-in">Made In Japan</div>
               <div className="button-wrapper">

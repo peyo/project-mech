@@ -19,8 +19,8 @@ class Onboarding extends Component {
             <div className="car-section">
               <h2>Your Car</h2>
               <form className="car-form">
-                <div className="make">Make: Toyota</div>
-                <div className="model">Your Car's Model</div>
+                <div className="make-onboarding">Manufacturer: Toyota</div>
+                <div className="model-onboarding">Your Car's Model</div>
                 <input tye="text" id="model-input" value="Model" />
                 <div className="button-div">
                   <Link to={"/add-dtc"}>

@@ -31,8 +31,8 @@ main {
   width: 72%;
 }
 
-.make, .model {
-  margin: 12px 0;
+.make-onboarding, .model-onboarding {
+  margin: 12px 0 0 0;
 }
 
 #model-input {

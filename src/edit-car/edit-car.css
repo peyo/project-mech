@@ -49,12 +49,8 @@ main {
   margin: 51px 0;
 }
 
-.vin, .make, .model, .made-in {
-  margin: 12px 0;
-}
-
 .button-wrapper {
-  margin: 24px 0 24px 0;
+  margin: 24px 0;
 }
 
 #vin-input, #make-input, #model-input {
@@ -62,6 +58,7 @@ main {
   border-radius: .3em;
   border-color: #686868;
   color: silver;
+  margin: 12px 0;
 }
 
 .button {
