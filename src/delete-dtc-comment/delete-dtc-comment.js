@@ -56,10 +56,6 @@ class DeleteDTCComment extends Component {
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </div>
               <div className="dtc-comment-edit-delete">
-                <Link to={"/edit-dtc-comment"}>
-                  edit
-                </Link>
-                <a id="delete-link" href="...">delete</a>
                 <div className="dtc-comment-delete-message">
                   Would you like to delete this comment?
                 </div>
