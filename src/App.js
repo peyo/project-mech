@@ -34,11 +34,11 @@ class App extends Component {
           component={Onboarding}
         />
         <Route
-          path="/add-dtc"
+          exact path="/add-dtc"
           component={AddDTC}
         />
         <Route
-          path="/display-vin-dtc"
+          exact path="/display-vin-dtc"
           component={DisplayVINDTC}
         />
         <Route
@@ -50,7 +50,7 @@ class App extends Component {
           component={DisplayVINDTCVINOnly}
         />
         <Route
-          path="/edit-car"
+          exact path="/edit-car"
           component={EditCar}
         />
         <Route
