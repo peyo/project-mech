@@ -66,27 +66,8 @@ main {
   text-align: right;
 }
 
-.vin, .make, .made-in, .dtc, .dtc-description {
+.dtc, .dtc-description {
   margin: 12px 0 12px 0;
-}
-
-.button-wrapper {
-  margin: 24px 0 24px 0;
-}
-
-#vin, #dtc {
-  border: 1px solid;
-  border-radius: .3em;
-  border-color: #686868;
-}
-
-.button {
-  background-color: #E8E8E8;
-  border-radius: .3em;
-}
-
-.button:hover {
-  border-color: #505050;
 }
 
 #delete-link {
