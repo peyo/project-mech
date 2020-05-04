@@ -43,6 +43,11 @@ main {
   margin: 12px 0
 }
 
+.check-email {
+  color: #686868;
+  font-size: smaller;
+}
+
 .or {
   margin: 30px 0 12px 0;
   font-weight: bold;

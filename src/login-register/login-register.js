@@ -28,7 +28,12 @@ class LoginRegister extends Component {
               <form className="username-form">
                 <div className="username">Username</div>
                 <input tye="text" id="username-input" />
-                <div className="email-label">Email</div>
+                <div className="email-label">
+                  Email
+                   <div className="check-email">
+                    Check your email for confirmation after signup.
+                  </div>
+                </div>
                 <input tye="text" id="email-input" />
                 <div className="password">Password</div>
                 <input tye="text" id="password-input" />
