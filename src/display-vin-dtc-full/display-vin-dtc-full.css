@@ -44,12 +44,20 @@ main {
   text-align: right;
 }
 
-.vin, .make, .made-in, .dtc, .dtc-description {
+.vin, .make, .made-in, .dtc {
   margin: 12px 0 12px 0;
 }
 
-.button-wrapper {
-  margin: 24px 0 24px 0;
+.edit-dtc-wrapper {
+  margin: 12px 0 0 0;
+}
+
+.dtc-comment-section {
+  margin: 48px 0 0 0;
+}
+
+.add-comment-wrapper {
+  margin: 12px 0 0 0;
 }
 
 #vin, #dtc {

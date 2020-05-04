@@ -23,9 +23,11 @@ class AddDTC extends Component {
               <form className="username-form">
                 <div className="dtc">Your DTC</div>
                 <input tye="text" id="dtc-input" />
-                <Link to={"/display-vin-dtc"}>
-                  <input className="button" type="submit" value="Submit" />
-                </Link>
+                <div className="button-div">
+                  <Link to={"/display-vin-dtc"}>
+                    <input className="button" type="submit" value="Submit" />
+                  </Link>
+                </div>
               </form>
             </div>
           </section>

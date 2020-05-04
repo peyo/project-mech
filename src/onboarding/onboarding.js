@@ -22,9 +22,11 @@ class Onboarding extends Component {
                 <div className="make">Make: Toyota</div>
                 <div className="model">Your Car's Model</div>
                 <input tye="text" id="model-input" value="Model" />
-                <Link to={"/add-dtc"}>
-                  <input className="button" type="submit" value="Submit" />
-                </Link>
+                <div className="button-div">
+                  <Link to={"/add-dtc"}>
+                    <input className="button" type="submit" value="Submit" />
+                  </Link>
+                </div>
               </form>
             </div>
           </section>

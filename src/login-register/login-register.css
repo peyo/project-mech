@@ -57,11 +57,14 @@ main {
   font-weight: bold;
 }
 
+.button-div {
+  margin: 12px 0 0 0;
+}
+
 .button {
   background-color: #E8E8E8;
   border-radius: .3em;
   font-size: medium;
-  margin: 12px 0 12px 0;
 }
 
 .button:hover {

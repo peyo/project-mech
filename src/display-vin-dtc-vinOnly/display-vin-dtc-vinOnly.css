@@ -48,8 +48,8 @@ main {
   margin: 12px 0 12px 0;
 }
 
-.button-wrapper {
-  margin: 24px 0 24px 0;
+.submit-wrapper {
+  margin: 12px 0 0px 0;
 }
 
 #vin, #dtc {

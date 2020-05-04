@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./display-vin-dtc.css";
+import "./display-vin-dtc-vinOnly.css";
 
 class DisplayVINDTCVINOnly extends Component {
   render() {
@@ -40,10 +40,12 @@ class DisplayVINDTCVINOnly extends Component {
               <h2>Trouble Code</h2>
               <form className="dtc-input">
                 <div className="dtc-description">Diagnostic Trouble Code (DTC)</div>
-                  <input tye="text" id="dtc-input" value="P1100" />
+                <input tye="text" id="dtc-input" value="P1100" />
+                <div className="submit-wrapper">
                   <Link to={"/display-vin-dtc"}>
                     <input className="button" type="submit" value="Submit" />
                   </Link>
+                </div>
               </form>
             </div>
           </section>

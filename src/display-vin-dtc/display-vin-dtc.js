@@ -42,12 +42,12 @@ class DisplayVINDTC extends Component {
               <div className="dtc-description">
                 Description: BARO Sensor Circuit.
               </div>
-              <div className="button-wrapper">
+              <div className="edit-button-wrapper">
                 <Link to={"/display-vin-dtc-vinOnly"}>
                   <input className="button" type="submit" value="Edit DTC" />
                 </Link>
               </div>
-              <div className="button-wrapper">
+              <div className="add-comment-wrapper">
                 <Link to={"/add-dtc-comment"}>
                   <input className="button" type="submit" value="Add Comment" />
                 </Link>

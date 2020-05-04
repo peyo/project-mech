@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./display-vin-dtc.css";
+import "./display-vin-dtc-full.css";
 
 class DisplayVINDTCFull extends Component {
   render() {
@@ -42,20 +42,22 @@ class DisplayVINDTCFull extends Component {
               <div className="dtc-description">
                 Description: BARO Sensor Circuit.
               </div>
-              <div className="button-wrapper">
+              <div className="edit-dtc-wrapper">
                 <Link to={'/display-vin-dtc-vinOnly'}>
                   <input className="button" type="submit" value="Edit DTC" />
                 </Link>
               </div>
-              <div className="dtc-comment-date">4/30/2020 - 11:46 AM</div>
-              <div className="dtc-comment">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <div className="dtc-comment-section">
+                <div className="dtc-comment-date">4/30/2020 - 11:46 AM</div>
+                <div className="dtc-comment">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                  enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                  in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                  nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                  sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </div>
               </div>
               <div className="dtc-comment-edit-delete">
                 <Link to={"/edit-dtc-comment"}>
@@ -65,7 +67,7 @@ class DisplayVINDTCFull extends Component {
                   delete
                 </Link>
               </div>
-              <div className="button-wrapper">
+              <div className="add-comment-wrapper">
                 <input className="button" type="submit" value="Add Comment" />
               </div>
             </div>

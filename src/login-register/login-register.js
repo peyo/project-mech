@@ -40,9 +40,11 @@ class LoginRegister extends Component {
                 <input tye="text" id="vin-input" />
                 <div className="make">Make</div>
                 <input tye="text" id="make-input" />
-                <Link to={"/onboarding"}>
+                <div className="button-div">
+                  <Link to={"/onboarding"}>
                   <input className="button" type="submit" value="Submit" />
-                </Link>
+                    </Link>
+                </div>
                 </div>
               </form>
             </div>
@@ -54,9 +56,11 @@ class LoginRegister extends Component {
                 <input tye="text" id="username-input" />
                 <div className="password">Password</div>
                 <input tye="text" id="password-input" />
-                <Link to={"/home"}>
-                  <input className="button" type="submit" value="Submit" />
-                </Link>
+                <div className="button-div">
+                  <Link to={"/home"}>
+                    <input className="button" type="submit" value="Submit" />
+                  </Link>
+                </div>
               </form>
             </div>
           </section>

@@ -62,10 +62,6 @@ main {
   margin: 12px 0 12px 0;
 }
 
-.button-wrapper {
-  margin: 24px 0 24px 0;
-}
-
 #vin, #dtc {
   border: 1px solid;
   border-radius: .3em;
@@ -78,6 +74,14 @@ main {
   border-color: #686868;
   font-size: medium;
   margin: 0 9px 0 0;
+}
+
+.edit-button-wrapper {
+  margin: 12px 0 0 0;
+}
+
+.add-comment-wrapper {
+  margin: 24px 0 0 0;
 }
 
 .button {
