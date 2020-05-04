@@ -39,7 +39,7 @@ class Home extends Component {
             <div className="dtc-section">
               <h2>Trouble Code</h2>
               <form className="username-form">
-                <div className="dtc">Your DTC</div>
+                <div className="dtc">Enter DTC</div>
                 <input tye="text" id="dtc-input" />
                 <div className="submit-wrapper">
                   <Link to={"/display-vin-dtc"}>

@@ -49,9 +49,11 @@ class AddDTCComment extends Component {
               <div className="comment">
                 <textarea id="comment"></textarea>
               </div>
-              <Link to={"/display-vin-dtc-full"}>
-                <input id="comment-submit" className="button" type="submit" value="Submit" />
-              </Link>
+              <div className="comment-submit-button">
+                <Link to={"/display-vin-dtc-full"}>
+                  <input id="comment-submit" className="button" type="submit" value="Submit" />
+                </Link>
+              </div>
             </div>
           </section>
         </main>
