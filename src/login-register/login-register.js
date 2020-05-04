@@ -35,7 +35,7 @@ class LoginRegister extends Component {
                 <div className="repeat-password">Repeat Password</div>
                 <input tye="text" id="repeat-password-input" />
                 <div id="vin-make-wrapper">
-                <div className="or">VIN or Make</div>
+                <div className="or">Enter VIN or Make</div>
                 <div className="vin-login">VIN</div>
                 <input tye="text" id="vin-input" />
                 <div className="make-login">Make</div>
