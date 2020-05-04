@@ -19,7 +19,7 @@ class Forgot extends Component {
             <div className="forgot-section">
               <h2>Forgot Your Username or Password?</h2>
               <form className="forgot-form">
-                <div className="email">Enter Your Email:</div>
+                <div className="enter-email">Enter Your Email:</div>
                 <input tye="text" id="email-input" value="Email Address" />
                 <div className="button-div">
                   <Link to={"/email-sent"}>

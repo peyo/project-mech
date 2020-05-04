@@ -31,12 +31,8 @@ main {
   width: 72%;
 }
 
-.car-section {
-  margin: 72px 0 72px 0;
-}
-
 .make, .model {
-  margin: 12px 0 12px 0;
+  margin: 12px 0;
 }
 
 #model-input {
@@ -44,7 +40,6 @@ main {
   border-radius: .3em;
   border-color: #686868;
   font-size: medium;
-  margin: 0 9px 0 0;
   color: silver;
 }
 

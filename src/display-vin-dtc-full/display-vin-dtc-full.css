@@ -40,12 +40,8 @@ main {
   width: 72%;
 }
 
-.vin-dtc-section {
-  margin: 72px 0 72px 0;
-}
-
-.dtc-comment-date {
-  margin: 0 0 12px 0;
+.vin-dtc-section, .dtc-comment-section {
+  margin: 51px 0;
 }
 
 .dtc-comment-edit-delete {
@@ -54,18 +50,10 @@ main {
 }
 
 .dtc {
-  margin: 12px 0 12px 0;
+  margin: 12px 0;
 }
 
-.edit-dtc-wrapper {
-  margin: 12px 0 0 0;
-}
-
-.dtc-comment-section {
-  margin: 48px 0 0 0;
-}
-
-.add-comment-wrapper {
+.edit-dtc-wrapper, .add-comment-wrapper {
   margin: 12px 0 0 0;
 }
 

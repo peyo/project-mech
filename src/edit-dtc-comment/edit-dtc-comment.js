@@ -42,6 +42,9 @@ class EditDTCComment extends Component {
               <div className="dtc-description">
                 Description: BARO Sensor Circuit.
               </div>
+            </div>
+            <hr/>
+            <div className="comment-submit-section">
               <label className="comment">Comment:</label>
               <div className="comment">
                 <textarea id="comment" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed

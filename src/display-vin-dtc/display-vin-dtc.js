@@ -47,12 +47,13 @@ class DisplayVINDTC extends Component {
                   <input className="button" type="submit" value="Edit DTC" />
                 </Link>
               </div>
-              <div id="add-comment-wrapper">
+            </div>
+              <hr/>
+              <div id="add-comment-section">
                 <Link to={"/add-dtc-comment"}>
                   <input className="button" type="submit" value="Add Comment" />
                 </Link>
               </div>
-            </div>
           </section>
         </main>
         <footer>

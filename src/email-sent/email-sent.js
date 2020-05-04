@@ -18,7 +18,7 @@ class EmailSent extends Component {
           <section id="screen-wrapper">
             <div className="email-sent-section">
               <h2>Email Sent</h2>
-              <div className="email">
+              <div className="email-response">
                 Please follow the instructions sent to your email address.
               </div>
               <div className="back-to-login">

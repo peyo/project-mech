@@ -45,20 +45,16 @@ main {
   align-items: center;
 }
 
+.vin-dtc-section, #add-comment-section {
+  margin: 51px 0;
+}
+
 #screen-wrapper {
   width: 72%;
 }
 
-.vin-dtc-section {
-  margin: 72px 0;
-}
-
 .dtc, .dtc-description {
   margin: 12px 0;
-}
-
-#add-comment-wrapper {
-  margin: 24px 0 0 0;
 }
 
 .button {

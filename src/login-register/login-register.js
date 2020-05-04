@@ -28,7 +28,7 @@ class LoginRegister extends Component {
               <form className="username-form">
                 <div className="username">Username</div>
                 <input tye="text" id="username-input" />
-                <div className="email">Email</div>
+                <div className="email-label">Email</div>
                 <input tye="text" id="email-input" />
                 <div className="password">Password</div>
                 <input tye="text" id="password-input" />
@@ -36,9 +36,9 @@ class LoginRegister extends Component {
                 <input tye="text" id="repeat-password-input" />
                 <div id="vin-make-wrapper">
                 <div className="or">VIN or Make</div>
-                <div className="vin">VIN</div>
+                <div className="vin-login">VIN</div>
                 <input tye="text" id="vin-input" />
-                <div className="make">Make</div>
+                <div className="make-login">Make</div>
                 <input tye="text" id="make-input" />
                 <div className="button-div">
                   <Link to={"/onboarding"}>

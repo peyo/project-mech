@@ -42,6 +42,9 @@ class DeleteDTCComment extends Component {
               <div className="dtc-description">
                 Description: BARO Sensor Circuit.
               </div>
+            </div>
+            <hr/>
+            <div className="dtc-comment-section">
               <div className="dtc-comment-date">4/30/2020 - 11:46 AM</div>
               <div className="dtc-comment">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

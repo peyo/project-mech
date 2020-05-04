@@ -40,16 +40,12 @@ main {
   width: 72%;
 }
 
-.vin-dtc-section {
-  margin: 72px 0 72px 0;
-}
-
 .dtc, .dtc-description {
-  margin: 12px 0 12px 0;
+  margin: 12px 0;
 }
 
 .submit-wrapper {
-  margin: 12px 0 0px 0;
+  margin: 12px 0 0 0;
 }
 
 #dtc-input {

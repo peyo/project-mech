@@ -48,6 +48,7 @@ class Home extends Component {
                 </div>
               </form>
             </div>
+            <hr/>
             <div className="garage-section">
               <h2>Garage</h2>
               <div className="comments">Your Comments</div>

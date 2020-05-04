@@ -49,9 +49,10 @@ main {
 
 #intro {
   margin: 12px 0 0 0;
-  text-align: center;
 }
 
 .intro-ul {
+  padding: 0;
+  text-align: left;
   list-style: none;
 }

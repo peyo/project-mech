@@ -31,20 +31,12 @@ main {
   width: 72%;
 }
 
-.forgot-section {
-  margin: 72px 0 72px 0;
-}
-
-.email {
-  margin: 12px 0 12px 0;
-}
-
 #email-input {
   border: 1px solid;
   border-radius: .3em;
   border-color: #686868;
   font-size: medium;
-  margin: 0 9px 0 0;
+  margin: 12px 0;
 }
 
 .button-div {

@@ -57,8 +57,8 @@ main {
   width: 72%;
 }
 
-.vin-dtc-section {
-  margin: 72px 0 72px 0;
+.vin-dtc-section, .dtc-comment-section {
+  margin: 51px 0;
 }
 
 .dtc-comment-date {
@@ -71,7 +71,7 @@ main {
 }
 
 .dtc, .dtc-description {
-  margin: 12px 0 12px 0;
+  margin: 12px 0;
 }
 
 #delete-link {

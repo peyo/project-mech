@@ -42,15 +42,16 @@ class AddDTCComment extends Component {
               <div className="dtc-description">
                 Description: BARO Sensor Circuit.
               </div>
+            </div>
+            <hr />
+            <div className="comment-submit-section">
               <label className="comment">Comment:</label>
               <div className="comment">
                 <textarea id="comment"></textarea>
               </div>
-              <div className="comment-submit-wrapper">
-                <Link to={"/display-vin-dtc-full"}>
-                  <input id="comment-submit" className="button" type="submit" value="Submit" />
-                </Link>
-              </div>
+              <Link to={"/display-vin-dtc-full"}>
+                <input id="comment-submit" className="button" type="submit" value="Submit" />
+              </Link>
             </div>
           </section>
         </main>

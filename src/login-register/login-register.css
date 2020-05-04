@@ -32,23 +32,21 @@ main {
 }
 
 .mech-welcome-section, .register-section, .login-section {
-  margin: 72px 0 72px 0;
+  margin: 51px 0;
 }
 
-.username, .email, .password, .repeat-password, .vin, .or, .make {
-  margin: 12px 0 12px 0;
-}
-
-#username-input, #email-input, #password-input, #repeat-password-input, #vin-input, #make-input, #username-input, #password-input {
+#username-input, #email-input, #password-input, #repeat-password-input, #vin-input, #make-input, #password-input {
   border: 1px solid;
   border-radius: .3em;
   border-color: #686868;
   font-size: medium;
-  margin: 0 9px 0 0;
+  margin: 12px 0
 }
 
 .or {
-  margin: 30px 0 0 0;
+  margin: 30px 0 12px 0;
+  font-weight: bold;
+  color: #f47209;
 }
 
 .dtc-error {

@@ -49,16 +49,12 @@ main {
   width: 72%;
 }
 
-.vin-dtc-section {
-  margin: 72px 0 72px 0;
-}
-
 .dtc, .dtc-description {
-  margin: 12px 0 12px 0;
+  margin: 12px 0;
 }
 
-.comment-submit-wrapper {
-  margin: 12px 0 0 0;
+.vin-dtc-section, .comment-submit-section {
+  margin: 51px 0;
 }
 
 .button {

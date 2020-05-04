@@ -35,12 +35,12 @@ main {
   margin: 12px 0 0 0;
 }
 
-.garage-section {
-  margin: 72px 0 72px 0;
+.dtc-section, .garage-section {
+  margin: 51px 0;
 }
 
 .comments {
-  margin: 12px 0 12px 0;
+  margin: 12px 0;
   display: flex;
 }
 
