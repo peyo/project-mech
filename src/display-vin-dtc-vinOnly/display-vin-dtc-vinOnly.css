@@ -44,17 +44,13 @@ main {
   margin: 12px 0;
 }
 
-.submit-wrapper {
-  margin: 12px 0 0 0;
-}
-
 #dtc-input {
   border: 1px solid;
   border-radius: .3em;
   border-color: #686868;
   font-size: medium;
-  margin: 0 9px 0 0;
   color: silver;
+  margin: 0 0 12px 0;
 }
 
 .button {

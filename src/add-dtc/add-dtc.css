@@ -40,12 +40,8 @@ main {
   border-radius: .3em;
   border-color: #686868;
   font-size: medium;
-  margin: 0 9px 0 0;
+  margin: 12px 0;
   color: silver
-}
-
-.button-div {
-  margin: 12px 0 0 0;
 }
 
 .button {

@@ -41,10 +41,7 @@ main {
   border-color: #686868;
   font-size: medium;
   color: silver;
-}
-
-.button-div {
-  margin: 12px 0 0 0;
+  margin: 12px 0;
 }
 
 .button {
