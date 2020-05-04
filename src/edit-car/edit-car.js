@@ -44,7 +44,7 @@ class EditCar extends Component {
               <input tye="text" id="make-input" value="Toyota"/>
               <div className="model">Model</div>
               <input tye="text" id="model-input" value="Prius" />
-              <div className="made-in">Made In: Japan</div>
+              <div className="made-in">Made In Japan</div>
               <div className="button-wrapper">
                 <Link to={"/display-vin-dtc"}>
                   <input className="button" type="submit" value="Save" />

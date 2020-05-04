@@ -39,7 +39,7 @@ class DisplayVINDTCVINOnly extends Component {
             <div className="vin-dtc-section">
               <h2>Trouble Code</h2>
               <form className="dtc-input">
-                <div className="dtc-description">Diagnostic Trouble Code (DTC)</div>
+                <div className="dtc-description">Your DTC</div>
                 <input tye="text" id="dtc-input" value="P1100" />
                 <div className="submit-wrapper">
                   <Link to={"/display-vin-dtc"}>

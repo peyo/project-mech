@@ -3,6 +3,8 @@ import { Route } from "react-router-dom";
 import Welcome from "./welcome/welcome";
 import Home from "./home/home";
 import LoginRegister from "./login-register/login-register";
+import Forgot from "./forgot/forgot";
+import EmailSent from "./email-sent/email-sent"
 import Onboarding from "./onboarding/onboarding";
 import AddDTC from "./add-dtc/add-dtc";
 import DisplayVINDTC from "./display-vin-dtc/display-vin-dtc";
@@ -28,6 +30,14 @@ class App extends Component {
         <Route
           path="/login-register"
           component={LoginRegister}
+        />
+        <Route
+          path="/forgot"
+          component={Forgot}
+        />
+        <Route
+          path="/email-sent"
+          component={EmailSent}
         />
         <Route
           path="/onboarding"

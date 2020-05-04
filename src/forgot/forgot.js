@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./add-dtc.css";
+import "./forgot.css";
 
-class AddDTC extends Component {
+class Forgot extends Component {
   render() {
     return (
       <body>
         <header role="banner">
           <div className="gear-keep-driving">
-            <Link to={"/home"}>
-              <img id="gear" src={require("../gear.png")} alt="gear" />
-            </Link>
+            <img id="gear" src={require("../gear.png")} alt="gear" />
             <div className="keep-driving">
               Keep driving.
             </div>
@@ -18,13 +16,13 @@ class AddDTC extends Component {
         </header>
         <main role="main">
           <section id="screen-wrapper">
-            <div className="dtc-section">
-              <h2>Trouble Code</h2>
-              <form className="username-form">
-                <div className="dtc">Your DTC</div>
-                <input tye="text" id="dtc-input" value="DTC" />
+            <div className="forgot-section">
+              <h2>Forgot Your Username or Password?</h2>
+              <form className="forgot-form">
+                <div className="email">Enter Your Email:</div>
+                <input tye="text" id="email-input" value="Email Address" />
                 <div className="button-div">
-                  <Link to={"/display-vin-dtc"}>
+                  <Link to={"/email-sent"}>
                     <input className="button" type="submit" value="Submit" />
                   </Link>
                 </div>
@@ -51,4 +49,4 @@ class AddDTC extends Component {
   }
 }
 
-export default AddDTC;
+export default Forgot;

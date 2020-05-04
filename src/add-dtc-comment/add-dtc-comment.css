@@ -25,6 +25,10 @@ header, footer {
   align-items: center;
 }
 
+.keep-driving {
+  text-align: left;
+}
+
 .user-info-div {
   text-align: right;
   margin-left: auto;

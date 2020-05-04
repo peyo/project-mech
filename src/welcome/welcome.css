@@ -48,6 +48,10 @@ main {
 }
 
 #intro {
-  margin: 24px 0 0 0;
+  margin: 12px 0 0 0;
   text-align: center;
+}
+
+.intro-ul {
+  list-style: none;
 }

@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./add-dtc.css";
+import "./email-sent.css";
 
-class AddDTC extends Component {
+class EmailSent extends Component {
   render() {
     return (
       <body>
         <header role="banner">
           <div className="gear-keep-driving">
-            <Link to={"/home"}>
-              <img id="gear" src={require("../gear.png")} alt="gear" />
-            </Link>
+            <img id="gear" src={require("../gear.png")} alt="gear" />
             <div className="keep-driving">
               Keep driving.
             </div>
@@ -18,17 +16,16 @@ class AddDTC extends Component {
         </header>
         <main role="main">
           <section id="screen-wrapper">
-            <div className="dtc-section">
-              <h2>Trouble Code</h2>
-              <form className="username-form">
-                <div className="dtc">Your DTC</div>
-                <input tye="text" id="dtc-input" value="DTC" />
-                <div className="button-div">
-                  <Link to={"/display-vin-dtc"}>
-                    <input className="button" type="submit" value="Submit" />
-                  </Link>
-                </div>
-              </form>
+            <div className="email-sent-section">
+              <h2>Email Sent</h2>
+              <div className="email">
+                Please follow the instructions sent to your email address.
+              </div>
+              <div className="back-to-login">
+                <Link to={"/login-register"}>
+                  Back to Login
+                </Link>
+              </div>
             </div>
           </section>
         </main>
@@ -51,4 +48,4 @@ class AddDTC extends Component {
   }
 }
 
-export default AddDTC;
+export default EmailSent;

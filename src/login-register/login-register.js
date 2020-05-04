@@ -19,7 +19,7 @@ class LoginRegister extends Component {
             <div className="mech-welcome-section">
               <h2>Welcome to Mech.</h2>
               <div className="welcome-description">
-                Mech is a community for car owners and mechanics to discuss problems and solutions based on DTC.
+                Mech is a community for car owners and mechanics to discuss problems and solutions based on your diagnostic trouble code (DTC).
               </div>
             </div>
             <hr />
@@ -59,6 +59,11 @@ class LoginRegister extends Component {
                 <div className="button-div">
                   <Link to={"/home"}>
                     <input className="button" type="submit" value="Submit" />
+                  </Link>
+                </div>
+                <div className="forgot-div">
+                  <Link to={"/forgot"}>
+                    Forgot Username or Password?
                   </Link>
                 </div>
               </form>

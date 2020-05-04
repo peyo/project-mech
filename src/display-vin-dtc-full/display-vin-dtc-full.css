@@ -27,6 +27,15 @@ main {
   align-items: center;
 }
 
+.gear-keep-driving {
+  display: flex;
+  align-items: center;
+}
+
+.keep-driving {
+  text-align: left;
+}
+
 #screen-wrapper {
   width: 72%;
 }
