@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  color: #000000;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+header, footer {
+  width: 100%;
+  display: flex;
+  padding: 3%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #296e01;
+}
+
+.gear-keep-driving {
+  display: flex;
+  align-items: center;
+}
+
+.user-info-div {
+  text-align: right;
+  margin-left: auto;
+}
+
+.user-info-ul {
+  list-style-type: none;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+#screen-wrapper {
+  width: 72%;
+}
+
+.car-section {
+  margin: 51px 0;
+}
+
+.button-wrapper {
+  margin: 24px 0;
+}
+
+#make-input, #model-input {
+  border: 1px solid;
+  border-radius: .3em;
+  border-color: #686868;
+  color: silver;
+  margin: 12px 0;
+}
+
+.button {
+  background-color: #E8E8E8;
+  border-radius: .3em;
+}
+
+.button:hover {
+  border-color: #505050;
+}
+
+#delete-link {
+  margin: 0 0 0 9px;
+}

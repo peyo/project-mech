@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Forgot from './forgot';
+import Forgot from './Forgot';
 import { BrowserRouter } from 'react-router-dom';
 
 it('renders without crashing', () => {

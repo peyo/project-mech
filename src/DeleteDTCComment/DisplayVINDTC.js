@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./Home.css";
+import "./DisplayVINDTC.css";
 
-class Home extends Component {
+class DeleteDTCComment extends Component {
   render() {
     return (
       <body>
@@ -30,32 +30,35 @@ class Home extends Component {
         </header>
         <main role="main">
           <section id="screen-wrapper">
-            <div className="dtc-section">
+            <div className="vin-dtc-section">
               <h2>Trouble Code</h2>
-              <form className="username-form">
-                <div className="dtc">Enter DTC</div>
-                <input tye="text" id="dtc-input" />
-                <div className="submit-wrapper">
-                  <Link to={"/DisplayVINDTC"}>
-                    <input className="button" type="submit" value="Submit" />
-                  </Link>
-                </div>
-              </form>
+              <div className="dtc">DTC: P1100</div>
+              <div className="dtc-description">
+                Description: BARO Sensor Circuit.
+              </div>
             </div>
             <hr/>
-            <div className="garage-section">
-              <h2>Garage</h2>
-              <div className="comments">Your Comments</div>
-              <div className="comments">
-                <div className="dtc-comment">
-                  DTC
-                </div>&nbsp;
-                <Link to={"/DisplayVINDTCFull"}>
-                  P1100
-                </Link>&nbsp;&nbsp;&nbsp;
-                <div className="dtc-comment">
-                  4/30/2020 - 11:46 AM
+            <div className="dtc-comment-section">
+              <div className="dtc-comment-date">peyo - 4/30/2020 - 11:46 AM</div>
+              <div className="dtc-comment">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </div>
+              <div className="dtc-comment-edit-delete">
+                <div className="dtc-comment-delete-message">
+                  Would you like to delete this comment?
                 </div>
+                <Link to={"/DisplayVINDTC"}>
+                  Y
+                </Link>&nbsp;
+                <Link to={"/DisplayVINDTCFull"}>
+                  N
+                </Link>
               </div>
             </div>
           </section>
@@ -79,4 +82,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default DeleteDTCComment;

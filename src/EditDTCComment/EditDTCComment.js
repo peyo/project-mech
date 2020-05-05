@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./Home.css";
+import "./EditDTCComment.css";
 
-class Home extends Component {
+class EditDTCComment extends Component {
   render() {
     return (
       <body>
@@ -22,40 +22,45 @@ class Home extends Component {
                   peyo
                 </Link>
               </li>
+              <li className="vin-item">
+                JTDKN3DU8D0355402
+              </li>
               <li className="make-model-item">
                 Toyota Prius
+              </li>
+              <li className="made-in-item">
+                Made in Japan
               </li>
             </ul>
           </div>
         </header>
         <main role="main">
           <section id="screen-wrapper">
-            <div className="dtc-section">
+            <div className="vin-dtc-section">
               <h2>Trouble Code</h2>
-              <form className="username-form">
-                <div className="dtc">Enter DTC</div>
-                <input tye="text" id="dtc-input" />
-                <div className="submit-wrapper">
-                  <Link to={"/DisplayVINDTC"}>
-                    <input className="button" type="submit" value="Submit" />
-                  </Link>
-                </div>
-              </form>
+              <div className="dtc">DTC: P1100</div>
+              <div className="dtc-description">
+                Description: BARO Sensor Circuit.
+              </div>
             </div>
             <hr/>
-            <div className="garage-section">
-              <h2>Garage</h2>
-              <div className="comments">Your Comments</div>
-              <div className="comments">
-                <div className="dtc-comment">
-                  DTC
-                </div>&nbsp;
+            <div className="comment-submit-section">
+              <label className="comment">Comment:</label>
+              <div className="comment">
+                <textarea id="comment" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.">
+                </textarea>
+              </div>
+              <div className="button-wrapper">
                 <Link to={"/DisplayVINDTCFull"}>
-                  P1100
-                </Link>&nbsp;&nbsp;&nbsp;
-                <div className="dtc-comment">
-                  4/30/2020 - 11:46 AM
-                </div>
+                  <input id="comment-submit" className="button" type="submit" value="Submit" />
+                </Link>
               </div>
             </div>
           </section>
@@ -79,4 +84,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default EditDTCComment;

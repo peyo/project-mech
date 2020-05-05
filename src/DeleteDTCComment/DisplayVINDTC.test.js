@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Onboarding from './Onboarding';
+import DeleteDTCComment from './DisplayVINDTC';
 import { BrowserRouter } from 'react-router-dom';
 
 it('renders without crashing', () => {
   const html = document.createElement('html');
   ReactDOM.render(
     <BrowserRouter>
-      <Onboarding />
+      <DeleteDTCComment />
     </BrowserRouter>,
     html
   );

@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import Welcome from "./welcome/welcome";
-import Home from "./home/home";
-import LoginRegister from "./login-register/login-register";
-import Forgot from "./forgot/forgot";
-import EmailSent from "./email-sent/email-sent"
-import Onboarding from "./onboarding/onboarding";
-import AddDTC from "./add-dtc/add-dtc";
-import DisplayVINDTC from "./display-vin-dtc/display-vin-dtc";
-import DisplayVINDTCFull from "./display-vin-dtc-full/display-vin-dtc-full";
-import DisplayVINDTCVINOnly from "./display-vin-dtc-vinOnly/display-vin-dtc-vinOnly";
-import EditCar from "./edit-car/edit-car";
-import AddDTCComment from "./add-dtc-comment/add-dtc-comment";
-import EditDTCComment from "./edit-dtc-comment/edit-dtc-comment";
-import DeleteDTCComment from "./delete-dtc-comment/delete-dtc-comment";
+import Welcome from "./Welcome/Welcome";
+import Home from "./Home/Home";
+import LoginRegister from "./LoginRegister/LoginRegister";
+import Forgot from "./Forgot/Forgot";
+import EmailSent from "./EmailSent/EmailSent"
+import Onboarding from "./Onboarding/Onboarding";
+import AddDTC from "./AddDTC/AddDTC";
+import DisplayVINDTC from "./DisplayVINDTC/DisplayVINDTC";
+import DisplayVINDTCFull from "./DisplayVINDTCFull/DisplayVINDTCFull";
+import EditDTC from "./EditDTC/EditDTC";
+import EditCar from "./EditCar/EditCar";
+import AddDTCComment from "./AddDTCComment/AddDTCComment";
+import EditDTCComment from "./EditDTCComment/EditDTCComment";
+import DeleteDTCComment from "./DeleteDTCComment/DisplayVINDTC";
 
 class App extends Component {
   render() {
@@ -24,55 +24,55 @@ class App extends Component {
           component={Welcome}
         />
         <Route
-          path="/home"
+          path="/Home"
           component={Home}
         />
         <Route
-          path="/login-register"
+          path="/LoginRegister"
           component={LoginRegister}
         />
         <Route
-          path="/forgot"
+          path="/Forgot"
           component={Forgot}
         />
         <Route
-          path="/email-sent"
+          path="/EmailSent"
           component={EmailSent}
         />
         <Route
-          path="/onboarding"
+          path="/Onboarding"
           component={Onboarding}
         />
         <Route
-          exact path="/add-dtc"
+          exact path="/AddDTC"
           component={AddDTC}
         />
         <Route
-          exact path="/display-vin-dtc"
+          exact path="/DisplayVINDTC"
           component={DisplayVINDTC}
         />
         <Route
-          path="/display-vin-dtc-full"
+          path="/DisplayVINDTCFull"
           component={DisplayVINDTCFull}
         />
         <Route
-          path="/display-vin-dtc-vinOnly"
-          component={DisplayVINDTCVINOnly}
+          path="/EditDTC"
+          component={EditDTC}
         />
         <Route
-          exact path="/edit-car"
+          exact path="/EditCar"
           component={EditCar}
         />
         <Route
-          path="/add-dtc-comment"
+          path="/AddDTCComment"
           component={AddDTCComment}
         />
         <Route
-          path="/edit-dtc-comment"
+          path="/EditDTCComment"
           component={EditDTCComment}
         />
         <Route
-          path="/delete-dtc-comment"
+          path="/DeleteDTCComment"
           component={DeleteDTCComment}
         />
       </html>

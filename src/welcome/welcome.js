@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./welcome.css";
+import "./Welcome.css";
 
 class Welcome extends Component {
   render() {
@@ -15,7 +15,7 @@ class Welcome extends Component {
           <div className="welcome-section">
             <h2 id="welcome-welcome">Welcome to Mech.</h2>
             <div id="home-link">
-              <Link to={"/login-register"}>Rev!</Link>
+              <Link to={"/LoginRegister"}>Rev!</Link>
             </div>
             <div id="intro">
               <ul className="intro-ul">

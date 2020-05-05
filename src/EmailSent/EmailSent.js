@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./Onboarding.css";
+import "./EmailSent.css";
 
-class Onboarding extends Component {
+class EmailSent extends Component {
   render() {
     return (
       <body>
@@ -16,18 +16,16 @@ class Onboarding extends Component {
         </header>
         <main role="main">
           <section id="screen-wrapper">
-            <div className="car-section">
-              <h2>Your Car</h2>
-              <form className="car-form">
-                <div className="make-onboarding">Manufacturer: Toyota</div>
-                <div className="model-onboarding">Your Car's Model</div>
-                <input tye="text" id="model-input" value="Model" />
-                <div className="button-div">
-                  <Link to={"/AddDTC"}>
-                    <input className="button" type="submit" value="Submit" />
-                  </Link>
-                </div>
-              </form>
+            <div className="email-sent-section">
+              <h2>Email Sent</h2>
+              <div className="email-response">
+                Please follow the instructions sent to your email address.
+              </div>
+              <div className="back-to-login">
+                <Link to={"/LoginRegister"}>
+                  Back to Login
+                </Link>
+              </div>
             </div>
           </section>
         </main>
@@ -50,4 +48,4 @@ class Onboarding extends Component {
   }
 }
 
-export default Onboarding;
+export default EmailSent;

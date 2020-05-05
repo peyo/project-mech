@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./forgot.css";
+import "./Forgot.css";
 
 class Forgot extends Component {
   render() {
@@ -22,7 +22,7 @@ class Forgot extends Component {
                 <div className="enter-email">Enter Your Email:</div>
                 <input tye="text" id="email-input" value="Email Address" />
                 <div className="button-div">
-                  <Link to={"/email-sent"}>
+                  <Link to={"/EmailSent"}>
                     <input className="button" type="submit" value="Submit" />
                   </Link>
                 </div>

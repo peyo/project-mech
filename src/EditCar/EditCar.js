@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./Home.css";
+import "./EditCar.css";
 
-class Home extends Component {
+class EditCar extends Component {
   render() {
     return (
       <body>
@@ -30,32 +30,17 @@ class Home extends Component {
         </header>
         <main role="main">
           <section id="screen-wrapper">
-            <div className="dtc-section">
-              <h2>Trouble Code</h2>
-              <form className="username-form">
-                <div className="dtc">Enter DTC</div>
-                <input tye="text" id="dtc-input" />
-                <div className="submit-wrapper">
-                  <Link to={"/DisplayVINDTC"}>
-                    <input className="button" type="submit" value="Submit" />
-                  </Link>
-                </div>
-              </form>
-            </div>
-            <hr/>
-            <div className="garage-section">
-              <h2>Garage</h2>
-              <div className="comments">Your Comments</div>
-              <div className="comments">
-                <div className="dtc-comment">
-                  DTC
-                </div>&nbsp;
-                <Link to={"/DisplayVINDTCFull"}>
-                  P1100
-                </Link>&nbsp;&nbsp;&nbsp;
-                <div className="dtc-comment">
-                  4/30/2020 - 11:46 AM
-                </div>
+            <div className="car-section">
+              <h2>Change Your Car</h2>
+              <div className="make-edit">Manufacturer</div>
+              <input tye="text" id="make-input" value="Toyota"/>
+              <div className="model-edit">Model</div>
+              <input tye="text" id="model-input" value="Prius" />
+              <div className="made-in">Made In Japan</div>
+              <div className="button-wrapper">
+                <Link to={"/DisplayVINDTC"}>
+                  <input className="button" type="submit" value="Save" />
+                </Link>
               </div>
             </div>
           </section>
@@ -79,4 +64,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default EditCar;

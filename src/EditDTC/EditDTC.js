@@ -1,29 +1,42 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./Onboarding.css";
+import "./EditDTC.css";
 
-class Onboarding extends Component {
+class EditDTC extends Component {
   render() {
     return (
       <body>
         <header role="banner">
           <div className="gear-keep-driving">
-            <img id="gear" src={require("../gear.png")} alt="gear" />
+            <Link to={"/Home"}>
+              <img id="gear" src={require("../gear.png")} alt="gear" />
+            </Link>
             <div className="keep-driving">
               Keep driving.
             </div>
           </div>
+          <div className="user-info-div">
+            <ul className="user-info-ul">
+              <li className="user-item">
+                <Link to={"/EditCar"}>
+                  peyo
+                </Link>
+              </li>
+              <li className="make-model-item">
+                Toyota Prius
+              </li>
+            </ul>
+          </div>
         </header>
         <main role="main">
           <section id="screen-wrapper">
-            <div className="car-section">
-              <h2>Your Car</h2>
-              <form className="car-form">
-                <div className="make-onboarding">Manufacturer: Toyota</div>
-                <div className="model-onboarding">Your Car's Model</div>
-                <input tye="text" id="model-input" value="Model" />
-                <div className="button-div">
-                  <Link to={"/AddDTC"}>
+            <div className="vin-dtc-section">
+              <h2>Trouble Code</h2>
+              <form className="dtc-input">
+                <div className="dtc-description">Your DTC</div>
+                <input tye="text" id="dtc-input" value="P1100" />
+                <div className="submit-wrapper">
+                  <Link to={"/DisplayVinDTC"}>
                     <input className="button" type="submit" value="Submit" />
                   </Link>
                 </div>
@@ -50,4 +63,4 @@ class Onboarding extends Component {
   }
 }
 
-export default Onboarding;
+export default EditDTC;
