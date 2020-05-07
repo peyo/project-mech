@@ -1,9 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import MechContext from "../MechContext";
 import "./DisplayVINDTC.css";
 
 class DisplayVINDTC extends Component {
+
+  static contextType = MechContext;
+
+  state = {
+    cars: {},
+    dtc: {}
+  };
+
   render() {
+
+    const { car, dtc } = this.context;
+
     return (
       <body>
         <header role="banner">
@@ -23,7 +35,7 @@ class DisplayVINDTC extends Component {
                 </Link>
               </li>
               <li className="make-model-item">
-                Toyota Prius
+                {car.make_id} {car.model}
               </li>
             </ul>
           </div>
@@ -32,9 +44,9 @@ class DisplayVINDTC extends Component {
           <section id="screen-wrapper">
             <div className="vin-dtc-section">
               <h2>Trouble Code</h2>
-              <div className="dtc">DTC: P1100</div>
+              <div className="dtc">DTC: {dtc.dtc}</div>
               <div className="dtc-description">
-                Description: BARO Sensor Circuit.
+                Description: {dtc.comment }.
               </div>
               <div className="edit-button-wrapper">
                 <Link to={"/EditDTC"}>

@@ -1,9 +1,51 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import MechContext from "../MechContext";
+import config from "../config";
 import "./EditDTC.css";
 
 class EditDTC extends Component {
+  
+  static contextType = MechContext;
+
+  state = {
+    car: {},
+  };
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const { DTC } = e.target;
+    const DTCAdd = {
+      DTC: DTC.value,
+    };
+    fetch(config.API_ENDPOINT, {
+      method: "POST",
+      body: JSON.stringify(DTCAdd),
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          return res.json().then((error) => {
+            throw error;
+          });
+        }
+        return res.json();
+      })
+      .then((data) => {
+        this.context.addDTC(data);
+        this.props.history.push("/DisplayVINDTC");
+      })
+      .catch((error) => {
+        this.setState({ error });
+      });
+  }
+
   render() {
+
+    const { car } = this.context;
+
     return (
       <body>
         <header role="banner">
@@ -11,20 +53,14 @@ class EditDTC extends Component {
             <Link to={"/Home"}>
               <img id="gear" src={require("../gear.png")} alt="gear" />
             </Link>
-            <div className="keep-driving">
-              Keep driving.
-            </div>
+            <div className="keep-driving">Keep driving.</div>
           </div>
           <div className="user-info-div">
             <ul className="user-info-ul">
               <li className="user-item">
-                <Link to={"/EditCar"}>
-                  peyo
-                </Link>
+                <Link to={"/EditCar"}>peyo</Link>
               </li>
-              <li className="make-model-item">
-                Toyota Prius
-              </li>
+              <li className="make-model-item">{car.make_id} {car.model}</li>
             </ul>
           </div>
         </header>
@@ -32,12 +68,18 @@ class EditDTC extends Component {
           <section id="screen-wrapper">
             <div className="vin-dtc-section">
               <h2>Trouble Code</h2>
-              <form className="dtc-input">
+              <form
+                className="dtc-input"
+                onSubmit={(e) => this.handleSubmit(e)}
+              >
                 <div className="dtc-description">Your DTC</div>
-                <input tye="text" id="dtc-input" value="P1100" />
+                <input type="text" id="dtc-input" name="DTC" />
                 <div className="submit-wrapper">
                   <Link to={"/DisplayVinDTC"}>
-                    <input className="button" type="submit" value="Submit" />
+                    <input
+                      className="button"
+                      type="submit"
+                      placeholder="Submit" />
                   </Link>
                 </div>
               </form>
@@ -46,9 +88,7 @@ class EditDTC extends Component {
         </main>
         <footer>
           <div className="footer-contact-info">
-            <div id="beep-beep">
-              Beep beep.
-            </div>
+            <div id="beep-beep">Beep beep.</div>
             <br />
             <div className="contact-us">
               Contact Us:&nbsp;

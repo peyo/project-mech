@@ -1,9 +1,53 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import MechContext from "../MechContext";
+import config from "../config";
 import "./EditCar.css";
 
 class EditCar extends Component {
+
+  static contextType = MechContext;
+
+  state = {
+    comments: [],
+  };
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const { model } = e.target;
+    const modelAdd = {
+      model: model.value
+    };
+    fetch(config.API_ENDPOINT, {
+      method: "POST",
+      body: JSON.stringify(modelAdd),
+      headers: {
+        "content-type": "application/json"
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          return res
+            .json()
+            .then(error => {
+              throw error
+            });
+        }
+        return res.json();
+      })
+      .then(data => {
+        this.context.addModel(data);
+        this.props.history.push("/AddDTC");
+      })
+      .catch(error => {
+        this.setState({ error })
+      })
+  }
+
   render() {
+
+    const { car } = this.context;
+
     return (
       <body>
         <header role="banner">
@@ -23,7 +67,7 @@ class EditCar extends Component {
                 </Link>
               </li>
               <li className="make-model-item">
-                Toyota Prius
+                {car.make_id} {car.model}
               </li>
             </ul>
           </div>
@@ -32,16 +76,17 @@ class EditCar extends Component {
           <section id="screen-wrapper">
             <div className="car-section">
               <h2>Change Your Car</h2>
-              <div className="make-edit">Manufacturer</div>
-              <input tye="text" id="make-input" value="Toyota"/>
-              <div className="model-edit">Model</div>
-              <input tye="text" id="model-input" value="Prius" />
-              <div className="made-in">Made In Japan</div>
-              <div className="button-wrapper">
-                <Link to={"/DisplayVINDTC"}>
-                  <input className="button" type="submit" value="Save" />
-                </Link>
-              </div>
+              <form className="EditCar-car-form" onSubmit={(e) => this.handleSubmit(e)}>
+                <div className="make-edit">Manufacturer</div>
+                <input tye="text" id="make-input" />
+                <div className="model-edit">Model</div>
+                <input tye="text" id="model-input" />
+                <div className="button-wrapper">
+                  <Link to={"/DisplayVINDTC"}>
+                    <input className="button" type="submit" value="Save" />
+                  </Link>
+                </div>
+              </form>
             </div>
           </section>
         </main>

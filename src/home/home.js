@@ -1,9 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import MechContext from "../MechContext";
 import "./Home.css";
 
 class Home extends Component {
+
+  static contextType = MechContext;
+
+  state = {
+    car: {},
+    dtc: {}
+  };
+
   render() {
+
+    const { car, comments } = this.context;
+
     return (
       <body>
         <header role="banner">
@@ -23,7 +35,7 @@ class Home extends Component {
                 </Link>
               </li>
               <li className="make-model-item">
-                Toyota Prius
+                {car.make_id} {car.model}
               </li>
             </ul>
           </div>
@@ -44,14 +56,14 @@ class Home extends Component {
             </div>
             <hr/>
             <div className="garage-section">
-              <h2>Garage</h2>
+              <h2>History</h2>
               <div className="comments">Your Comments</div>
               <div className="comments">
                 <div className="dtc-comment">
                   DTC
                 </div>&nbsp;
                 <Link to={"/DisplayVINDTCFull"}>
-                  P1100
+                  {comments.dtc_id}
                 </Link>&nbsp;&nbsp;&nbsp;
                 <div className="dtc-comment">
                   4/30/2020 - 11:46 AM

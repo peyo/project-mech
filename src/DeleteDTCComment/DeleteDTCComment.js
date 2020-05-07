@@ -1,9 +1,22 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./DisplayVINDTC.css";
+import MechContext from "../MechContext";
+import "./DeleteDTCComment.css";
 
 class DeleteDTCComment extends Component {
+  
+  static contextType = MechContext;
+
+  state = {
+    cars: {},
+    comments: [],
+    dtc: {}
+  };
+  
   render() {
+
+    const { car, comments, dtc } = this.context;
+
     return (
       <body>
         <header role="banner">
@@ -23,7 +36,7 @@ class DeleteDTCComment extends Component {
                 </Link>
               </li>
               <li className="make-model-item">
-                Toyota Prius
+                {car.make_id} {car.model}
               </li>
             </ul>
           </div>
@@ -32,22 +45,26 @@ class DeleteDTCComment extends Component {
           <section id="screen-wrapper">
             <div className="vin-dtc-section">
               <h2>Trouble Code</h2>
-              <div className="dtc">DTC: P1100</div>
+              <div className="dtc">DTC: {dtc.dtc}</div>
               <div className="dtc-description">
-                Description: BARO Sensor Circuit.
+                Description: {dtc.description}.
               </div>
             </div>
             <hr/>
             <div className="dtc-comment-section">
               <div className="dtc-comment-date">peyo - 4/30/2020 - 11:46 AM</div>
               <div className="dtc-comment">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <ul className="DisplayVINDTCFull_comment-list">
+                {comments.map((comment) =>
+                  comment.DTC_id === parseInt(this.props.match.params.DTCId) ? (
+                    <li key={comment.id} className="DisplayVINDTCFull_comment">
+                      <p className="DisplayVINDTCFull_comment-text">
+                        {comment.text}
+                      </p>
+                    </li>
+                  ) : null
+                )}
+                </ul>
               </div>
               <div className="dtc-comment-edit-delete">
                 <div className="dtc-comment-delete-message">

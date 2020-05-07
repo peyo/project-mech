@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import DeleteDTCComment from './DisplayVINDTC';
+import DeleteDTCComment from './DeleteDTCComment';
 import { BrowserRouter } from 'react-router-dom';
 
 it('renders without crashing', () => {

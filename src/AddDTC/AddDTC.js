@@ -4,10 +4,39 @@ import MechContext from "../MechContext";
 import config from "../config";
 import "./AddDTC.css";
 
-const Required = () => <span className="AddBookmark__required">*</span>;
-
 class AddDTC extends Component {
+  
   static contextType = MechContext;
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const { DTC } = e.target;
+    const DTCAdd = {
+      dtc: DTC.value,
+    };
+    fetch(config.API_ENDPOINT, {
+      method: "POST",
+      body: JSON.stringify(DTCAdd),
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          return res.json().then((error) => {
+            throw error;
+          });
+        }
+        return res.json();
+      })
+      .then((data) => {
+        this.context.addDTC(data);
+        this.props.history.push("/DisplayVINDTC");
+      })
+      .catch((error) => {
+        this.setState({ error });
+      });
+  }
 
   render() {
     return (
@@ -24,10 +53,17 @@ class AddDTC extends Component {
           <section id="screen-wrapper">
             <div className="dtc-section">
               <h2>Trouble Code</h2>
-              <form className="username-form">
-                <div className="dtc">Your DTC <Required /></div>
-                <input type="text" id="dtc-input" name="DTC" placeholder="DTC" required />
-                <div className="button-div">
+              <form
+                className="username-form"
+                onSubmit={(e) => this.handleSubmit(e)}
+              >
+                <div className="dtc">Your DTC</div>
+                <input
+                  type="text"
+                  id="dtc-input"
+                  name="DTC"
+                />
+                <div className="submit-wrapper">
                   <Link to={"/DisplayVINDTC"}>
                     <input
                       className="button"

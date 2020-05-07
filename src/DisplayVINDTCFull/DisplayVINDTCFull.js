@@ -1,9 +1,22 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import MechContext from "../MechContext";
 import "./DisplayVINDTCFull.css";
 
 class DisplayVINDTCFull extends Component {
+
+  static contextType = MechContext;
+
+  state = {
+    cars: {},
+    comments: [],
+    dtc: {}
+  };
+
   render() {
+    
+    const { car, comments, dtc } = this.context;
+
     return (
       <body>
         <header role="banner">
@@ -11,19 +24,15 @@ class DisplayVINDTCFull extends Component {
             <Link to={"/Home"}>
               <img id="gear" src={require("../gear.png")} alt="gear" />
             </Link>
-            <div className="keep-driving">
-              Keep driving.
-            </div>
+            <div className="keep-driving">Keep driving.</div>
           </div>
           <div className="user-info-div">
             <ul className="user-info-ul">
               <li className="user-item">
-                <Link to={"/EditCar"}>
-                  peyo
-                </Link>
+                <Link to={"/EditCar"}>peyo</Link>
               </li>
               <li className="make-model-item">
-                Toyota Prius
+                {car.make_id} {car.model}
               </li>
             </ul>
           </div>
@@ -32,35 +41,35 @@ class DisplayVINDTCFull extends Component {
           <section id="screen-wrapper">
             <div className="vin-dtc-section">
               <h2>Trouble Code</h2>
-              <div className="dtc">DTC: P1100</div>
+              <div className="dtc">DTC: {dtc.dtc}</div>
               <div className="dtc-description">
-                Description: BARO Sensor Circuit.
+                Description: {dtc.comment}.
               </div>
               <div className="edit-dtc-wrapper">
-                <Link to={'/EditDTC'}>
+                <Link to={"/EditDTC"}>
                   <input className="button" type="submit" value="Edit DTC" />
                 </Link>
               </div>
             </div>
-            <hr/>
+            <hr />
             <div className="dtc-comment-section">
-              <div className="dtc-comment-user-date">peyo - 4/30/2020 - 11:46 AM</div>
-              <div className="dtc-comment">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <div className="dtc-comment-user-date">
+                peyo - 4/30/2020 - 11:46 AM
               </div>
+              <ul className="DisplayVINDTCFull_comment-list">
+                {comments.map((comment) =>
+                  comment.DTC_id === parseInt(this.props.match.params.DTCId) ? (
+                    <li key={comment.id} className="DisplayVINDTCFull_comment">
+                      <p className="DisplayVINDTCFull_comment-text">
+                        {comment.text}
+                      </p>
+                    </li>
+                  ) : null
+                )}
+              </ul>
               <div className="dtc-comment-edit-delete">
-                <Link to={"/EditDTCComment"}>
-                  edit
-                </Link>&nbsp;
-                <Link to={"/DeleteDTCComment"}>
-                  delete
-                </Link>
+                <Link to={"/EditDTCComment"}>edit</Link>&nbsp;
+                <Link to={"/DeleteDTCComment"}>delete</Link>
               </div>
               <div className="add-comment-wrapper">
                 <input className="button" type="submit" value="Add Comment" />
@@ -70,9 +79,7 @@ class DisplayVINDTCFull extends Component {
         </main>
         <footer>
           <div className="footer-contact-info">
-            <div id="beep-beep">
-              Beep beep.
-            </div>
+            <div id="beep-beep">Beep beep.</div>
             <br />
             <div className="contact-us">
               Contact Us:&nbsp;

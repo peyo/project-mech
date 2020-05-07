@@ -53,12 +53,12 @@ main {
   margin: 12px 0;
 }
 
-.button-wrapper {
-  margin: 24px 0;
-}
-
 textarea {
   font-size: medium;
+}
+
+#editDTCComment-comment {
+  margin: 0 0 12px 0;
 }
 
 .button {

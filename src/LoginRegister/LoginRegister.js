@@ -1,8 +1,49 @@
 import React, { Component } from "react";
+import MechContext from "../MechContext";
 import { Link } from "react-router-dom";
+import config from "../config";
 import "./LoginRegister.css";
 
 class LoginRegister extends Component {
+  
+  static contextType = MechContext;
+
+  state = {
+    car: {}
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const { make } = e.target;
+    const makeAdd = {
+      make: make.value
+    };
+    fetch(config.API_ENDPOINT, {
+      method: "POST",
+      body: JSON.stringify(makeAdd),
+      headers: {
+        "content-type": "application/json"
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          return res
+            .json()
+            .then(error => {
+              throw error
+            });
+        }
+        return res.json();
+      })
+      .then(data => {
+        this.context.addMake(data);
+        this.props.history.push("/Onboarding");
+      })
+      .catch(error => {
+        this.setState({ error })
+    })
+  }
+
   render() {
     return (
       <body>
@@ -25,7 +66,7 @@ class LoginRegister extends Component {
             <hr />
             <div className="register-section">
               <h2>Register</h2>
-              <form className="username-form">
+              <form className="username-form" onSubmit={(e) => this.handleSubmit(e)}>
                 <div className="username">Username</div>
                 <input tye="text" id="username-input" />
                 <div className="email-label">
@@ -34,16 +75,24 @@ class LoginRegister extends Component {
                     Check your email for confirmation after signup.
                   </div>
                 </div>
-                <input tye="text" id="email-input" />
+                <input type="text" id="email-input" />
                 <div className="password">Password</div>
-                <input tye="text" id="password-input" />
+                <input type="text" id="password-input" />
                 <div className="repeat-password">Repeat Password</div>
-                <input tye="text" id="repeat-password-input" />
+                <input type="text" id="repeat-password-input" />
                 <div className="make-login">Manufacturer</div>
-                <input tye="text" id="make-input" />
+                <input
+                  type="text"
+                  id="make-input"
+                  name="make"
+                />
                 <div className="button-div">
                   <Link to={"/Onboarding"}>
-                  <input className="button" type="submit" value="Submit" />
+                    <input
+                      className="button"
+                      type="submit"
+                      placeholder="Submit"
+                    />
                     </Link>
                 </div>
               </form>
@@ -58,7 +107,10 @@ class LoginRegister extends Component {
                 <input tye="text" id="password-input" />
                 <div className="button-div">
                   <Link to={"/Home"}>
-                    <input className="button" type="submit" value="Submit" />
+                    <input
+                      className="button"
+                      type="submit"
+                      placeholder="Submit" />
                   </Link>
                 </div>
                 <div className="forgot-div">

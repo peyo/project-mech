@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import "./Forgot.css";
 
 class Forgot extends Component {
+
+  handleSubmit(e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
       <body>
@@ -18,9 +23,9 @@ class Forgot extends Component {
           <section id="screen-wrapper">
             <div className="forgot-section">
               <h2>Forgot Your Username or Password?</h2>
-              <form className="forgot-form">
+              <form className="forgot-form" onSubmit={(e) => this.handleSubmit(e)}>
                 <div className="enter-email">Enter Your Email:</div>
-                <input tye="text" id="email-input" value="Email Address" />
+                <input tye="text" id="email-input" />
                 <div className="button-div">
                   <Link to={"/EmailSent"}>
                     <input className="button" type="submit" value="Submit" />

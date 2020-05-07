@@ -1,14 +1,15 @@
 import React from "react";
 
 const MechContext = React.createContext({
+  user: {},
+  car: {},
+  dtc: {},
   comments: [],
-  addVIN: () => { },
-  clearVIN: () => { },
+  addMake: () => { },
+  addModel: () => { },
   addDTC: () => { },
-  clearDTC: () => { },
-  addComment: () => { },
-  updateComment: () => { },
-  deleteComment: () => { }
+  getDTCComments: () => { },
+  editComment: () => { }
 })
 
 export default MechContext;
