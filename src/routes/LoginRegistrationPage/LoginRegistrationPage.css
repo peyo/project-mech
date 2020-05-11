@@ -27,29 +27,20 @@ main {
   align-items: center;
 }
 
-#screen-wrapper {
+#LoginRegistration__screen-wrapper {
   width: 72%;
 }
 
-.make-onboarding, .model-onboarding {
-  margin: 12px 0 0 0;
+.LoginRegistration__welcome-section, .LoginRegistration__registration-section, .LoginRegistration__login-section {
+  margin: 51px 0;
 }
 
-#model-input {
-  border: 1px solid;
-  border-radius: .3em;
-  border-color: #686868;
-  font-size: medium;
-  color: silver;
-  margin: 12px 0;
-}
-
-.button {
+.LoginRegistration__button-div {
   background-color: #E8E8E8;
   border-radius: .3em;
   font-size: medium;
 }
 
-.button:hover {
+.LoginRegistration__button-div:hover {
   border-color: #505050;
 }

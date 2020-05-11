@@ -27,32 +27,6 @@ main {
   align-items: center;
 }
 
-#screen-wrapper {
+#ForgotPage__screen-wrapper {
   width: 72%;
-}
-
-#gear {
-  height: 57px;
-  width: 57px;
-}
-
-.welcome-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#home-link {
-  text-align: center;
-  font-size: larger;
-}
-
-#intro {
-  margin: 12px 0 0 0;
-}
-
-.intro-ul {
-  padding: 0;
-  text-align: left;
-  list-style: none;
 }

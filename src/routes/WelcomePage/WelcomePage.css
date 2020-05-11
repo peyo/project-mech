@@ -27,24 +27,29 @@ main {
   align-items: center;
 }
 
-#screen-wrapper {
+.WelcomePage__section {
   width: 72%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.email-sent-section {
+#WelcomePage__gear {
+  height: 57px;
+  width: 57px;
+}
+
+#WelcomePage__home-link {
   text-align: center;
+  font-size: larger;
 }
 
-.email-response {
-  margin: 24px 0;
+#WelcomePage__intro {
+  margin: 12px 0 0 0;
 }
 
-.button {
-  background-color: #E8E8E8;
-  border-radius: .3em;
-  font-size: medium;
-}
-
-.button:hover {
-  border-color: #505050;
+.WelcomePage__intro-ul {
+  padding: 0;
+  text-align: left;
+  list-style: none;
 }

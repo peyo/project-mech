@@ -1,24 +1,24 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./Welcome.css";
+import "./WelcomePage.css";
 
-class Welcome extends Component {
+class WelcomePage extends Component {
   render() {
     return (
       <body>
         <header role="banner">
           <div>
-            <img id="gear" src={require("../gear.png")} alt="gear" />
+            <img id="WelcomePage__gear" src={require("../gear.png")} alt="gear" />
           </div>
         </header>
-        <main className="main">
-          <div className="welcome-section">
-            <h2 id="welcome-welcome">Welcome to Mech.</h2>
-            <div id="home-link">
-              <Link to={"/LoginRegister"}>Rev!</Link>
+        <main className="WelcomePage__main">
+          <div className="WelcomePage__section">
+            <h2 id="WelcomePage__welcome">Welcome to Mech.</h2>
+            <div id="WelcomePage__home-link">
+              <Link to={"/LoginRegisterPage"}>Rev!</Link>
             </div>
-            <div id="intro">
-              <ul className="intro-ul">
+            <div id="WelcomePage__intro">
+              <ul className="WelcomePage__intro-ul">
                 <li>
                   Enter your VIN or Make and Model.
                 </li>
@@ -36,14 +36,14 @@ class Welcome extends Component {
           </div>
         </main>
         <footer>
-          <div className="footer-contact-info">
-            <div id="beep-beep">
+          <div className="WelcomePage__footer-contact-info">
+            <div id="WelcomePage__beep-beep">
               Beep beep.
             </div>
             <br />
-            <div className="contact-us">
+            <div className="WelcomePage__contact-us">
               Contact Us:&nbsp;
-              <a className="email-connect" href="mailto:peteryyoon@gmail.com">
+              <a className="WelcomePage__email-connect" href="mailto:peteryyoon@gmail.com">
                 Email
               </a>
             </div>
@@ -54,4 +54,4 @@ class Welcome extends Component {
   }
 }
 
-export default Welcome;
+export default WelcomePage;

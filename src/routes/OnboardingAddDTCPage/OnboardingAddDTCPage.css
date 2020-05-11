@@ -27,24 +27,6 @@ main {
   align-items: center;
 }
 
-#screen-wrapper {
+#OnboardingAddDTCPage__screen-wrapper {
   width: 72%;
-}
-
-#email-input {
-  border: 1px solid;
-  border-radius: .3em;
-  border-color: #686868;
-  font-size: medium;
-  margin: 12px 0;
-}
-
-.button {
-  background-color: #E8E8E8;
-  border-radius: .3em;
-  font-size: medium;
-}
-
-.button:hover {
-  border-color: #505050;
 }

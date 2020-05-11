@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import MechContext from "../MechContext";
+import MechContext from "../contexts/MechContext";
 import "./DisplayVINDTC.css";
 
 class DisplayVINDTC extends Component {

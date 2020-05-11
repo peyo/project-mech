@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Forgot from './Forgot';
+import Welcome from './WelcomePage';
 import { BrowserRouter } from 'react-router-dom';
 
 it('renders without crashing', () => {
   const html = document.createElement('html');
   ReactDOM.render(
     <BrowserRouter>
-      <Forgot />
+      <Welcome />
     </BrowserRouter>,
     html
   );

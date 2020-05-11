@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import MechContext from "../MechContext";
+import MechContext from "../contexts/MechContext";
 import config from "../config";
 import "./EditDTC.css";
 

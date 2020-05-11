@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+#LoginRegistration__username-input, #LoginRegistration__nickname-input, #LoginRegistration__password-input, #LoginRegistration__repeat-password-input, #LoginRegistration__make-input {
+  border: 1px solid;
+  border-radius: .3em;
+  border-color: #686868;
+  font-size: medium;
+  margin: 12px 0
+}
+
+.LoginRegistration__check-email {
+  color: #686868;
+  font-size: smaller;
+}
+
+.LoginRegistration__button-div {
+  background-color: #E8E8E8;
+  border-radius: .3em;
+  font-size: medium;
+}
+
+.LoginRegistration__button-div:hover {
+  border-color: #505050;
+}

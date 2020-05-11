@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+#LoginRegister__username-input, #LoginRegister__password-input {
+  border: 1px solid;
+  border-radius: .3em;
+  border-color: #686868;
+  font-size: medium;
+  margin: 12px 0
+}
+
+.LoginRegister__forgot-div {
+  margin: 24px 0 0 0;
+}
+
+.LoginRegister__button-div {
+  background-color: #E8E8E8;
+  border-radius: .3em;
+  font-size: medium;
+}
+
+.LoginRegister__button-div:hover {
+  border-color: #505050;
+}
