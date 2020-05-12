@@ -10,23 +10,26 @@ export default class OnboardingAddModelForm extends Component {
     user: {},
   };
 
-  handleSubmit(e){
-    e.preventDefault()
-    const { user } = this.context
-    const { model } = e.target
+  handleSubmit(e) {
+    e.preventDefault();
+    const { user } = this.context;
+    const { model } = e.target;
     MechAPIService.postCar(user.id, user.first_make, model.value)
       .then(this.context.addCar)
       .then(() => {
-        model.value = ""
+        model.value = "";
       })
-      .catch(this.context.setError)
+      .catch(this.context.setError);
   }
 
   render() {
     const { user } = this.context;
 
     return (
-      <form className="OnboardingAddModelForm__car-form" onSubmit={(e) => this.handleSubmit(e)}>
+      <form
+        className="OnboardingAddModelForm__car-form"
+        onSubmit={(e) => this.handleSubmit(e)}
+      >
         <div className="OnboardingAddModelForm__make-onboarding">
           Manufacturer: {user.first_make}
         </div>

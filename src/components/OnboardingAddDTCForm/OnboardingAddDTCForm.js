@@ -4,6 +4,20 @@ import MechAPIService from "../../services/mech-api-service";
 import "./OnboardingAddDTCForm.css";
 
 export default class OnboardingAddDTCForm extends Component {
+  static contextType = MechContext;
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const { cars } = this.context;
+    const { dtc } = e.target;
+    MechAPIService.getDTC(cars.car.make, dtc.value)
+      .then(this.context.getDTC)
+      .then(() => {
+        dtc.value = "";
+      })
+      .catch(this.context.setError);
+  }
+  
   render() {
     return (
       <form
