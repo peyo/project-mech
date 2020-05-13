@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./ForgotPage.css";
 
 export default class ForgotPage extends Component {
@@ -8,7 +7,7 @@ export default class ForgotPage extends Component {
       <body>
         <header role="banner">
           <div className="ForgotPage__gear-keep-driving">
-            <img id="ForgotPage__gear" src={require("../gear.png")} alt="gear" />
+            <img id="ForgotPage__gear" src={require("../../gear.png")} alt="gear" />
             <div className="ForgotPage__keep-driving">Keep driving.</div>
           </div>
         </header>

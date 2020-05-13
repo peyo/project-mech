@@ -27,33 +27,15 @@ main {
   align-items: center;
 }
 
-.WelcomePage__screen-wrapper {
-  width: 72%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#WelcomePage__gear {
+#RegistrationPage__gear {
   height: 57px;
   width: 57px;
 }
 
-.WelcomePage__not-logged-in {
-  display: flex;
-  flex-direction: row;
+#RegistrationPage__screen-wrapper {
+  width: 72%;
 }
 
-.WelcomePage_link {
-  margin: 0 12px 0 12px;
-}
-
-#WelcomePage__intro {
-  margin: 12px 0 0 0;
-}
-
-.WelcomePage__intro-ul {
-  padding: 0;
-  text-align: left;
-  list-style: none;
+.RegistrationPage__welcome-section {
+  margin: 51px 0;
 }

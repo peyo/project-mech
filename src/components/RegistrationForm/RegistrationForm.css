@@ -2,25 +2,30 @@
   box-sizing: border-box;
 }
 
-#LoginRegistration__username-input, #LoginRegistration__nickname-input, #LoginRegistration__password-input, #LoginRegistration__repeat-password-input, #LoginRegistration__make-input {
+#RegisterForm__username-input, #RegisterForm__nickname-input, #RegisterForm__password-input, #RegisterForm__repeat-password-input, #RegisterForm__make-input {
   border: 1px solid;
-  border-radius: .3em;
+  border-radius: .5em;
   border-color: #686868;
-  font-size: medium;
-  margin: 12px 0
+  font-size: smaller;
+  margin: 12px 0;
+  padding: 3px 21px 3px 3px;
 }
 
-.LoginRegistration__check-email {
+/*.RegisterForm__check-email {
   color: #686868;
   font-size: smaller;
-}
+}*/
 
-.LoginRegistration__button-div {
+.RegisterForm__button {
   background-color: #E8E8E8;
-  border-radius: .3em;
+  border-radius: .5em;
   font-size: medium;
 }
 
-.LoginRegistration__button-div:hover {
+.RegisterForm__button:hover {
   border-color: #505050;
+}
+
+.RegisterForm__orange {
+  color: #FB4D3D;
 }

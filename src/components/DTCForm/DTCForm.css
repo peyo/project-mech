@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-#LoginForm__username-input, #LoginForm__password-input {
+#DTCForm__dtc-input {
   border: 1px solid;
   border-radius: .3em;
   border-color: #686868;
@@ -11,20 +11,13 @@
   padding: 3px 21px 3px 3px;
 }
 
-.LoginForm__forgot-div {
-  margin: 24px 0 0 0;
-}
 
-.LoginForm__button {
+.DTCForm__button {
   background-color: #E8E8E8;
   border-radius: .3em;
   font-size: medium;
 }
 
-.LoginForm__button:hover {
+.DTCForm__button:hover {
   border-color: #505050;
-}
-
-.LoginForm__orange {
-  color: #FB4D3D;
 }

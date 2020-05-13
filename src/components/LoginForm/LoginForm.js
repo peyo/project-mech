@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./LoginForm.css"
+import TokenService from "../../services/token-service";
+import AuthApiService from "../../services/auth-api-service";
+import "./LoginForm.css";
 
 export default class LoginForm extends Component {
   static defaultProps = {
@@ -9,16 +11,25 @@ export default class LoginForm extends Component {
 
   state = { error: null };
 
-  handleSubmitBasicAuth(e){
+  handleSubmitJwtAuth(e) {
     e.preventDefault();
+    this.setState({ error: null });
     const { username, password } = e.target;
 
-    console.log("Login form submitted.");
-    console.log({ username, password });
-
-    username.value = ""
-    password.value = ""
-    this.props.onLoginSuccess()
+    AuthApiService.postLogin({
+      username: username.value,
+      password: password.value,
+    })
+      .then(this.context.addUser)
+      .then((res) => {
+        username.value = "";
+        password.value = "";
+        TokenService.saveAuthToken(res.authToken);
+        this.props.onLoginSuccess();
+      })
+      .catch((res) => {
+        this.setState({ error: res.error });
+      });
   };
 
   render() {
@@ -26,25 +37,31 @@ export default class LoginForm extends Component {
 
     return (
       <form
-        className="LoginRegister__login-form"
-        onSubmit={(e) => this.handleSubmitBasicAuth(e)}
+        className="LoginForm__login-form"
+        onSubmit={(e) => this.handleSubmitJwtAuth(e)}
       >
-        <div role="alert">{error && <p className="red">{error}</p>}</div>
-        <div className="LoginRegister__username">Username</div>
-        <input required type="text" id="LoginRegister__username-input" />
+        <div role="alert">{error && <p className="LoginForm__orange">{error}</p>}</div>
+        <div className="LoginForm__username">Username (Email)</div>
+        <input
+          required
+          type="text"
+          id="LoginForm__username-input"
+          name="username"
+        />
         <div className="password">Password</div>
-        <input required type="text" id="LoginRegister__password-input" />
-        <div className="LoginRegister__button-div">
-          <Link to={"/Home"}>
-            <input
-              className="LoginRegister__button"
-              type="submit"
-              placeholder="Submit"
-            />
-          </Link>
+        <input
+          required
+          type="text"
+          id="LoginForm__password-input"
+          name="password"
+        />
+        <div className="LoginForm__button-div">
+          <button className="LoginForm__button" type="submit">
+            Submit
+          </button>
         </div>
-        <div className="LoginRegister__forgot-div">
-          <Link to={"/ForgotPage"}>Forgot Username or Password?</Link>
+        <div className="LoginForm__forgot-div">
+          <Link to={"/forgot"}>Forgot Username or Password?</Link>
         </div>
       </form>
     );
