@@ -19,7 +19,7 @@ export default class WelcomePage extends Component {
             <div id="WelcomePage__intro">
               <ul className="WelcomePage__intro-ul">
                 <li>
-                  Mech is a community for car owners and mechanics to discuss problems and solutions based on car manufacturers and diagnostic trouble codes (DTC). Enter your VIN or Make and Model to your car. Enter your DTC. Find solutions. Chat with car owners and mechanics.
+                  Mech is a community for car owners and mechanics to discuss problems and solutions based on car manufacturers and diagnostic trouble codes (DTC). Enter your VIN or Make and Model of your car. Enter your DTC. Find solutions. Chat with car owners and mechanics.
                 </li>
               </ul>
             </div>

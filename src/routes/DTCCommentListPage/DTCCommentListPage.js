@@ -26,7 +26,7 @@ export default class DtcCommentListPage extends Component {
   }
 
   render() {
-    const { error } = this.context;
+    const { error, dtc } = this.context;
 
     return (
       <div>

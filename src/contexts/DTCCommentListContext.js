@@ -29,7 +29,7 @@ export class DtcCommentListProvider extends Component {
   }
 
   render() {
-    const value = {
+    const contextValue = {
       dtcCommentList: this.state.dtcCommentList,
       error: this.state.error,
       setError: this.setError,
@@ -37,7 +37,7 @@ export class DtcCommentListProvider extends Component {
       setDtcCommentList: this.setDtcCommentList,
     }
     return (
-      <DtcCommentListContext.Provider value={value}>
+      <DtcCommentListContext.Provider value={contextValue}>
         {this.props.children}
       </DtcCommentListContext.Provider>
     )
