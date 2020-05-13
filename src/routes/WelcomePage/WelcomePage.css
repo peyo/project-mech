@@ -57,3 +57,11 @@ main {
   text-align: left;
   list-style: none;
 }
+
+a, a:visited {
+  color: #00acdf;
+}
+
+a:hover {
+  color: #32527B;
+}

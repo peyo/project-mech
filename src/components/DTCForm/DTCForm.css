@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-#DTCForm__dtc-input {
+#DtcForm__dtc-input {
   border: 1px solid;
   border-radius: .3em;
   border-color: #686868;
@@ -12,12 +12,12 @@
 }
 
 
-.DTCForm__button {
+.DtcForm__button {
   background-color: #E8E8E8;
   border-radius: .3em;
   font-size: medium;
 }
 
-.DTCForm__button:hover {
+.DtcForm__button:hover {
   border-color: #505050;
 }

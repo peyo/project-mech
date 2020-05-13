@@ -2,10 +2,9 @@ import config from "../config";
 import TokenService from "../services/token-service";
 
 const MechApiService = {
-  getDTCCommentList() {
+  getDtcCommentList() {
     return fetch(`${config.API_ENDPOINT}/dtc`, {
       headers: {
-        Authorization: "bearer " + TokenService.getAuthToken(),
       },
     })
       .then((res) =>

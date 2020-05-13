@@ -27,18 +27,6 @@ main {
   align-items: center;
 }
 
-#RegistrationPage__screen-wrapper {
-  width: 72%;
-}
-
-.RegistrationPage__welcome-section {
-  margin: 51px 0;
-}
-
-a, a:visited {
-  color: #00acdf;
-}
-
-a:hover {
-  color: #32527B;
+.Header__register, .Header_login {
+  margin: 9px;
 }

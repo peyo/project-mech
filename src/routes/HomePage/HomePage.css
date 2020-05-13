@@ -63,3 +63,11 @@ main {
 .HomePage__button:hover {
   border-color: #505050;
 }
+
+a, a:visited {
+  color: #00acdf;
+}
+
+a:hover {
+  color: #32527B;
+}

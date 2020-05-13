@@ -27,15 +27,18 @@ main {
   align-items: center;
 }
 
-#LoginPage__gear {
-  height: 57px;
-  width: 57px;
-}
-
 #LoginPage__screen-wrapper {
   width: 72%;
 }
 
 .LoginPage__welcome-section {
   margin: 51px 0;
+}
+
+a, a:visited {
+  color: #00acdf;
+}
+
+a:hover {
+  color: #32527B;
 }

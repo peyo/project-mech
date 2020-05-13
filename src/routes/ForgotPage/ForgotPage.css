@@ -30,3 +30,11 @@ main {
 #ForgotPage__screen-wrapper {
   width: 72%;
 }
+
+a, a:visited {
+  color: #00acdf;
+}
+
+a:hover {
+  color: #32527B;
+}

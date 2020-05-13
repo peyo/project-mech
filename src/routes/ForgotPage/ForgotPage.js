@@ -5,12 +5,6 @@ export default class ForgotPage extends Component {
   render() {
     return (
       <body>
-        <header role="banner">
-          <div className="ForgotPage__gear-keep-driving">
-            <img id="ForgotPage__gear" src={require("../../gear.png")} alt="gear" />
-            <div className="ForgotPage__keep-driving">Keep driving.</div>
-          </div>
-        </header>
         <main role="main">
           <section id="ForgotPage__screen-wrapper">
             <div className="ForgotPage__forgot-section">

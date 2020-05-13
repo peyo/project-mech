@@ -4,9 +4,9 @@
 
 #LoginForm__username-input, #LoginForm__password-input {
   border: 1px solid;
-  border-radius: .3em;
+  border-radius: .5em;
   border-color: #686868;
-  font-size: medium;
+  font-size: smaller;
   margin: 12px 0;
   padding: 3px 21px 3px 3px;
 }
@@ -17,7 +17,7 @@
 
 .LoginForm__button {
   background-color: #E8E8E8;
-  border-radius: .3em;
+  border-radius: .5em;
   font-size: medium;
 }
 

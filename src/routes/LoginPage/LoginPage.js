@@ -19,15 +19,6 @@ export default class LoginPage extends Component {
   render() {
     return (
       <body>
-        <header role="banner">
-          <div className="LoginPage__gear-keep-driving">
-            <img
-              id="LoginPage__gear"
-              src={require("../../gear.png")}
-              alt="gear"
-            />
-          </div>
-        </header>
         <main role="main">
           <section id="LoginPage__screen-wrapper">
             <div className="LoginPage__mech-welcome-section">

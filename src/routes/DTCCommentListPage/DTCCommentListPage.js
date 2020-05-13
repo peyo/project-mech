@@ -1,54 +1,50 @@
 import React, { Component } from "react";
-import DTCCommentListContext from "../../contexts/DTCCommentListContext";
+import DtcCommentListContext from "../../contexts/DtcCommentListContext";
 import MechApiService from "../../services/mech-api-service";
-import { Section } from '../../components/Utility/Utility'
-import DTCCommentListItem from "../../components/DTCCommentListItem/DTCCommentListItem";
-import "./DTCCommentListPage.css";
+import { Section } from "../../components/Utility/Utility";
+import DtcCommentListItem from "../../components/DtcCommentListItem/DtcCommentListItem";
+import "./DtcCommentListPage.css";
 
-export default class DTCCommentListPage extends Component {
-  static contextType = DTCCommentListContext;
+export default class DtcCommentListPage extends Component {
+  static contextType = DtcCommentListContext
 
   componentDidMount() {
     this.context.clearError();
-    MechApiService.getDTCCommentList()
-      .then(this.context.setDTCCommentList)
-      .catch(this.context.setError);
+    MechApiService.getDtcCommentList()
+      .then(this.context.setDtcCommentList)
+      .catch(this.context.setError)
   }
 
-  renderDTCCommentList() {
+  renderDtcCommentList() {
     const { dtcCommentList = [] } = this.context;
     return dtcCommentList.map((dtc) => (
-      <DTCCommentListItem key={dtc.id} dtc={dtc} />
+      <DtcCommentListItem
+        key={dtc.id}
+        dtc={dtc}
+      />
     ));
   }
 
   render() {
     const { error } = this.context;
+
     return (
       <div>
-        <header role="banner">
-          <div className="DTCCommentListPage__gear-keep-driving">
-            <img
-              id="DTCCommentListPage__gear"
-              src={require("../../gear.png")}
-              alt="gear"
-            />
-          </div>
-        </header>
-        <Section list className="DTCCommentListPage">
+        <Section list className="DtcCommentListPage">
           {error
-            ? <p className="DTCCommentListPage__orange">There was an error, please try again!</p>
-            : this.renderDTCCommentList()
-          }
+            ? <p className="DtcCommentListPage__orange">There was an error, please try again.</p>
+            : this.renderDtcCommentList()}
         </Section>
         <footer>
-          <div className="HomePage__footer-contact-info">
-            <div id="HomePage__beep-beep">Beep beep</div>
+          <div className="DtcCommentListPage__footer-contact-info">
+            <div id="DtcCommentListPage__beep-beep">
+              Beep beep
+            </div>
             <br />
-            <div className="HomePage__contact-us">
+            <div className="DtcCommentListPage__contact-us">
               Contact Us:&nbsp;
               <a
-                className="HomePage__email-connect"
+                className="DtcCommentListPage__email-connect"
                 href="mailto:peteryyoon@gmail.com"
               >
                 Email
@@ -57,6 +53,6 @@ export default class DTCCommentListPage extends Component {
           </div>
         </footer>
       </div>
-    );
+    )
   }
 }

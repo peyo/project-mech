@@ -17,15 +17,6 @@ export default class RegistrationPage extends Component {
   render() {
     return (
       <body>
-        <header role="banner">
-          <div className="RegistrationPage__gear-keep-driving">
-            <img
-              id="RegistrationPage__gear"
-              src={require("../../gear.png")}
-              alt="gear"
-            />
-          </div>
-        </header>
         <main role="main">
           <section id="RegistrationPage__screen-wrapper">
             <div className="RegistrationPage__mech-welcome-section">

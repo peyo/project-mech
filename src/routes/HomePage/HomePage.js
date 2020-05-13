@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import CarForm from "../../components/CarForm/CarForm";
-import DTCForm from "../../components/DTCForm/DTCForm";
+import DtcForm from "../../components/DtcForm/DtcForm";
 import "./HomePage.css";
 
 export default class HomePage extends Component {
@@ -18,7 +18,7 @@ export default class HomePage extends Component {
     history.push(destination);
   }
 
-  handleAddDTCSuccess(e) {
+  handleAddDtcSuccess(e) {
     const { location, history } = this.props;
     const destination = (location.state || {}).from || "/";
     history.push(destination);
@@ -53,9 +53,9 @@ export default class HomePage extends Component {
             <hr />
             <div className="HomePage__dtc-section">
               <h2>Add Trouble Code</h2>
-              <DTCForm
+              <DtcForm
                 onSubmitSuccess={(e) => {
-                  this.handleAddDTCSuccess(e);
+                  this.handleAddDtcSuccess(e);
                 }}
               />
             </div>
@@ -65,7 +65,7 @@ export default class HomePage extends Component {
               <div className="HomePage__comments">Your Comments</div>
               <div className="HomePage__comments">
                 <div className="HomePage__dtc-comment">DTC</div>&nbsp;
-                {/*<Link to={"/DisplayVINDTCFull"}>
+                {/*<Link to={"/DisplayVINDtcFull"}>
                   {comments.dtc_id}
                 </Link>&nbsp;&nbsp;&nbsp;*/}
                 {/*<div className="HomePage__dtc-comment">

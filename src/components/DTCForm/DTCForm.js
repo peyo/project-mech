@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import "./DTCForm.css";
+import "./DtcForm.css";
 
-export default class DTCForm extends Component {
+export default class DtcForm extends Component {
   static defaultProps = {
-    onAddDTCSuccess: () => {},
+    onAddDtcSuccess: () => {},
   };
 
   state = { error: null };
@@ -16,7 +16,7 @@ export default class DTCForm extends Component {
     console.log({ dtc });
 
     dtc.value = "";
-    this.props.onAddDTCSuccess();
+    this.props.onAddDtcSuccess();
   }
 
   render() {
@@ -24,16 +24,16 @@ export default class DTCForm extends Component {
 
     return (
       <form
-        className="DTCForm__form"
+        className="DtcForm__form"
         onSubmit={(e) => {
           this.handleSubmit(e);
         }}
       >
         <div role="alert">{error && <p className="red">{error}</p>}</div>
-        <div className="DTCForm__dtc">DTC</div>
-        <input type="text" id="DTCForm__dtc-input" name="dtc" />
-        <div className="DTCForm__submit-wrapper">
-          <button className="DTCForm__button" type="submit">
+        <div className="DtcForm__dtc">DTC</div>
+        <input type="text" id="DtcForm__dtc-input" name="dtc" />
+        <div className="DtcForm__submit-wrapper">
+          <button className="DtcForm__button" type="submit">
             Submit
           </button>
         </div>

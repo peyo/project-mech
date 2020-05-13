@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
 
-const DTCCommentListContext = React.createContext({
+const DtcCommentListContext = React.createContext({
   dtcCommentList: [],
   error: null,
   setError: () => { },
   clearError: () => { },
-  setDTCCommentList: () => { },
+  setDtcCommentList: () => { },
 })
-export default DTCCommentListContext
+export default DtcCommentListContext
 
-export class DTCCommentListProvider extends Component {
+export class DtcCommentListProvider extends Component {
   state = {
     dtcCommentList: [],
     error: null,
   };
 
-  setDTCCommentList = dtcCommentList => {
+  setDtcCommentList = dtcCommentList => {
     this.setState({ dtcCommentList })
   }
 
@@ -34,12 +34,12 @@ export class DTCCommentListProvider extends Component {
       error: this.state.error,
       setError: this.setError,
       clearError: this.clearError,
-      setDTCCommentList: this.setDTCCommentList,
+      setDtcCommentList: this.setDtcCommentList,
     }
     return (
-      <DTCCommentListContext.Provider value={value}>
+      <DtcCommentListContext.Provider value={value}>
         {this.props.children}
-      </DTCCommentListContext.Provider>
+      </DtcCommentListContext.Provider>
     )
   }
 }

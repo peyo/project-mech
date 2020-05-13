@@ -27,11 +27,19 @@ main {
   align-items: center;
 }
 
-#DTCCommentListPage__gear {
+#DtcCommentListPage__gear {
   height: 57px;
   width: 57px;
 }
 
-.DTCCommentListPage__orange {
+.DtcCommentListPage__orange {
   color: #FB4D3D;
+}
+
+a, a:visited {
+  color: #00acdf;
+}
+
+a:hover {
+  color: #32527B;
 }
