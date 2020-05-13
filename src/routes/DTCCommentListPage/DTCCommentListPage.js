@@ -27,9 +27,9 @@ export default class DTCCommentListPage extends Component {
     return (
       <div>
         <header role="banner">
-          <div className="HomePage__gear-keep-driving">
+          <div className="DTCCommentListPage__gear-keep-driving">
             <img
-              id="HomePage__gear"
+              id="DTCCommentListPage__gear"
               src={require("../../gear.png")}
               alt="gear"
             />
