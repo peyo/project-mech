@@ -11,12 +11,11 @@ export default class Footer extends Component {
             </div>
           <br />
           <div className="Footer__contact-us">
-            Contact Us:&nbsp;
               <a
               className="Footer__email-connect"
               href="mailto:peteryyoon@gmail.com"
             >
-              Email
+              Contact Us
               </a>
           </div>
         </div>

@@ -32,7 +32,7 @@ export default class DtcForm extends Component {
         <div role="alert">{error && <p className="red">{error}</p>}</div>
         <div className="DtcForm__dtc">DTC</div>
         <input type="text" id="DtcForm__dtc-input" name="dtc" />
-        <div className="DtcForm__submit-wrapper">
+        <div className="DtcForm__button-div">
           <button className="DtcForm__button" type="submit">
             Submit
           </button>

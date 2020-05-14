@@ -21,3 +21,8 @@
 .CarForm__button:hover {
   border-color: #505050;
 }
+
+.CarForm__button-div {
+  display: flex;
+  justify-content: center;
+}

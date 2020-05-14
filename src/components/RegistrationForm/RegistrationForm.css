@@ -11,6 +11,11 @@
   padding: 3px 21px 3px 3px;
 }
 
+.RegisterForm__button-div {
+  display: flex;
+  justify-content: center;
+}
+
 .RegisterForm__button {
   background-color: #E8E8E8;
   border-radius: .5em;

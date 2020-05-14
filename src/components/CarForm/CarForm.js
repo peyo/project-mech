@@ -42,7 +42,7 @@ export default class CarForm extends Component {
         <input type="text" id="CarForm__dtc-input" name="make" />
         <div className="CarForm__dtc">Model</div>
         <input type="text" id="CarForm__dtc-input" name="model" />
-        <div className="CarForm__submit-wrapper">
+        <div className="CarForm__button-div">
           <button className="CarForm__button" type="submit">
             Submit
           </button>

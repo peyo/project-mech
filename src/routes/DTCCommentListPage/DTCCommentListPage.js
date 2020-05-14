@@ -9,15 +9,22 @@ export default class DtcCommentListPage extends Component {
   static contextType = DtcCommentListContext
 
   componentDidMount() {
+    const {
+      setDtcCommentList,
+      setError
+    } = this.context;
+
     this.context.clearError();
     MechApiService.getDtcCommentList()
-      .then(this.context.setDtcCommentList)
-      .catch(this.context.setError)
+      .then(setDtcCommentList)
+      .catch(setError)
   }
 
   renderDtcCommentList() {
     const { dtcCommentList = [] } = this.context;
-    return dtcCommentList.map((dtc) => (
+    const newList = dtcCommentList.filter((dtc) => (
+      dtc.number_of_comments > 0))
+    return newList.map((dtc) => (
       <DtcCommentListItem
         key={dtc.id}
         dtc={dtc}
@@ -33,8 +40,9 @@ export default class DtcCommentListPage extends Component {
         <div className="DtcCommentListPage__screen-wrapper">
           <Section list className="DtcCommentListPage">
             {error
-              ? <p className="DtcCommentListPage__orange">There was an error, please try again.</p>
-              : this.renderDtcCommentList()}
+              ? <p className="DtcCommentListPage__orange">Error. Please try again.</p>
+              : this.renderDtcCommentList()
+            }
             </Section>
         </div>
       </main>

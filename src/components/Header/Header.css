@@ -5,7 +5,7 @@
 .Header__header {
   width: 100%;
   padding: 3%;
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
