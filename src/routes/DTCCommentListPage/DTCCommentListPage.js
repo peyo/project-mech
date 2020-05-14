@@ -26,33 +26,18 @@ export default class DtcCommentListPage extends Component {
   }
 
   render() {
-    const { error, dtc } = this.context;
+    const { error } = this.context;
 
     return (
-      <div>
-        <Section list className="DtcCommentListPage">
-          {error
-            ? <p className="DtcCommentListPage__orange">There was an error, please try again.</p>
-            : this.renderDtcCommentList()}
-        </Section>
-        <footer>
-          <div className="DtcCommentListPage__footer-contact-info">
-            <div id="DtcCommentListPage__beep-beep">
-              Beep beep
-            </div>
-            <br />
-            <div className="DtcCommentListPage__contact-us">
-              Contact Us:&nbsp;
-              <a
-                className="DtcCommentListPage__email-connect"
-                href="mailto:peteryyoon@gmail.com"
-              >
-                Email
-              </a>
-            </div>
-          </div>
-        </footer>
-      </div>
+      <main className="DtcCommentListPage__main">
+        <div className="DtcCommentListPage__screen-wrapper">
+          <Section list className="DtcCommentListPage">
+            {error
+              ? <p className="DtcCommentListPage__orange">There was an error, please try again.</p>
+              : this.renderDtcCommentList()}
+            </Section>
+        </div>
+      </main>
     )
   }
 }

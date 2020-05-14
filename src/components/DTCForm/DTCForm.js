@@ -3,7 +3,7 @@ import "./DtcForm.css";
 
 export default class DtcForm extends Component {
   static defaultProps = {
-    onAddDtcSuccess: () => {},
+    onAddDtcSuccess: () => { },
   };
 
   state = { error: null };

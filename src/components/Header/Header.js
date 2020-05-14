@@ -11,7 +11,7 @@ export default class Header extends Component {
   renderLogoutLink() {
     return (
       <div className="Header__logged-in">
-        <Link onClick={(e) => this.handleLogoutClick(e)}>
+        <Link to="/home" onClick={(e) => this.handleLogoutClick(e)}>
           Logout
         </Link>
       </div>
@@ -31,17 +31,17 @@ export default class Header extends Component {
 
   render() {
     return (
-      <nav className="DtcCommentListPage__header">
-        <div className="DtcCommentListPage__gear-keep-driving">
+      <nav className="Header__header">
+        <div className="Header__gear-keep-driving">
           <Link to="/">
             <img
-              id="DtcCommentListPage__gear"
+              id="Header__gear"
               src={require("../../gear.png")}
               alt="gear"
             />
           </Link>
         </div>
-        <div className="DtcCommentListPage__logged-in-not-logged-in">
+        <div className="Header__logged-in-not-logged-in">
           {TokenService.hasAuthToken()
             ? this.renderLogoutLink()
             : this.renderLoginLink()}

@@ -5,7 +5,6 @@ import "./WelcomePage.css";
 export default class WelcomePage extends Component {
   render() {
     return (
-      <body>
         <main className="WelcomePage__main">
           <div className="WelcomePage__screen-wrapper">
             <div className="WelcomePage__welcome-section">
@@ -25,21 +24,6 @@ export default class WelcomePage extends Component {
             </div>
           </div>
         </main>
-        <footer>
-          <div className="WelcomePage__footer-contact-info">
-            <div id="WelcomePage__beep-beep">
-              Beep beep
-            </div>
-            <br />
-            <div className="WelcomePage__contact-us">
-              Contact Us:&nbsp;
-              <a className="WelcomePage__email-connect" href="mailto:peteryyoon@gmail.com">
-                Email
-              </a>
-            </div>
-          </div>
-        </footer>
-      </body>
     );
   }
 }

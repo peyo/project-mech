@@ -20,6 +20,20 @@ header, footer {
   background-color: #296e01;
 }
 
+.gear-keep-driving {
+  display: flex;
+  align-items: center;
+}
+
+.user-info-div {
+  text-align: right;
+  margin-left: auto;
+}
+
+.user-info-ul {
+  list-style-type: none;
+}
+
 main {
   display: flex;
   flex: 1;
@@ -27,47 +41,30 @@ main {
   align-items: center;
 }
 
-#HomePage__gear {
-  height: 57px;
-  width: 57px;
-}
-
-#HomePage__screen-wrapper {
+#screen-wrapper {
   width: 72%;
 }
 
-#HomePage__dtc-input {
-  border: 1px solid;
-  border-radius: .3em;
-  border-color: #686868;
-  font-size: medium;
-  margin: 12px 0;
-}
-
-.HomePage__car-section, .HomePage__dtc-section, .HomePage__garage-section {
+.car-section {
   margin: 51px 0;
 }
 
-.HomePage__comments {
+#make-input, #model-input {
+  border: 1px solid;
+  border-radius: .3em;
+  border-color: #686868;
   margin: 12px 0;
-  display: flex;
-  align-items: baseline;
 }
 
-.HomePage__button {
+.button {
   background-color: #E8E8E8;
   border-radius: .3em;
-  font-size: medium;
 }
 
-.HomePage__button:hover {
+.button:hover {
   border-color: #505050;
 }
 
-a, a:visited {
-  color: #00acdf;
-}
-
-a:hover {
-  color: #32527B;
+#delete-link {
+  margin: 0 0 0 9px;
 }

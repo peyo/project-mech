@@ -11,11 +11,11 @@
   padding: 3px 21px 3px 3px;
 }
 
-
 .CarForm__button {
   background-color: #E8E8E8;
   border-radius: .3em;
   font-size: medium;
+  margin: 15px 0;
 }
 
 .CarForm__button:hover {

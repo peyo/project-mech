@@ -2,22 +2,25 @@
   box-sizing: border-box;
 }
 
-#DtcForm__dtc-input {
+.OnboardingAddDTCForm__dtc {
+  margin: 12px 0;
+}
+
+#.OnboardingAddDTCForm__dtc-input {
   border: 1px solid;
   border-radius: .3em;
   border-color: #686868;
   font-size: medium;
   margin: 12px 0;
-  padding: 3px 21px 3px 3px;
+  color: silver
 }
 
-.DtcForm__button {
+..OnboardingAddDTCForm__button {
   background-color: #E8E8E8;
   border-radius: .3em;
   font-size: medium;
-  margin: 15px 0;
 }
 
-.DtcForm__button:hover {
+..OnboardingAddDTCForm__button:hover {
   border-color: #505050;
 }

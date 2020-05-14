@@ -2,13 +2,17 @@
   box-sizing: border-box;
 }
 
-.RegistrationPage__main {
+hr {
+  width: 100%;
+}
+
+.GaragePage__main {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.RegistrationPage__screen-wrapper {
+.GaragePage__screen-wrapper {
   width: 72%;
   display: flex;
   flex-direction: column;
@@ -17,17 +21,9 @@
   min-height: 70vh;
 }
 
-.RegistrationPage__registration-section {
+.GaragePage__add-car, .GaragePage__list, .GaragePage__selection, .GaragePage__add-dtc, .GaragePage__history {
   margin: 51px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-a, a:visited {
-  color: #00acdf;
-}
-
-a:hover {
-  color: #32527B;
 }

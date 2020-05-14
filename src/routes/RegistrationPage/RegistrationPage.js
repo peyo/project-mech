@@ -16,37 +16,18 @@ export default class RegistrationPage extends Component {
 
   render() {
     return (
-      <body>
-        <main role="main">
-          <section id="RegistrationPage__screen-wrapper">
-            <div className="RegistrationPage__mech-welcome-section">
-              <h2>Register</h2>
-              <div className="RegistrationPage__welcome-description">
-                <RegistrationForm
-                  onRegistrationSuccess={(e) => 
-                    this.handleRegistrationSuccess(e)
-                  }
-                />
-              </div>
-            </div>
-          </section>
-        </main>
-        <footer>
-          <div className="RegistrationPage__footer-contact-info">
-            <div id="beep-beep">Beep beep</div>
-            <br />
-            <div className="RegistrationPage__contact-us">
-              Contact Us:&nbsp;
-              <a
-                className="RegistrationPage__email-connect"
-                href="mailto:peteryyoon@gmail.com"
-              >
-                Email
-              </a>
+      <main className="RegistrationPage__main">
+        <div className="RegistrationPage__screen-wrapper">
+          <div className="RegistrationPage__registration-section">
+            <h2>Register</h2>
+            <div className="RegistrationPage__registration-form">
+              <RegistrationForm
+                onRegistrationSuccess={(e) => this.handleRegistrationSuccess(e)}
+              />
             </div>
           </div>
-        </footer>
-      </body>
+        </div>
+      </main>
     );
   }
 }

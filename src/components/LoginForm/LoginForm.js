@@ -61,7 +61,7 @@ export default class LoginForm extends Component {
           </button>
         </div>
         <div className="LoginForm__forgot-div">
-          <Link to={"/forgot"}>Forgot Username or Password?</Link>
+          <Link to={"/forgot"}>Forgot?</Link>
         </div>
       </form>
     );

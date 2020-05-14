@@ -2,34 +2,19 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: sans-serif;
-  color: #000000;
+.DtcCommentListPage__main {
   display: flex;
-  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.DtcCommentListPage__screen-wrapper {
+  width: 72%;
+  display: flex;
   flex-direction: column;
-}
-
-header, footer {
-  width: 100%;
-  display: flex;
-  padding: 3%;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  background-color: #296e01;
-}
-
-main {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-}
-
-#DtcCommentListPage__gear {
-  height: 57px;
-  width: 57px;
+  min-height: 70vh;
 }
 
 .DtcCommentListPage__orange {
