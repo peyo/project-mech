@@ -4,7 +4,7 @@ This is the front-end for Project Mech. This app is a forum where car owners can
 ## Tech
 React, jQuery, CSS
 
-##npm i
+## npm i
 Momentjs
 npm install moment --save
 
