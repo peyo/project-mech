@@ -10,6 +10,9 @@ export default class WelcomePage extends Component {
             <div className="WelcomePage__welcome-section">
               <h2>Welcome to Mech</h2>
             </div>
+            <div className="WelcomePage__notice">
+              <h3>Notice: Currently we only support Toyota, Honda, GMC, Buick, Chevrolet, and Cadillac.</h3>
+            </div>
             <div id="WelcomePage__login-logout-link">
               <Link to='/home'>
                 Rev!

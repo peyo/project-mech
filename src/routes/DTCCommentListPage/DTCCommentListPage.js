@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import DtcCommentListContext from "../../contexts/DtcCommentListContext";
+import MechContext from "../../contexts/MechContext";
 import MechApiService from "../../services/mech-api-service";
 import { Section } from "../../components/Utility/Utility";
 import DtcCommentListItem from "../../components/DtcCommentListItem/DtcCommentListItem";
 import "./DtcCommentListPage.css";
 
 export default class DtcCommentListPage extends Component {
-  static contextType = DtcCommentListContext
+  static contextType = MechContext
 
   componentDidMount() {
     const {

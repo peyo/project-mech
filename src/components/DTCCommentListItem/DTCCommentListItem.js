@@ -26,7 +26,7 @@ export default class DtcCommentListItem extends Component {
 
 function DtcCommentMake({ dtc }) {
   return (
-    <span className="DtcCommentListItem__make_vin">
+    <span className="DtcCommentListItem__make-vin">
       <FontAwesomeIcon className="DtcCommentListItem__icon" size="sm" icon="car" />
       {dtc.vinmake_id.make_vin ? (
         <p> {dtc.vinmake_id.make_vin}</p>

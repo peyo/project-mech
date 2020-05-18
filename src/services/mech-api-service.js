@@ -2,15 +2,29 @@ import config from "../config";
 import TokenService from "../services/token-service";
 
 const MechApiService = {
+  
   getDtcCommentList() {
     return fetch(`${config.API_ENDPOINT}/dtc`, {
       headers: {
       },
     })
       .then((res) =>
-      !res.ok
-        ? res.json().then((e) => Promise.reject(e))
-        : res.json()
+        !res.ok
+          ? res.json().then((e) => Promise.reject(e))
+          : res.json()
+      )
+  },
+
+  getVinMake() {
+    return fetch(`${config.API_ENDPOINT}/vinmake`, {
+      headers: {
+        Authorization: "bearer " + TokenService.getAuthToken(),
+      },
+    })
+      .then((res) =>
+        !res.ok
+          ? res.json().then((e) => Promise.reject(e))
+          : res.json()
       )
   },
   
@@ -24,11 +38,34 @@ const MechApiService = {
       body: JSON.stringify(car),
     })
       .then((res) =>
-      !res.ok
-        ? res.json().then((e) => Promise.reject(e))
-        : res.json()
-    );
+        !res.ok
+          ? res.json().then((e) => Promise.reject(e))
+          : res.json()
+      )
   },
-};
+
+  getCarByUserId() {
+    return fetch(`${config.API_ENDPOINT}/cars`, {
+      headers: {
+        Authorization: "bearer " + TokenService.getAuthToken(),
+      },
+    })
+      .then((res) =>
+        !res.ok
+          ? res.json().then((e) => Promise.reject(e))
+          : res.json()
+      )
+  },
+
+  deleteCar(carId) {
+    return fetch(`${config.API_ENDPOINT}/cars/${carId}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+        Authorization: "bearer " + TokenService.getAuthToken(),
+      },
+    })
+  },
+}
 
 export default MechApiService;

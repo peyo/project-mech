@@ -1,22 +1,40 @@
 import React, { Component } from "react";
+import MechContext from "../../contexts/MechContext";
+import MechApiService from "../../services/mech-api-service";
 import "./DtcForm.css";
 
 export default class DtcForm extends Component {
+  static contextType = MechContext;
+
   static defaultProps = {
-    onAddDtcSuccess: () => { },
+    onAddDtcSuccess: () => {},
   };
 
   state = { error: null };
 
+  componentDidMount() {
+    const { setDtcCommentList, setError } = this.context;
+
+    this.context.clearError();
+    MechApiService.getDtcCommentList().then(setDtcCommentList).catch(setError);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
+    this.setState({ error: null });
     const { dtc } = e.target;
 
-    console.log("Added DTC successfully.");
-    console.log({ dtc });
+    const { dtcCommentList, selectedCar, setDtcSearch } = this.context;
 
-    dtc.value = "";
-    this.props.onAddDtcSuccess();
+    const dtcFilteredByDtc = dtcCommentList.filter(
+      (dtcComment) => dtcComment.dtc === dtc.value.toUpperCase()
+    );
+
+    const dtcFilteredByDtcAndSelectedCar = dtcFilteredByDtc.filter(
+      (dtcComment) => dtcComment.vinmake_id.id === selectedCar.vinmake_id
+    );
+
+    setDtcSearch(dtcFilteredByDtcAndSelectedCar);
   }
 
   render() {
@@ -29,7 +47,9 @@ export default class DtcForm extends Component {
           this.handleSubmit(e);
         }}
       >
-        <div role="alert">{error && <p className="red">{error}</p>}</div>
+        <div role="alert">
+          {error && <div className="DtcForm__orange">{error}</div>}
+        </div>
         <div className="DtcForm__dtc">DTC</div>
         <input type="text" id="DtcForm__dtc-input" name="dtc" />
         <div className="DtcForm__button-div">

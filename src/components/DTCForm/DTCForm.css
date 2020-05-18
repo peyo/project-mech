@@ -4,7 +4,7 @@
 
 #DtcForm__dtc-input {
   border: 1px solid;
-  border-radius: .3em;
+  border-radius: .5em;
   border-color: #686868;
   font-size: medium;
   margin: 12px 0;
@@ -13,7 +13,7 @@
 
 .DtcForm__button {
   background-color: #E8E8E8;
-  border-radius: .3em;
+  border-radius: .5em;
   font-size: medium;
   margin: 15px 0;
 }
@@ -25,4 +25,8 @@
 .DtcForm__button-div {
   display: flex;
   justify-content: center;
+}
+
+.DtcForm__orange {
+  color: #FB4D3D;
 }

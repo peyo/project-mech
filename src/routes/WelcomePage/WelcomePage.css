@@ -27,6 +27,11 @@
   flex-direction: row;
 }
 
+.WelcomePage__notice {
+  color: #FB4D3D;
+  text-align: center;
+}
+
 .WelcomePage_link {
   margin: 0 12px 0 12px;
 }

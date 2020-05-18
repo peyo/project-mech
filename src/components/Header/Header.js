@@ -11,7 +11,10 @@ export default class Header extends Component {
   renderLogoutLink() {
     return (
       <div className="Header__logged-in">
-        <Link to="/home" onClick={(e) => this.handleLogoutClick(e)}>
+        <Link to="/garage" className="Header__garage">
+          Garage
+        </Link>
+        <Link to="/home" onClick={(e) => this.handleLogoutClick(e)} className="Header__logout">
           Logout
         </Link>
       </div>
@@ -24,7 +27,9 @@ export default class Header extends Component {
         <Link to="/register" className="Header__register">
           Register
         </Link>
-        <Link to="/login" className="Header__login">Log in</Link>
+        <Link to="/login" className="Header__login">
+          Log in
+        </Link>
       </div>
     );
   }
@@ -33,7 +38,7 @@ export default class Header extends Component {
     return (
       <nav className="Header__header">
         <div className="Header__gear-keep-driving">
-          <Link to="/">
+          <Link to="/home">
             <img
               id="Header__gear"
               src={require("../../gear.png")}

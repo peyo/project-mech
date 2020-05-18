@@ -40,7 +40,7 @@ export default class RegistrationForm extends Component {
         className="RegisterForm__username-form"
         onSubmit={(e) => this.handleSubmit(e)}
       >
-        <div role="alert">{error && <p className="RegisterForm__orange">{error}</p>}</div>
+        <div role="alert">{error && <div className="RegistrationForm__orange">{error}</div>}</div>
         <div className="RegisterForm__username">
           Username (Email)
           {/*<div className="RegisterForm__check-email">

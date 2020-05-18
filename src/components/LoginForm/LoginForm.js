@@ -40,7 +40,7 @@ export default class LoginForm extends Component {
         className="LoginForm__login-form"
         onSubmit={(e) => this.handleSubmitJwtAuth(e)}
       >
-        <div role="alert">{error && <p className="LoginForm__orange">{error}</p>}</div>
+        <div role="alert">{error && <div className="LoginForm__orange">{error}</div>}</div>
         <div className="LoginForm__username">Username (Email)</div>
         <input
           required

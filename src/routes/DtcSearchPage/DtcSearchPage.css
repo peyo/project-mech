@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+.DtcSearchPage__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DtcSearchPage__screen-wrapper {
+  width: 72%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.DtcSearchPage__orange {
+  color: #FB4D3D;
+}
+
+a, a:visited {
+  color: #00acdf;
+}
+
+a:hover {
+  color: #32527B;
+}
