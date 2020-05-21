@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import MechContext from "../../contexts/MechContext";
-import "./FilteredDtcCommentListItem.css";
+import "./InnerDtcCommentListItem.css";
 
-export default class FilteredDtcCommentListItem extends Component {
+export default class InnerDtcCommentListItem extends Component {
   static contextType = MechContext
-  
+
   render() {
     const { comment } = this.props;
 
     return (
-      <div className="FilteredDtcCommentListItem__comment-wrapper">
-        <div className="FilteredDtcCommentListItem__comment">{comment.comment}</div>
-        <footer className="FilteredDtcCommentListItem__footer">
+      <div className="InnerDtcCommentListItem__comment-wrapper">
+        <div className="InnerDtcCommentListItem__comment">{comment.comment}</div>
+        <footer className="InnerDtcCommentListItem__footer">
           <DtcCommentNickname comment={comment} />
           <DtcCommentCreated comment={comment} />
         </footer>
@@ -22,7 +22,7 @@ export default class FilteredDtcCommentListItem extends Component {
 
 function DtcCommentNickname({ comment }) {
   return (
-    <span className="FilteredDtcCommentListItem__nickname">
+    <span className="InnerDtcCommentListItem__nickname">
       {comment.user_id.nickname}
     </span>
   );
@@ -30,7 +30,7 @@ function DtcCommentNickname({ comment }) {
 
 function DtcCommentCreated({ comment }) {
   return (
-    <span className="FilteredDtcCommentListItem__created">
+    <span className="InnerDtcCommentListItem__created">
       <p> {comment.date_created}</p>
     </span>
   );

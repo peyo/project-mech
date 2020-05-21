@@ -6,35 +6,49 @@ import "./DtcForm.css";
 export default class DtcForm extends Component {
   static contextType = MechContext;
 
-  static defaultProps = {
-    onAddDtcSuccess: () => {},
+  state = {
+    error: null
   };
 
-  state = { error: null };
+  static defaultProps = {
+    onDtcAddSuccess: () => { },
+  };
 
   componentDidMount() {
-    const { setDtcCommentList, setError } = this.context;
+    const {
+      setDtcCommentList,
+      setError
+    } = this.context;
 
     this.context.clearError();
-    MechApiService.getDtcCommentList().then(setDtcCommentList).catch(setError);
+    MechApiService.getDtcCommentList()
+      .then(setDtcCommentList)
+      .catch(setError);
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
     this.setState({ error: null });
     const { dtc } = e.target;
 
-    const { dtcCommentList, selectedCar, setDtcSearch } = this.context;
+    const {
+      dtcCommentList,
+      selectedCar,
+      setDtcSearch,
+    } = this.context;
 
     const dtcFilteredByDtc = dtcCommentList.filter(
-      (dtcComment) => dtcComment.dtc === dtc.value.toUpperCase()
+      (dtcComment) =>
+        dtcComment.dtc === dtc.value.toUpperCase()
     );
 
-    const dtcFilteredByDtcAndSelectedCar = dtcFilteredByDtc.filter(
-      (dtcComment) => dtcComment.vinmake_id.id === selectedCar.vinmake_id
+    const filteredDtcComments = dtcFilteredByDtc.filter(
+      (dtcComment) =>
+        dtcComment.vinmake_id.id === selectedCar.vinmake_id
     );
 
-    setDtcSearch(dtcFilteredByDtcAndSelectedCar);
+    setDtcSearch(filteredDtcComments)
+    this.props.onDtcAddSuccess()
   }
 
   render() {
@@ -51,7 +65,12 @@ export default class DtcForm extends Component {
           {error && <div className="DtcForm__orange">{error}</div>}
         </div>
         <div className="DtcForm__dtc">DTC</div>
-        <input type="text" id="DtcForm__dtc-input" name="dtc" />
+        <input
+          type="text"
+          id="DtcForm__dtc-input"
+          name="dtc"
+          required
+        />
         <div className="DtcForm__button-div">
           <button className="DtcForm__button" type="submit">
             Submit

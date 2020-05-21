@@ -9,9 +9,9 @@ export default class RegistrationPage extends Component {
     },
   };
 
-  handleRegistrationSuccess(e) {
-    const { history } = this.props;
-    history.push("/login");
+  handleRegistrationSuccess() {
+    const { history } = this.props
+    history.push('/login')
   }
 
   render() {
@@ -22,7 +22,7 @@ export default class RegistrationPage extends Component {
             <h2>Register</h2>
             <div className="RegistrationPage__registration-form">
               <RegistrationForm
-                onRegistrationSuccess={(e) => this.handleRegistrationSuccess(e)}
+                onRegistrationSuccess={() => this.handleRegistrationSuccess()}
               />
             </div>
           </div>

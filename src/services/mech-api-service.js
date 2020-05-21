@@ -15,6 +15,43 @@ const MechApiService = {
       )
   },
 
+  getDtcById(dtcId) {
+    return fetch(`${config.API_ENDPOINT}/dtc/${dtcId}`, {
+      headers: {
+      },
+    })
+      .then((res) =>
+        !res.ok
+          ? res.json().then((e) => Promise.reject(e))
+          : res.json()
+      )
+  },
+
+  getSpecificDtcCommentList(dtcId) {
+    return fetch(`${config.API_ENDPOINT}/dtc/${dtcId}/comments`, {
+      headers: {
+      },
+    })
+      .then((res) =>
+        !res.ok
+          ? res.json().then((e) => Promise.reject(e))
+          : res.json()
+      )
+  },
+
+  getCarByUserId() {
+    return fetch(`${config.API_ENDPOINT}/cars`, {
+      headers: {
+        Authorization: "bearer " + TokenService.getAuthToken(),
+      },
+    })
+      .then((res) =>
+        !res.ok
+          ? res.json().then((e) => Promise.reject(e))
+          : res.json()
+      )
+  },
+
   getVinMake() {
     return fetch(`${config.API_ENDPOINT}/vinmake`, {
       headers: {
@@ -44,11 +81,14 @@ const MechApiService = {
       )
   },
 
-  getCarByUserId() {
-    return fetch(`${config.API_ENDPOINT}/cars`, {
+  postComment(post) {
+    return fetch(`${config.API_ENDPOINT}/comments`, {
+      method: "POST",
       headers: {
+        "content-type": "application/json",
         Authorization: "bearer " + TokenService.getAuthToken(),
       },
+      body: JSON.stringify(post),
     })
       .then((res) =>
         !res.ok

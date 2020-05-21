@@ -3,16 +3,15 @@ import CarForm from "../../components/CarForm/CarForm";
 import CarListItem from "../../components/CarListItem/CarListItem";
 import CarSelectDropdown from "../../components/CarSelectDropdown/CarSelectDropdown";
 import DtcForm from "../../components/DtcForm/DtcForm";
+import { Section } from "../../components/Utility/Utility";
 import MechContext from "../../contexts/MechContext";
 import MechApiService from "../../services/mech-api-service";
-import { Section } from "../../components/Utility/Utility";
 import "./GaragePage.css";
 
 export default class GaragePage extends Component {
   static contextType = MechContext
   
   static defaultProps = {
-    location: {},
     history: {
       push: () => {},
     },
@@ -30,12 +29,6 @@ export default class GaragePage extends Component {
       .catch(setError)
   }
 
-  handleAddCarSuccess(e) {
-    const { location, history } = this.props;
-    const destination = (location.state || {}).from || "/garage";
-    history.push(destination);
-  }
-
   renderCarList() {
     const { carList = [] } = this.context;
     return carList.map((car) => (
@@ -46,22 +39,19 @@ export default class GaragePage extends Component {
     ))
   }
 
-  handleAddDtcSuccess(e) {
-    e.preventDefault()
-    this.props.history.push("/searchDtc");
+  handleDtcAddSuccess() {
+    const { history } = this.props
+    history.push('/dtcSearch')
   }
 
   render() {
+
     return (
       <main className="GaragePage__main">
         <div className="GaragePage__screen-wrapper">
           <div className="GaragePage__add-car">
             <h2>Add Car</h2>
-            <CarForm
-              onSubmitSuccess={(e) => {
-                this.handleAddCarSuccess(e);
-              }}
-            />
+            <CarForm />
           </div>
           <hr />
           <div className="GaragePage__list">
@@ -81,9 +71,7 @@ export default class GaragePage extends Component {
           <div className="GaragePage__add-dtc">
             <h2>Add Trouble Code</h2>
             <DtcForm
-              onSubmit={(e) => {
-                this.handleAddDtcSuccess(e);
-              }}
+              onDtcAddSuccess={() => this.handleDtcAddSuccess()}
             />
           </div>
         </div>

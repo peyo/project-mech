@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Header from "../Header/Header";
-//import WelcomePage from "../../routes/WelcomePage/WelcomePage";
+import Footer from "../Footer/Footer";
 import WelcomePage from "../../routes/WelcomePage/WelcomePage";
-import DtcCommentListPage from "../../routes/DtcCommentListPage/DtcCommentListPage";
 import LoginPage from "../../routes/LoginPage/LoginPage";
 import RegistrationPage from "../../routes/RegistrationPage/RegistrationPage";
 import ForgotPage from "../../routes/ForgotPage/ForgotPage";
+import DtcCommentListPage from "../../routes/DtcCommentListPage/DtcCommentListPage";
+import InnerDtcCommentListPage from "../../routes/InnerDtcCommentListPage/InnerDtcCommentListPage";
 import GaragePage from "../../routes/GaragePage/GaragePage";
 import DtcSearchPage from "../../routes/DtcSearchPage/DtcSearchPage";
-import Footer from "../Footer/Footer";
 
 class App extends Component {
   render() {
@@ -22,12 +22,13 @@ class App extends Component {
           <div className="App__route">
             <Switch>
               <Route exact path="/" component={WelcomePage} />
-              <Route path="/home" component={DtcCommentListPage} />
               <Route path="/login" component={LoginPage} />
               <Route path="/register" component={RegistrationPage} />
               <Route path="/forgot" component={ForgotPage} />
+              <Route path="/home" component={DtcCommentListPage} />
+              <Route path="/dtc/:dtc_id/comments" component={InnerDtcCommentListPage} />
               <Route path="/garage" component={GaragePage} />
-              <Route path="/searchDtc" component={DtcSearchPage} />
+              <Route path="/dtcSearch" component={DtcSearchPage} />
             </Switch>
           </div>
         </div>

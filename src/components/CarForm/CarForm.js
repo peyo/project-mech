@@ -71,13 +71,34 @@ export default class CarForm extends Component {
           this.handleSubmit(e);
         }}
       >
-        <div role="alert">{error && <div className="CarForm__orange">{error}</div>}</div>
-        <div className="CarForm__dtc">Manufacturer</div>
-        <input type="text" id="CarForm__dtc-input" name="make" />
-        <div className="CarForm__dtc">Model</div>
-        <input type="text" id="CarForm__dtc-input" name="model" />
+        <div role="alert">
+          {error && <div className="CarForm__orange">{error}</div>}
+        </div>
+        <div
+          className="CarForm__dtc"
+          required
+        >
+          Manufacturer
+        </div>
+        <input
+          type="text"
+          id="CarForm__dtc-input"
+          name="make"
+        />
+        <div className="CarForm__dtc">
+          Model
+        </div>
+        <input
+          type="text"
+          id="CarForm__dtc-input"
+          name="model"
+          required
+        />
         <div className="CarForm__button-div">
-          <button className="CarForm__button" type="submit">
+          <button
+            className="CarForm__button"
+            type="submit"
+          >
             Submit
           </button>
         </div>

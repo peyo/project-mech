@@ -6,30 +6,19 @@ import DtcCommentListItem from "../../components/DtcCommentListItem/DtcCommentLi
 import "./DtcCommentListPage.css";
 
 export default class DtcCommentListPage extends Component {
-  static contextType = MechContext
+  static contextType = MechContext;
 
   componentDidMount() {
-    const {
-      setDtcCommentList,
-      setError
-    } = this.context;
+    const { setDtcCommentList, setError } = this.context;
 
     this.context.clearError();
-    MechApiService.getDtcCommentList()
-      .then(setDtcCommentList)
-      .catch(setError)
+    MechApiService.getDtcCommentList().then(setDtcCommentList).catch(setError);
   }
 
   renderDtcCommentList() {
     const { dtcCommentList = [] } = this.context;
-    const newList = dtcCommentList.filter((dtc) => (
-      dtc.number_of_comments > 0))
-    return newList.map((dtc) => (
-      <DtcCommentListItem
-        key={dtc.id}
-        dtc={dtc}
-      />
-    ));
+    const newList = dtcCommentList.filter((dtc) => dtc.number_of_comments > 0);
+    return newList.map((dtc) => <DtcCommentListItem key={dtc.id} dtc={dtc} />);
   }
 
   render() {
@@ -39,13 +28,16 @@ export default class DtcCommentListPage extends Component {
       <main className="DtcCommentListPage__main">
         <div className="DtcCommentListPage__screen-wrapper">
           <Section list className="DtcCommentListPage">
-            {error
-              ? <p className="DtcCommentListPage__orange">Error. Please try again.</p>
-              : this.renderDtcCommentList()
-            }
-            </Section>
+            {error ? (
+              <p className="DtcCommentListPage__orange">
+                Error. Please try again.
+              </p>
+            ) : (
+              this.renderDtcCommentList()
+            )}
+          </Section>
         </div>
       </main>
-    )
+    );
   }
 }

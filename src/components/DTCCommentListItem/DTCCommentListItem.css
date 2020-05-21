@@ -17,3 +17,8 @@
   display: flex;
   align-items: center;
 }
+
+.DtcCommentListItem__comment-count {
+  display: flex;
+  align-items: center;
+}

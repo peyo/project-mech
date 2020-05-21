@@ -14,7 +14,10 @@ export default class LoginForm extends Component {
   handleSubmitJwtAuth(e) {
     e.preventDefault();
     this.setState({ error: null });
-    const { username, password } = e.target;
+    const {
+      username,
+      password
+    } = e.target;
 
     AuthApiService.postLogin({
       username: username.value,

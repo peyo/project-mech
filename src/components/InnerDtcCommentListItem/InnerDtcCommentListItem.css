@@ -1,23 +1,23 @@
-.FilteredDtcCommentListItem__footer {
+.InnerDtcCommentListItem__footer {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.FilteredDtcCommentListItem__icon {
+.InnerDtcCommentListItem__icon {
   margin: 0 3px 0 0;
   color: #848482;
 }
 
-.FilteredDtcCommentListItem__created, .FilteredDtcCommentListItem__nickname {
+.InnerDtcCommentListItem__created, .InnerDtcCommentListItem__nickname {
   margin: 0 9px 0 0;
 }
 
-.FilteredDtcCommentListItem__comment {
+.InnerDtcCommentListItem__comment {
   margin: 16px 0 0 0;
 }
 
-.FilteredDtcCommentListItem__comment-wrapper {
+.InnerDtcCommentListItem__comment-wrapper {
   margin: 18px 0 0 0;
   border: 1px #848482 solid;
   border-radius: .5em;

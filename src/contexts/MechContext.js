@@ -8,7 +8,13 @@ const MechContext = React.createContext({
   carVinMakeId: [],
   selectedCar: [],
   addedDtc: [],
+  filteredDtcComments: [],
   filteredDtcCommentList: [],
+  filteredDtc: [],
+  headerDtc: [],
+  dtcId: [],
+  specificDtcCommentList: [],
+  specificDtc: [],
   setError: () => { },
   clearError: () => { },
   setDtcCommentList: () => { },
@@ -19,6 +25,12 @@ const MechContext = React.createContext({
   deleteCar: () => { },
   selectCar: () => { },
   setDtcSearch: () => { },
+  setFilteredCommentList: () => { },
+  setFilteredDtc: () => { },
+  setHeaderDtc: () => { },
+  setSpecificDtcCommentList: () => { },
+  setSpecificDtc: () => { },
+  addComment: () => { }
 });
 
 export default MechContext;
@@ -31,7 +43,12 @@ export class MechProvider extends Component {
     carVinMakeId: [],
     selectedCar: [],
     addedDtc: [],
+    filteredDtcComments: [],
     filteredDtcCommentList: [],
+    filteredDtc: [],
+    headerDtc: [],
+    specificDtcCommentList: [],
+    specificDtc: [],
     error: null,
   };
 
@@ -72,16 +89,42 @@ export class MechProvider extends Component {
 
   selectCar = (selectedCar) => {
     this.setState({ selectedCar });
-    console.log(this.state.selectedCar)
   }
 
   addDtc = (addedDtc) => {
     this.setState({ addedDtc });
   }
 
-  setDtcSearch = (filteredDtcCommentList) => {
+  setDtcSearch = (filteredDtcComments) => {
+    this.setState({ filteredDtcComments })
+  }
+
+  setFilteredCommentList = (filteredDtcCommentList) => {
     this.setState({ filteredDtcCommentList })
-    console.log(this.state.filteredDtcCommentList)
+    this.setFilteredDtc(filteredDtcCommentList)
+  }
+
+  setFilteredDtc = (filteredDtcCommentList) => {
+    this.setState({ filteredDtc: filteredDtcCommentList[0] })
+  }
+
+  setHeaderDtc = (headerDtc) => {
+    this.setState({ headerDtc })
+  }
+
+  setSpecificDtcCommentList = (specificDtcCommentList) => {
+    this.setState({ specificDtcCommentList })
+    this.setSpecificDtc(specificDtcCommentList)
+  }
+
+  setSpecificDtc = (specificDtcCommentList) => {
+    this.setState({ specificDtc: specificDtcCommentList[0] })
+  }
+
+  addComment = (post) => {
+    this.setState({
+      filteredDtcCommentList: [...this.state.filteredDtcCommentList, post]
+    })
   }
 
   render() {
@@ -93,7 +136,12 @@ export class MechProvider extends Component {
       carVinMakeId: this.state.carVinMakeId,
       selectedCar: this.state.selectedCar,
       addedDtc: this.state.addedDtc,
+      filteredDtcComments: this.state.filteredDtcComments,
       filteredDtcCommentList: this.state.filteredDtcCommentList,
+      filteredDtc: this.state.filteredDtc,
+      headerDtc: this.state.headerDtc,
+      specificDtcCommentList: this.state.specificDtcCommentList,
+      specificDtc: this.state.specificDtc,
       setError: this.setError,
       clearError: this.clearError,
       setDtcCommentList: this.setDtcCommentList,
@@ -104,6 +152,12 @@ export class MechProvider extends Component {
       deleteCar: this.deleteCar,
       selectCar: this.selectCar,
       setDtcSearch: this.setDtcSearch,
+      setFilteredCommentList: this.setFilteredCommentList,
+      setFilteredDtc: this.setFilteredDtc,
+      setHeaderDtc: this.setHeaderDtc,
+      setSpecificDtcCommentList: this.setSpecificDtcCommentList,
+      setSpecificDtc: this.setSpecificDtc,
+      addComment: this.addComment,
     };
     return (
       <MechContext.Provider value={contextValue}>
