@@ -48,7 +48,7 @@ export default class DtcForm extends Component {
     );
 
     setDtcSearch(filteredDtcComments)
-    this.props.onDtcAddSuccess()
+    this.props.onDtcAddSuccess(filteredDtcComments)
   }
 
   render() {

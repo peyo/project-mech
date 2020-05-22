@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+.CommentForm__dtc {
+  margin: 18px 0 0 0;
+}
+
 #CommentForm__text-input {
   border: 1px solid;
   border-radius: .5em;

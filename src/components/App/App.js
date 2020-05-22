@@ -10,6 +10,7 @@ import DtcCommentListPage from "../../routes/DtcCommentListPage/DtcCommentListPa
 import InnerDtcCommentListPage from "../../routes/InnerDtcCommentListPage/InnerDtcCommentListPage";
 import GaragePage from "../../routes/GaragePage/GaragePage";
 import DtcSearchPage from "../../routes/DtcSearchPage/DtcSearchPage";
+import NotFoundPage from "../../routes/NotFoundPage/NotFoundPage";
 
 class App extends Component {
   render() {
@@ -26,9 +27,10 @@ class App extends Component {
               <Route path="/register" component={RegistrationPage} />
               <Route path="/forgot" component={ForgotPage} />
               <Route path="/home" component={DtcCommentListPage} />
-              <Route path="/dtc/:dtc_id/comments" component={InnerDtcCommentListPage} />
+              <Route exact path="/dtc/:dtc_id/comments" component={InnerDtcCommentListPage} />
               <Route path="/garage" component={GaragePage} />
-              <Route path="/dtcSearch" component={DtcSearchPage} />
+              <Route exact path="/dtc/:dtc_id/search" component={DtcSearchPage} />
+              <Route component={NotFoundPage} />
             </Switch>
           </div>
         </div>

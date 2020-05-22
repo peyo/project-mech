@@ -39,13 +39,14 @@ export default class GaragePage extends Component {
     ))
   }
 
-  handleDtcAddSuccess() {
-    const { history } = this.props
-    history.push('/dtcSearch')
+  handleDtcAddSuccess = (filteredDtcComments) => {
+    const { history } = this.props;
+    const dtc = filteredDtcComments[0];
+
+    history.push(`/dtc/${dtc.id}/search`)
   }
 
   render() {
-
     return (
       <main className="GaragePage__main">
         <div className="GaragePage__screen-wrapper">
@@ -71,7 +72,7 @@ export default class GaragePage extends Component {
           <div className="GaragePage__add-dtc">
             <h2>Add Trouble Code</h2>
             <DtcForm
-              onDtcAddSuccess={() => this.handleDtcAddSuccess()}
+              onDtcAddSuccess={this.handleDtcAddSuccess}
             />
           </div>
         </div>

@@ -9,16 +9,24 @@ export default class DtcCommentListPage extends Component {
   static contextType = MechContext;
 
   componentDidMount() {
-    const { setDtcCommentList, setError } = this.context;
+    const {
+      setDtcCommentList,
+      setError
+    } = this.context;
 
     this.context.clearError();
-    MechApiService.getDtcCommentList().then(setDtcCommentList).catch(setError);
+    MechApiService.getDtcCommentList()
+      .then(setDtcCommentList)
+      .catch(setError);
   }
 
   renderDtcCommentList() {
     const { dtcCommentList = [] } = this.context;
-    const newList = dtcCommentList.filter((dtc) => dtc.number_of_comments > 0);
-    return newList.map((dtc) => <DtcCommentListItem key={dtc.id} dtc={dtc} />);
+    const newList = dtcCommentList.filter((dtc) =>
+      dtc.number_of_comments > 0);
+    return newList.map((dtc) =>
+      <DtcCommentListItem key={dtc.id} dtc={dtc}
+      />);
   }
 
   render() {

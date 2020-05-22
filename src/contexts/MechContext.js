@@ -10,9 +10,7 @@ const MechContext = React.createContext({
   addedDtc: [],
   filteredDtcComments: [],
   filteredDtcCommentList: [],
-  filteredDtc: [],
   headerDtc: [],
-  dtcId: [],
   specificDtcCommentList: [],
   specificDtc: [],
   setError: () => { },
@@ -26,7 +24,6 @@ const MechContext = React.createContext({
   selectCar: () => { },
   setDtcSearch: () => { },
   setFilteredCommentList: () => { },
-  setFilteredDtc: () => { },
   setHeaderDtc: () => { },
   setSpecificDtcCommentList: () => { },
   setSpecificDtc: () => { },
@@ -45,7 +42,6 @@ export class MechProvider extends Component {
     addedDtc: [],
     filteredDtcComments: [],
     filteredDtcCommentList: [],
-    filteredDtc: [],
     headerDtc: [],
     specificDtcCommentList: [],
     specificDtc: [],
@@ -101,11 +97,6 @@ export class MechProvider extends Component {
 
   setFilteredCommentList = (filteredDtcCommentList) => {
     this.setState({ filteredDtcCommentList })
-    this.setFilteredDtc(filteredDtcCommentList)
-  }
-
-  setFilteredDtc = (filteredDtcCommentList) => {
-    this.setState({ filteredDtc: filteredDtcCommentList[0] })
   }
 
   setHeaderDtc = (headerDtc) => {
@@ -138,7 +129,6 @@ export class MechProvider extends Component {
       addedDtc: this.state.addedDtc,
       filteredDtcComments: this.state.filteredDtcComments,
       filteredDtcCommentList: this.state.filteredDtcCommentList,
-      filteredDtc: this.state.filteredDtc,
       headerDtc: this.state.headerDtc,
       specificDtcCommentList: this.state.specificDtcCommentList,
       specificDtc: this.state.specificDtc,
@@ -153,7 +143,6 @@ export class MechProvider extends Component {
       selectCar: this.selectCar,
       setDtcSearch: this.setDtcSearch,
       setFilteredCommentList: this.setFilteredCommentList,
-      setFilteredDtc: this.setFilteredDtc,
       setHeaderDtc: this.setHeaderDtc,
       setSpecificDtcCommentList: this.setSpecificDtcCommentList,
       setSpecificDtc: this.setSpecificDtc,

@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import MechContext from "../../contexts/MechContext";
 import "./InnerDtcCommentListItemHeader.css";
 
 export default class InnerDtcCommentListItemHeader extends Component {
-  static contextType = MechContext;
-
   render() {
     const { specificDtc } = this.props;
 

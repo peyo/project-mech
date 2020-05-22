@@ -12,20 +12,20 @@ export default class DtcSearchPage extends Component {
 
   componentDidMount() {
     const {
-      filteredDtcComments,
       setFilteredCommentList,
       setHeaderDtc,
       setError,
       clearError
     } = this.context;
+    const { dtc_id } = this.props.match.params;
 
     clearError();
 
-    MechApiService.getDtcById(filteredDtcComments[0].id)
+    MechApiService.getDtcById(dtc_id)
       .then((res) => setHeaderDtc(res))
       .catch(setError);
 
-    MechApiService.getSpecificDtcCommentList(filteredDtcComments[0].id)
+    MechApiService.getSpecificDtcCommentList(dtc_id)
       .then((res) => setFilteredCommentList(res))
       .catch(setError);
   }
@@ -67,6 +67,7 @@ export default class DtcSearchPage extends Component {
                 </div>
               )}
             </div>
+            <hr />
             <CommentForm />
             <div className="DtcSearchPage__items-wrapper">
               {error ? (
