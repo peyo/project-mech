@@ -5,9 +5,10 @@ This is the front-end for Project Mech. This app is a forum where car owners can
 React, jQuery, CSS
 
 ## npm i
-Momentjs<br/>
-npm install moment --save<br/>
-npm install --save @fortawesome/fontawesome-free<br/>
+```
+npm install moment --save
+npm install --save @fortawesome/fontawesome-free
+```
 
 ## Routes
 
