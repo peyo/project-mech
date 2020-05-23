@@ -3,7 +3,7 @@ This is the front-end for Project Mech. This app is a forum where car owners can
 
 ## Limitations
 **Car Makes**<br/>
-You can only add **Toyota, Honda, and Chevrolet** cars at the moment to your garage. This is because the database isn't fully populated with other cars.
+You can only add **Toyota, Honda, and Chevrolet** cars at the moment to your garage. Technically, you can add any car. There just isn't data to support them outside of the ones mentioned previously. This is because the database isn't fully populated with other cars.
 
 **DTC**<br/>
 These are the only codes that will work at the moment. Same reason as above, this is because the database isn't fully populated with other DTCs.<br/><br/>
