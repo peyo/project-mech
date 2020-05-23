@@ -3,7 +3,7 @@ This is the front-end for Project Mech. This app is a forum where car owners can
 
 ## Limitations
 **Car Makes**<br/>
-You can only add **Toyota, Honda, and Chevrolet** cars at the moment to your garage. This is because the database isn't fully populated with other cars.
+You can only add **Toyota, Honda, and Chevrolet** cars at the moment to your garage. Technically, you can add any car. There just isn't data to support them outside of the ones mentioned previously. This is because the database isn't fully populated with other cars.
 
 **DTC**<br/>
 These are the only codes that will work at the moment. Same reason as above, this is because the database isn't fully populated with other DTCs.<br/><br/>
@@ -13,7 +13,7 @@ These are the only codes that will work at the moment. Same reason as above, thi
 *Universal (Does not require the user to have a specific car to see and post to these comments)*: **P0100, P0101, P0102, P0103**
 
 ## Zeit
-https://vercel.com/peyo/project-mech
+https://project-mech.now.sh/
 
 ## Tech
 Reactjs, jQuery, CSS
