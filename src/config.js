@@ -1,4 +1,3 @@
 export default {
-  API_ENDPOINT: "http://localhost:8000/api",
-  TOKEN_KEY: "project-mech-auth-token",
+  API_ENDPOINT: "https://shielded-forest-42936.herokuapp.com/",
 };
