@@ -13,7 +13,7 @@ These are the only codes that will work at the moment. Same reason as above, thi
 *Universal (Does not require the user to have a specific car to see and post to these comments)*: **P0100, P0101, P0102, P0103**
 
 ## Zeit
-https://vercel.com/peyo/project-mech
+https://project-mech.now.sh/
 
 ## Tech
 Reactjs, jQuery, CSS
