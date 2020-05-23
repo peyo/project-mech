@@ -10,8 +10,9 @@ export default class RegistrationPage extends Component {
   };
 
   handleRegistrationSuccess() {
-    const { history } = this.props
-    history.push('/login')
+    const { location, history } = this.props;
+    const destination = (location.state || {}).from || "/login";
+    history.push(destination);
   }
 
   render() {
