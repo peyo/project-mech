@@ -1,4 +1,4 @@
-# Mech API
+# Mech App
 This is the front-end for Project Mech. This app is a forum where car owners can input their cars' makes and models and search diagnostic trouble codes (DTC) to chat with other car owners for potential solutions.
 
 ## Limitations
