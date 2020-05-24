@@ -24,6 +24,7 @@
 
 .LoginForm__orange {
   color: #FB4D3D;
+  width: 90%;
 }
 
 .LoginForm__button-div, .LoginForm__forgot-div {

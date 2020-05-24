@@ -13,6 +13,7 @@ export default class LoginForm extends Component {
 
   handleSubmitJwtAuth(e) {
     e.preventDefault();
+    e.stopPropagation();
     this.setState({ error: null });
     const {
       username,

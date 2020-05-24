@@ -14,6 +14,7 @@ export default class RegistrationForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    e.stopPropagation();
     const { username, nickname, password } = e.target;
     this.setState({ error: null });
     AuthApiService.postUser({
@@ -32,22 +33,29 @@ export default class RegistrationForm extends Component {
       })
   }
 
+  handleError = (error) => {
+    if (error) {
+      return <div className="RegistrationForm__orange">Error: {error}.</div>
+    }
+    else {
+      return null
+    }
+  }
+
   render() {
-    const { error } = this.state;
+    const {
+      error } = this.state;
 
     return (
       <form
         className="RegistrationForm__username-form"
         onSubmit={(e) => this.handleSubmit(e)}
       >
-        <div role="alert">{error
-          ? <div className="RegistrationForm__orange">Error: {error.message}.</div>
-          : null }</div>
+        <div role="alert">
+          {this.handleError(error)}
+        </div>
         <div className="RegistrationForm__username">
           Username (Email)
-          {/*<div className="RegistrationForm__check-email">
-            Check your email for confirmation after signup.
-          </div>*/}
         </div>
         <input
           required
@@ -69,15 +77,6 @@ export default class RegistrationForm extends Component {
           id="RegistrationForm__password-input"
           name="password"
         />
-        {/*<div className="RegistrationForm__repeat-password">
-          Repeat Password
-        </div>
-        <input
-          required
-          type="text"
-          id="RegistrationForm__repeat-password-input"
-          name="repeat-password"
-        />*/}
         <div className="RegistrationForm__button-div">
           <button className="RegistrationForm__button" type="submit">
             Submit
