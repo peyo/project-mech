@@ -55,7 +55,7 @@ export default class LoginForm extends Component {
         <div className="password">Password</div>
         <input
           required
-          type="text"
+          type="password"
           id="LoginForm__password-input"
           name="password"
         />

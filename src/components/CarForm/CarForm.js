@@ -43,12 +43,13 @@ export default class CarForm extends Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();
+    e.stopPropagation();
     const {
       setVinMake,
       setError
     } = this.context;
 
-    e.preventDefault();
     this.setState({ error: null });
     const { make, model } = e.target;
 

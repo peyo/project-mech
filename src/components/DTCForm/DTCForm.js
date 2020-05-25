@@ -28,6 +28,7 @@ export default class DtcForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
+    e.stopPropagation();
     this.setState({ error: null });
     const { dtc } = e.target;
 
