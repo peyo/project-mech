@@ -11,7 +11,8 @@ export default class CommentForm extends Component {
   };
 
   handleCommentSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
+    e.stopPropagation();
     const { comment } = e.target;
     const { headerDtc = [], addComment, setError } = this.context;
 
