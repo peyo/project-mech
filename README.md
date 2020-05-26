@@ -1,6 +1,8 @@
 # Mech App
 This is the front-end for Project Mech. This app is a forum where car owners can input their cars' makes and models and search diagnostic trouble codes (DTC) to chat with other car owners for potential solutions.
 
+![Preview01](https://user-images.githubusercontent.com/55764217/82862884-a44db480-9ed5-11ea-9c46-064c8ced7a17.png)
+
 ## Limitations
 **Car Makes**<br/>
 You can only add **Toyota, Honda, and Chevrolet** cars at the moment to your garage. Technically, you can add any car. There just isn't data to support them outside of the ones mentioned previously. This is because the database isn't fully populated with other cars.
