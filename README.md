@@ -67,3 +67,9 @@ https://github.com/peyo/project-mech-api
 ## Data
 This is a collection of DTC by make and VINs that correspond with world manufacturer identifiers (WMI).
 https://github.com/peyo/dtc-and-vin-data
+
+## More Preview
+
+![Preview02](https://user-images.githubusercontent.com/55764217/82862888-a57ee180-9ed5-11ea-9a8d-5f1b36fd8631.png)
+![Preview03](https://user-images.githubusercontent.com/55764217/82862891-a6b00e80-9ed5-11ea-9b63-09a935587fa7.png)
+![Preview04](https://user-images.githubusercontent.com/55764217/82862896-a879d200-9ed5-11ea-926d-6ee6c07718e0.png)
