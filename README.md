@@ -60,6 +60,15 @@ npm install --save @fortawesome/fontawesome-free
 /FilteredDtcCommentListItemHeader
 /CommentForm
 ```
+## Next Steps
+1. DTC
+    - Add more car makes.
+    - Add different dtc types, such as C, B, and U type codes.
+    - Add solutions to dtc.
+  
+2. VIN
+    - Add car models.
+    - Add where car is made in.
 
 ## Back-end
 https://github.com/peyo/project-mech-api
