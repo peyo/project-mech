@@ -23,7 +23,10 @@ export default class InnerDtcCommentListItem extends Component {
 function DtcCommentNickname({ comment }) {
   return (
     <span className="InnerDtcCommentListItem__nickname">
-      {comment.user_id.nickname}
+      {comment.user_id.nickname === null
+        ? <div>`[deleted]`</div>
+        : <div>{comment.user_id.nickname}</div>
+      }
     </span>
   );
 }
