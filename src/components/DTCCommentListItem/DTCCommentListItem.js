@@ -23,7 +23,12 @@ export default class DtcCommentListItem extends Component {
         <div className="DtcCommentListItem__body">{dtc.description}</div>
         <footer className="DtcCommentListItem__footer">
           <DtcCommentMake dtc={dtc} />
-          <DtcCommentCount dtc={dtc} />
+          <Link
+            to={`/dtc/${dtc.id}/comments`}
+            className="DtcCommentListItem__link"
+          >
+            <DtcCommentCount dtc={dtc} />
+          </Link>
         </footer>
       </div>
     );
