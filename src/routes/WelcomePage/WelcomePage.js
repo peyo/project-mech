@@ -12,8 +12,8 @@ export default class WelcomePage extends Component {
           </div>
           <div className="WelcomePage__notice">
             <h3>
-              Notice: Currently we only support Toyota, Honda, GMC, Buick,
-              Chevrolet, and Cadillac.
+              Notice: Currently we only support Toyota, Honda,
+              Chevrolet.
             </h3>
           </div>
           <div className="WelcomePage__notice">
