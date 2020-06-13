@@ -55,7 +55,7 @@ export default class RegistrationForm extends Component {
           {this.handleError(error)}
         </div>
         <div className="RegistrationForm__username">
-          Username (Email)
+          Username (Use Email)
         </div>
         <input
           required
