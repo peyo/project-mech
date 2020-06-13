@@ -44,7 +44,7 @@ export default class LoginForm extends Component {
         <div role="alert">
           {error && <div className="LoginForm__orange">{error}</div>}
         </div>
-        <div className="LoginForm__username">Username (Email)</div>
+        <div className="LoginForm__username">Username (Use Email)</div>
         <input
           required
           type="text"
