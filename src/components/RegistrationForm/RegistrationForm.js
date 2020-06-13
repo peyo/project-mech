@@ -36,11 +36,11 @@ export default class RegistrationForm extends Component {
   handleError = (error) => {
     if (error) {
       return (
-        (
+        /*(
           <div className="RegistrationForm__orange">
             Error: {error.message}.{" "}
           </div>
-        ) || <div className="RegistrationForm__orange">Error: {error}.</div>
+        ) ||*/ <div className="RegistrationForm__orange">Error: {error}</div>
       );
     } else {
       return null;

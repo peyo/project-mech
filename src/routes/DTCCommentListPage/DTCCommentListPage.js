@@ -27,6 +27,9 @@ export default class DtcCommentListPage extends Component {
     return (
       <main className="DtcCommentListPage__main">
         <div className="DtcCommentListPage__screen-wrapper">
+          <div className="DtcCommentListPage__section">
+          All Comments
+          </div>
           <Section list className="DtcCommentListPage">
             {error ? (
               <p className="DtcCommentListPage__orange">

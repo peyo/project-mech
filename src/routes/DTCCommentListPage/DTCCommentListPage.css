@@ -18,6 +18,10 @@
   margin: 21px 0;
 }
 
+.DtcCommentListPage__section {
+  font-weight: bold;
+}
+
 .DtcCommentListPage__orange {
   color: #FB4D3D;
   width: 90%;

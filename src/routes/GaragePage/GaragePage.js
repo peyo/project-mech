@@ -40,6 +40,9 @@ export default class GaragePage extends Component {
     return (
       <main className="GaragePage__main">
         <div className="GaragePage__screen-wrapper">
+          <div className="GaragePage__section">
+            Garage Page
+          </div>
           <div className="GaragePage__add-car">
             <h2>Add Car</h2>
             <CarForm />

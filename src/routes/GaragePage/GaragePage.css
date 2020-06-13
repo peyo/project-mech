@@ -19,6 +19,11 @@ hr {
   justify-content: center;
   align-items: center;
   min-height: 90vh;
+  margin: 21px 0;
+}
+
+.GaragePage__section {
+  font-weight: bold;
 }
 
 .GaragePage__add-car, .GaragePage__list, .GaragePage__selection, .GaragePage__add-dtc, .GaragePage__history {
