@@ -23,7 +23,7 @@ export default class WelcomePage extends Component {
             </h4>
           </div>
           <div id="WelcomePage__login-logout-link">
-            <Link to="/home">Rev!</Link>
+            <Link to="/home">Rev! Enter >></Link>
           </div>
           <div id="WelcomePage__intro">
             <ul className="WelcomePage__intro-ul">
