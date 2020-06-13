@@ -6,17 +6,15 @@ export default class Footer extends Component {
     return (
       <div className="Footer__container">
         <div className="Footer__footer">
-          <div id="Footer__beep-beep">
-            Beep beep
-            </div>
+          <div id="Footer__beep-beep">Beep beep</div>
           <br />
           <div className="Footer__contact-us">
-              <a
+            <a
               className="Footer__email-connect"
               href="mailto:peteryyoon@gmail.com"
             >
               Contact Us
-              </a>
+            </a>
           </div>
         </div>
       </div>

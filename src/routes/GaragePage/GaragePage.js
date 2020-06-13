@@ -9,8 +9,8 @@ import MechApiService from "../../services/mech-api-service";
 import "./GaragePage.css";
 
 export default class GaragePage extends Component {
-  static contextType = MechContext
-  
+  static contextType = MechContext;
+
   static defaultProps = {
     history: {
       push: () => {},
@@ -18,33 +18,23 @@ export default class GaragePage extends Component {
   };
 
   componentDidMount() {
-    const {
-      setCarList,
-      setError,
-    } = this.context;
+    const { setCarList, setError } = this.context;
 
     this.context.clearError();
-    MechApiService.getCarByUserId()
-      .then(setCarList)
-      .catch(setError)
+    MechApiService.getCarByUserId().then(setCarList).catch(setError);
   }
 
   renderCarList() {
     const { carList = [] } = this.context;
-    return carList.map((car) => (
-      <CarListItem
-        key={car.id}
-        car={car}
-      />
-    ))
+    return carList.map((car) => <CarListItem key={car.id} car={car} />);
   }
 
   handleDtcAddSuccess = (filteredDtcComments) => {
     const { history } = this.props;
     const dtc = filteredDtcComments[0];
 
-    history.push(`/dtc/${dtc.id}/search`)
-  }
+    history.push(`/dtc/${dtc.id}/search`);
+  };
 
   render() {
     return (
@@ -65,15 +55,13 @@ export default class GaragePage extends Component {
           <div className="GaragePage__selection">
             <h2>Select Car</h2>
             <div className="GaragePage__car-dropdown">
-                <CarSelectDropdown />
+              <CarSelectDropdown />
             </div>
           </div>
           <hr />
           <div className="GaragePage__add-dtc">
             <h2>Add Trouble Code</h2>
-            <DtcForm
-              onDtcAddSuccess={this.handleDtcAddSuccess}
-            />
+            <DtcForm onDtcAddSuccess={this.handleDtcAddSuccess} />
           </div>
         </div>
       </main>

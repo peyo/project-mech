@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./DtcCommentListItem.css";
 
 export default class DtcCommentListItem extends Component {
-  static contextType = MechContext
+  static contextType = MechContext;
 
   render() {
     const { dtc } = this.props;
@@ -38,11 +38,16 @@ export default class DtcCommentListItem extends Component {
 function DtcCommentMake({ dtc }) {
   return (
     <span className="DtcCommentListItem__make-vin">
-      <FontAwesomeIcon className="DtcCommentListItem__icon" size="sm" icon="car" />
-      {dtc.vinmake_id.make_vin
-        ? <p> {dtc.vinmake_id.make_vin}</p>
-        : <p>All Cars</p>
-      }
+      <FontAwesomeIcon
+        className="DtcCommentListItem__icon"
+        size="sm"
+        icon="car"
+      />
+      {dtc.vinmake_id.make_vin ? (
+        <p> {dtc.vinmake_id.make_vin}</p>
+      ) : (
+        <p>All Cars</p>
+      )}
     </span>
   );
 }
@@ -50,11 +55,16 @@ function DtcCommentMake({ dtc }) {
 function DtcCommentCount({ dtc }) {
   return (
     <span className="DtcCommentListItem__comment-count">
-      <FontAwesomeIcon className="DtcCommentListItem__icon" size="sm" icon="comment" />
-      {dtc.number_of_comments > 1
-        ? <p>{dtc.number_of_comments} comments </p>
-        : <p>{dtc.number_of_comments} comment </p>
-      }
+      <FontAwesomeIcon
+        className="DtcCommentListItem__icon"
+        size="sm"
+        icon="comment"
+      />
+      {dtc.number_of_comments > 1 ? (
+        <p>{dtc.number_of_comments} comments </p>
+      ) : (
+        <p>{dtc.number_of_comments} comment </p>
+      )}
     </span>
   );
 }

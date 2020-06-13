@@ -9,11 +9,7 @@ export default class CarSelectDropdown extends Component {
     const { carList = [], selectCar } = this.context;
 
     return (
-      <Dropdown
-        title="Car list"
-        carList={carList}
-        selectCar={selectCar}
-      />
+      <Dropdown title="Car list" carList={carList} selectCar={selectCar} />
     );
   }
 }
@@ -24,7 +20,7 @@ function Dropdown({ title, carList = [], selectCar, select = true }) {
   const toggle = () => setOpen(!open);
 
   function handleOnClick(car) {
-    selectCar(car)
+    selectCar(car);
     selectCarDropdown(car);
   }
 

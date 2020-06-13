@@ -20,7 +20,7 @@ export default class RegistrationForm extends Component {
     AuthApiService.postUser({
       username: username.value,
       nickname: nickname.value,
-      password: password.value
+      password: password.value,
     })
       .then(() => {
         username.value = "";
@@ -28,35 +28,35 @@ export default class RegistrationForm extends Component {
         password.value = "";
         this.props.onRegistrationSuccess();
       })
-      .catch(res => {
-        this.setState({ error: res.error })
-      })
+      .catch((res) => {
+        this.setState({ error: res.error });
+      });
   }
 
   handleError = (error) => {
     if (error) {
-      return <div className="RegistrationForm__orange">Error: {error.message}. </div> || <div className="RegistrationForm__orange">Error: {error}.</div>
+      return (
+        (
+          <div className="RegistrationForm__orange">
+            Error: {error.message}.{" "}
+          </div>
+        ) || <div className="RegistrationForm__orange">Error: {error}.</div>
+      );
+    } else {
+      return null;
     }
-    else {
-      return null
-    }
-  }
+  };
 
   render() {
-    const {
-      error } = this.state;
+    const { error } = this.state;
 
     return (
       <form
         className="RegistrationForm__username-form"
         onSubmit={(e) => this.handleSubmit(e)}
       >
-        <div role="alert">
-          {this.handleError(error)}
-        </div>
-        <div className="RegistrationForm__username">
-          Username (Use Email)
-        </div>
+        <div role="alert">{this.handleError(error)}</div>
+        <div className="RegistrationForm__username">Username (Use Email)</div>
         <input
           required
           type="text"

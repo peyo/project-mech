@@ -7,7 +7,7 @@ export default class CommentForm extends Component {
   static contextType = MechContext;
 
   state = {
-    error: null
+    error: null,
   };
 
   handleCommentSubmit(e) {
@@ -21,9 +21,9 @@ export default class CommentForm extends Component {
     MechApiService.postComment({
       dtc_id: headerDtc.id,
       vinmake_id: headerDtc.vinmake_id,
-      comment: comment.value
+      comment: comment.value,
     })
-      .then(addComment)  
+      .then(addComment)
       .then(document.getElementById("CommentForm__form").reset())
       .catch(setError);
   }

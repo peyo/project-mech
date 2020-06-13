@@ -12,11 +12,7 @@ export default class InnerDtcCommentListPage extends Component {
   componentDidMount() {
     const { dtc_id } = this.props.match.params;
 
-    const {
-      setSpecificDtcCommentList,
-      setError,
-      clearError
-    } = this.context;
+    const { setSpecificDtcCommentList, setError, clearError } = this.context;
 
     clearError();
 

@@ -27,9 +27,17 @@ class App extends Component {
               <Route path="/register" component={RegistrationPage} />
               <Route path="/forgot" component={ForgotPage} />
               <Route path="/home" component={DtcCommentListPage} />
-              <Route exact path="/dtc/:dtc_id/comments" component={InnerDtcCommentListPage} />
+              <Route
+                exact
+                path="/dtc/:dtc_id/comments"
+                component={InnerDtcCommentListPage}
+              />
               <Route path="/garage" component={GaragePage} />
-              <Route exact path="/dtc/:dtc_id/search" component={DtcSearchPage} />
+              <Route
+                exact
+                path="/dtc/:dtc_id/search"
+                component={DtcSearchPage}
+              />
               <Route component={NotFoundPage} />
             </Switch>
           </div>

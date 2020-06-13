@@ -13,21 +13,21 @@ const MechContext = React.createContext({
   headerDtc: [],
   specificDtcCommentList: [],
   specificDtc: [],
-  setError: () => { },
-  clearError: () => { },
-  setDtcCommentList: () => { },
-  setVinMake: () => { },
-  setCarVinMakeId: () => { },
-  setCarList: () => { },
-  addCar: () => { },
-  deleteCar: () => { },
-  selectCar: () => { },
-  setDtcSearch: () => { },
-  setFilteredCommentList: () => { },
-  setHeaderDtc: () => { },
-  setSpecificDtcCommentList: () => { },
-  setSpecificDtc: () => { },
-  addComment: () => { }
+  setError: () => {},
+  clearError: () => {},
+  setDtcCommentList: () => {},
+  setVinMake: () => {},
+  setCarVinMakeId: () => {},
+  setCarList: () => {},
+  addCar: () => {},
+  deleteCar: () => {},
+  selectCar: () => {},
+  setDtcSearch: () => {},
+  setFilteredCommentList: () => {},
+  setHeaderDtc: () => {},
+  setSpecificDtcCommentList: () => {},
+  setSpecificDtc: () => {},
+  addComment: () => {},
 });
 
 export default MechContext;
@@ -61,12 +61,12 @@ export class MechProvider extends Component {
   };
 
   setVinMake = (vinMake) => {
-    this.setState({ vinMake })
-  }
+    this.setState({ vinMake });
+  };
 
   setCarVinMakeId = (vinMakeOfCar) => {
-    this.setState({ carVinMakeId: vinMakeOfCar })
-  }
+    this.setState({ carVinMakeId: vinMakeOfCar });
+  };
 
   setCarList = (carList) => {
     this.setState({ carList });
@@ -74,49 +74,49 @@ export class MechProvider extends Component {
 
   addCar = (car) => {
     this.setState({
-      carList: [...this.state.carList, car]
-    })
-  }
+      carList: [...this.state.carList, car],
+    });
+  };
 
   deleteCar = (carId) => {
-    const newCarList = this.state.carList.filter(car => car.id !== carId)
+    const newCarList = this.state.carList.filter((car) => car.id !== carId);
     this.setState({ carList: newCarList });
-  }
+  };
 
   selectCar = (selectedCar) => {
     this.setState({ selectedCar });
-  }
+  };
 
   addDtc = (addedDtc) => {
     this.setState({ addedDtc });
-  }
+  };
 
   setDtcSearch = (filteredDtcComments) => {
-    this.setState({ filteredDtcComments })
-  }
+    this.setState({ filteredDtcComments });
+  };
 
   setFilteredCommentList = (filteredDtcCommentList) => {
-    this.setState({ filteredDtcCommentList })
-  }
+    this.setState({ filteredDtcCommentList });
+  };
 
   setHeaderDtc = (headerDtc) => {
-    this.setState({ headerDtc })
-  }
+    this.setState({ headerDtc });
+  };
 
   setSpecificDtcCommentList = (specificDtcCommentList) => {
-    this.setState({ specificDtcCommentList })
-    this.setSpecificDtc(specificDtcCommentList)
-  }
+    this.setState({ specificDtcCommentList });
+    this.setSpecificDtc(specificDtcCommentList);
+  };
 
   setSpecificDtc = (specificDtcCommentList) => {
-    this.setState({ specificDtc: specificDtcCommentList[0] })
-  }
+    this.setState({ specificDtc: specificDtcCommentList[0] });
+  };
 
   addComment = (post) => {
     this.setState({
-      filteredDtcCommentList: [...this.state.filteredDtcCommentList, post]
-    })
-  }
+      filteredDtcCommentList: [...this.state.filteredDtcCommentList, post],
+    });
+  };
 
   render() {
     const contextValue = {

@@ -15,7 +15,7 @@ export default class DtcSearchPage extends Component {
       setFilteredCommentList,
       setHeaderDtc,
       setError,
-      clearError
+      clearError,
     } = this.context;
     const { dtc_id } = this.props.match.params;
 
@@ -43,10 +43,7 @@ export default class DtcSearchPage extends Component {
   renderFilteredDtcCommentList() {
     const { filteredDtcCommentList = [] } = this.context;
     return filteredDtcCommentList.map((comment) => (
-      <FilteredDtcCommentListItem
-        key={comment.id}
-        comment={comment}
-      />
+      <FilteredDtcCommentListItem key={comment.id} comment={comment} />
     ));
   }
 

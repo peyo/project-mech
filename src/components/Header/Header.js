@@ -6,7 +6,7 @@ import "./Header.css";
 export default class Header extends Component {
   handleLogoutClick(e) {
     TokenService.clearAuthToken();
-  };
+  }
 
   renderLogoutLink() {
     return (
@@ -14,7 +14,11 @@ export default class Header extends Component {
         <Link to="/garage" className="Header__garage">
           Garage
         </Link>
-        <Link to="/home" onClick={(e) => this.handleLogoutClick(e)} className="Header__logout">
+        <Link
+          to="/home"
+          onClick={(e) => this.handleLogoutClick(e)}
+          className="Header__logout"
+        >
           Logout
         </Link>
       </div>
@@ -39,11 +43,7 @@ export default class Header extends Component {
       <nav className="Header__header">
         <div className="Header__gear-keep-driving">
           <Link to="/home">
-            <img
-              id="Header__gear"
-              src={require("../../gear.png")}
-              alt="gear"
-            />
+            <img id="Header__gear" src={require("../../gear.png")} alt="gear" />
           </Link>
         </div>
         <div className="Header__logged-in-not-logged-in">

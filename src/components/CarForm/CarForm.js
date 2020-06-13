@@ -12,30 +12,21 @@ export default class CarForm extends Component {
   };
 
   filterVin(makeValue, modelValue) {
-    const {
-      vinMake,
-      setCarVinMakeId,
-    } = this.context;
+    const { vinMake, setCarVinMakeId } = this.context;
 
-    const vinMakeOfCar = vinMake.filter(
-      (make) => make.make_vin === makeValue
-    );
-      
-    setCarVinMakeId(vinMakeOfCar)
-    this.postCar(makeValue, modelValue)
+    const vinMakeOfCar = vinMake.filter((make) => make.make_vin === makeValue);
+
+    setCarVinMakeId(vinMakeOfCar);
+    this.postCar(makeValue, modelValue);
   }
 
   postCar(makeValue, modelValue) {
-    const {
-      carVinMakeId,
-      addCar,
-      setError
-    } = this.context;
+    const { carVinMakeId, addCar, setError } = this.context;
 
     MechApiService.postCar({
       make: makeValue,
       model: modelValue,
-      vinmake_id: carVinMakeId[0].id
+      vinmake_id: carVinMakeId[0].id,
     })
       .then(addCar)
       .then(document.getElementById("CarForm__form").reset())
@@ -45,10 +36,7 @@ export default class CarForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
     e.stopPropagation();
-    const {
-      setVinMake,
-      setError
-    } = this.context;
+    const { setVinMake, setError } = this.context;
 
     this.setState({ error: null });
     const { make, model } = e.target;
@@ -56,7 +44,7 @@ export default class CarForm extends Component {
     MechApiService.getVinMake()
       .then(setVinMake)
       .then(() => {
-        this.filterVin(make.value, model.value)
+        this.filterVin(make.value, model.value);
       })
       .catch(setError);
   }
@@ -75,31 +63,14 @@ export default class CarForm extends Component {
         <div role="alert">
           {error && <div className="CarForm__orange">{error}</div>}
         </div>
-        <div
-          className="CarForm__dtc"
-          required
-        >
+        <div className="CarForm__dtc" required>
           Manufacturer
         </div>
-        <input
-          type="text"
-          id="CarForm__dtc-input"
-          name="make"
-        />
-        <div className="CarForm__dtc">
-          Model
-        </div>
-        <input
-          type="text"
-          id="CarForm__dtc-input"
-          name="model"
-          required
-        />
+        <input type="text" id="CarForm__dtc-input" name="make" />
+        <div className="CarForm__dtc">Model</div>
+        <input type="text" id="CarForm__dtc-input" name="model" required />
         <div className="CarForm__button-div">
-          <button
-            className="CarForm__button"
-            type="submit"
-          >
+          <button className="CarForm__button" type="submit">
             Submit
           </button>
         </div>

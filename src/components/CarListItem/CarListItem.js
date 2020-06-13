@@ -7,9 +7,7 @@ export default class CarListItem extends Component {
   static contextType = MechContext;
 
   handleDeleteCar(carId) {
-    MechApiService.deleteCar(
-      carId
-    )
+    MechApiService.deleteCar(carId)
       .then(this.context.deleteCar(carId))
       .catch(this.context.setError);
   }
@@ -23,15 +21,15 @@ export default class CarListItem extends Component {
           <div className="CarListItem__make">{car.make}&nbsp;</div>
           <div className="CarListItem__model">{car.model}&nbsp;&nbsp;</div>
         </div>
-        <div className="CarListItem__date-created">Added {car.date_created}</div>
+        <div className="CarListItem__date-created">
+          Added {car.date_created}
+        </div>
         <button
           className="CarListItem__button"
-          onClick={() =>
-            this.handleDeleteCar(car.id)
-          }
+          onClick={() => this.handleDeleteCar(car.id)}
         >
           Delete
-      </button>
+        </button>
         <div className="CarListItem__space" />
       </div>
     );

@@ -11,15 +11,14 @@ export default class WelcomePage extends Component {
             <h2>Welcome to Mech</h2>
           </div>
           <div className="WelcomePage__notice">
-            <h3>
-              Notice: Currently we only support Toyota, Honda,
-              Chevrolet.
-            </h3>
+            <h3>Notice: Currently we only support Toyota, Honda, Chevrolet.</h3>
           </div>
           <div className="WelcomePage__notice">
             <h4>
-              You may use<br />
-              l: testaccount@gmail.com / p: @ABCabc123<br />
+              You may use
+              <br />
+              l: testaccount@gmail.com / p: @ABCabc123
+              <br />
               for the login credentials.
             </h4>
           </div>
