@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import MechContext from "../../contexts/MechContext";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaRegComment } from "react-icons/fa";
+import { RiCarLine } from "react-icons/ri"
 import "./DtcCommentListItem.css";
 
 export default class DtcCommentListItem extends Component {
@@ -22,7 +23,9 @@ export default class DtcCommentListItem extends Component {
         </Link>
         <div className="DtcCommentListItem__body">{dtc.description}</div>
         <footer className="DtcCommentListItem__footer">
-          <DtcCommentMake dtc={dtc} />
+          <RiCarLine />&nbsp;
+          <DtcCommentMake dtc={dtc} />&nbsp;
+          <FaRegComment />&nbsp;
           <Link
             to={`/dtc/${dtc.id}/comments`}
             className="DtcCommentListItem__link"
@@ -38,11 +41,6 @@ export default class DtcCommentListItem extends Component {
 function DtcCommentMake({ dtc }) {
   return (
     <span className="DtcCommentListItem__make-vin">
-      <FontAwesomeIcon
-        className="DtcCommentListItem__icon"
-        size="sm"
-        icon="car"
-      />
       {dtc.vinmake_id.make_vin ? (
         <p> {dtc.vinmake_id.make_vin}</p>
       ) : (
@@ -55,11 +53,6 @@ function DtcCommentMake({ dtc }) {
 function DtcCommentCount({ dtc }) {
   return (
     <span className="DtcCommentListItem__comment-count">
-      <FontAwesomeIcon
-        className="DtcCommentListItem__icon"
-        size="sm"
-        icon="comment"
-      />
       {dtc.number_of_comments > 1 ? (
         <p>{dtc.number_of_comments} comments </p>
       ) : (

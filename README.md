@@ -23,7 +23,6 @@ Reactjs, jQuery, CSS
 ## npm i
 ```
 npm install moment --save
-npm install --save @fortawesome/fontawesome-free
 ```
 
 ## Routes
