@@ -9,7 +9,6 @@ const MechApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
-
   getDtcById(dtcId) {
     return fetch(`${config.API_ENDPOINT}/dtc/${dtcId}`, {
       headers: {},
@@ -17,7 +16,6 @@ const MechApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
-
   getSpecificDtcCommentList(dtcId) {
     return fetch(`${config.API_ENDPOINT}/dtc/${dtcId}/comments`, {
       headers: {},
@@ -25,7 +23,6 @@ const MechApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
-
   getCarByUserId() {
     return fetch(`${config.API_ENDPOINT}/cars`, {
       headers: {
@@ -35,7 +32,6 @@ const MechApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
-
   getVinMake() {
     return fetch(`${config.API_ENDPOINT}/vinmake`, {
       headers: {
@@ -45,7 +41,6 @@ const MechApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
-
   postCar(car) {
     return fetch(`${config.API_ENDPOINT}/cars`, {
       method: "POST",
@@ -58,7 +53,6 @@ const MechApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
-
   postComment(post) {
     return fetch(`${config.API_ENDPOINT}/comments`, {
       method: "POST",
@@ -71,7 +65,6 @@ const MechApiService = {
       !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
     );
   },
-
   deleteCar(carId) {
     return fetch(`${config.API_ENDPOINT}/cars/${carId}`, {
       method: "DELETE",

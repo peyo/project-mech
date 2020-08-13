@@ -16,6 +16,7 @@ export default class FilteredDtcCommentListItem extends Component {
         <footer className="FilteredDtcCommentListItem__footer">
           <DtcCommentNickname comment={comment} />
           <DtcCommentCreated comment={comment} />
+          {/*<DtcCommentDeleteButton comment={comment} />*/}
         </footer>
       </div>
     );
@@ -41,3 +42,21 @@ function DtcCommentCreated({ comment }) {
     </span>
   );
 }
+
+/*
+function DtcCommentDeleteButton({ comment }) {
+  return (
+    <span className="FilteredDtcCommentListItem__button">
+      {comment.user_id !== userId ? (
+        null
+      ): (
+          <button
+            onClick={(e) => this.handleDelete(e)}
+            className="FilteredDtcCommentListItem__delete">
+          Delete
+        </button>
+      )}
+    </span>
+  )
+}
+*/
