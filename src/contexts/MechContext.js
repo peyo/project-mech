@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 const MechContext = React.createContext({
   error: null,
+  user: null,
+  setUser: [],
   dtcCommentList: [],
   carList: [],
   vinMake: [],
@@ -34,6 +36,7 @@ export default MechContext;
 
 export class MechProvider extends Component {
   state = {
+    user_id: localStorage.user_id || null,
     dtcCommentList: [],
     carList: [],
     vinMake: [],
@@ -47,6 +50,11 @@ export class MechProvider extends Component {
     specificDtc: [],
     error: null,
   };
+
+  setUser = (payload) => {
+    this.setState({ user_id: payload.user_id });
+    localStorage.user_id = payload.user_id;
+  }
 
   setError = (error) => {
     this.setState({ error });
@@ -120,6 +128,7 @@ export class MechProvider extends Component {
 
   render() {
     const contextValue = {
+      user: this.state.user,
       error: this.state.error,
       dtcCommentList: this.state.dtcCommentList,
       carList: this.state.carList,

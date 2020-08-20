@@ -16,7 +16,7 @@ export default class FilteredDtcCommentListItem extends Component {
         <footer className="FilteredDtcCommentListItem__footer">
           <DtcCommentNickname comment={comment} />
           <DtcCommentCreated comment={comment} />
-          {/*<DtcCommentDeleteButton comment={comment} />*/}
+          <DtcCommentDeleteButton comment={comment} />
         </footer>
       </div>
     );
@@ -43,11 +43,11 @@ function DtcCommentCreated({ comment }) {
   );
 }
 
-/*
+
 function DtcCommentDeleteButton({ comment }) {
   return (
     <span className="FilteredDtcCommentListItem__button">
-      {comment.user_id !== userId ? (
+      {comment.user_id !== this.context.user_id ? (
         null
       ): (
           <button
@@ -59,4 +59,3 @@ function DtcCommentDeleteButton({ comment }) {
     </span>
   )
 }
-*/

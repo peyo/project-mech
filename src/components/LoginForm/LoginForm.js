@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import TokenService from "../../services/token-service";
 import AuthApiService from "../../services/auth-api-service";
+import MechContext from "../contexts/MechContext";
 import "./LoginForm.css";
 
 export default class LoginForm extends Component {
   static defaultProps = {
     onLoginSuccess: () => {},
   };
+
+  static contextType = MechContext;
 
   state = { error: null };
 
@@ -26,6 +29,7 @@ export default class LoginForm extends Component {
         username.value = "";
         password.value = "";
         TokenService.saveAuthToken(res.authToken);
+        this.context.setUser(res.payload);
         this.props.onLoginSuccess();
       })
       .catch((res) => {
