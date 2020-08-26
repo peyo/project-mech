@@ -74,6 +74,15 @@ const MechApiService = {
       },
     });
   },
+  deleteComment(commentId) {
+    return fetch(`${config.API_ENDPOINT}/comments/${commentId}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+        Authorization: "bearer " + TokenService.getAuthToken(),
+      },
+    });
+  }, 
 };
 
 export default MechApiService;

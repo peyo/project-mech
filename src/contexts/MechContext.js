@@ -2,8 +2,6 @@ import React, { Component } from "react";
 
 const MechContext = React.createContext({
   error: null,
-  user: null,
-  setUser: [],
   dtcCommentList: [],
   carList: [],
   vinMake: [],
@@ -15,6 +13,7 @@ const MechContext = React.createContext({
   headerDtc: [],
   specificDtcCommentList: [],
   specificDtc: [],
+  user_id: localStorage.user_id || null,
   setError: () => {},
   clearError: () => {},
   setDtcCommentList: () => {},
@@ -29,14 +28,14 @@ const MechContext = React.createContext({
   setHeaderDtc: () => {},
   setSpecificDtcCommentList: () => {},
   setSpecificDtc: () => {},
-  addComment: () => {},
+  addComment: () => { },
+  setUser: [],
 });
 
 export default MechContext;
 
 export class MechProvider extends Component {
   state = {
-    user_id: localStorage.user_id || null,
     dtcCommentList: [],
     carList: [],
     vinMake: [],
@@ -48,13 +47,9 @@ export class MechProvider extends Component {
     headerDtc: [],
     specificDtcCommentList: [],
     specificDtc: [],
+    user_id: localStorage.user_id || null,
     error: null,
   };
-
-  setUser = (payload) => {
-    this.setState({ user_id: payload.user_id });
-    localStorage.user_id = payload.user_id;
-  }
 
   setError = (error) => {
     this.setState({ error });
@@ -126,9 +121,13 @@ export class MechProvider extends Component {
     });
   };
 
+  setUser = (payload) => {
+    this.setState({ user_id: payload.user_id });
+    localStorage.user_id = payload.user_id;
+  };
+
   render() {
     const contextValue = {
-      user: this.state.user,
       error: this.state.error,
       dtcCommentList: this.state.dtcCommentList,
       carList: this.state.carList,
@@ -141,6 +140,7 @@ export class MechProvider extends Component {
       headerDtc: this.state.headerDtc,
       specificDtcCommentList: this.state.specificDtcCommentList,
       specificDtc: this.state.specificDtc,
+      user_id: this.state.user_id,
       setError: this.setError,
       clearError: this.clearError,
       setDtcCommentList: this.setDtcCommentList,
@@ -156,6 +156,7 @@ export class MechProvider extends Component {
       setSpecificDtcCommentList: this.setSpecificDtcCommentList,
       setSpecificDtc: this.setSpecificDtc,
       addComment: this.addComment,
+      setUser: this.setUser
     };
     return (
       <MechContext.Provider value={contextValue}>

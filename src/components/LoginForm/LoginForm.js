@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import TokenService from "../../services/token-service";
 import AuthApiService from "../../services/auth-api-service";
-import MechContext from "../contexts/MechContext";
+import MechContext from "../../contexts/MechContext";
 import "./LoginForm.css";
 
 export default class LoginForm extends Component {
