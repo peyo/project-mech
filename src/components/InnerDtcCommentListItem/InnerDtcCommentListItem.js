@@ -56,7 +56,7 @@ function DtcCommentDeleteButton({ comment, userId }) {
   console.log(userId)
   return (
     <span className="InnerDtcCommentListItem__button">
-      {comment.user_id.id != userId ? (
+      {comment.user_id.id !== parseInt(userId) ? (
         null
       ) : (
           <button

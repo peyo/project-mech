@@ -1,13 +1,20 @@
 import React, { Component } from "react";
 import MechContext from "../../contexts/MechContext";
+import MechApiService from "../../services/mech-api-service";
 import "./FilteredDtcCommentListItem.css";
 
 export default class FilteredDtcCommentListItem extends Component {
   static contextType = MechContext;
 
+  handleDeleteComment(commentId) {
+    const { user } = this.context;
+
+    MechApiService.deleteComment(commentId, user)
+  };
+
   render() {
     const { comment } = this.props;
-    const { user_id } = this.context;
+    const { user } = this.context;
 
     return (
       <div className="FilteredDtcCommentListItem__comment-wrapper">
@@ -17,7 +24,7 @@ export default class FilteredDtcCommentListItem extends Component {
         <footer className="FilteredDtcCommentListItem__footer">
           <DtcCommentNickname comment={comment} />
           <DtcCommentCreated comment={comment} />
-          <DtcCommentDeleteButton comment={comment} userId={user_id} />
+          <DtcCommentDeleteButton comment={comment} userId={user} />
         </footer>
       </div>
     );
@@ -48,11 +55,11 @@ function DtcCommentCreated({ comment }) {
 function DtcCommentDeleteButton({ comment, userId }) {
   return (
     <span className="FilteredDtcCommentListItem__button">
-      {comment.user_id !== userId ? (
+      {comment.user.id !== parseInt(userId) ? (
         null
       ): (
           <button
-            onClick={(e) => this.handleDelete(e)}
+            onClick={() => this.handleDeleteComment(comment.id)}
             className="FilteredDtcCommentListItem__delete">
             Delete
           </button>
