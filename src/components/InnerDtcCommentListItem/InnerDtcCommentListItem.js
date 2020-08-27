@@ -6,12 +6,6 @@ import "./InnerDtcCommentListItem.css";
 export default class InnerDtcCommentListItem extends Component {
   static contextType = MechContext;
 
-  handleDeleteComment(commentId) {
-    const { user_id } = this.context;
-
-    MechApiService.deleteComment(commentId, user_id)
-  };
-
   render() {
     const { comment } = this.props;
     const { user_id } = this.context;
@@ -52,19 +46,25 @@ function DtcCommentCreated({ comment }) {
 }
 
 function DtcCommentDeleteButton({ comment, userId }) {
-  console.log(comment.user_id.id)
-  console.log(userId)
   return (
     <span className="InnerDtcCommentListItem__button">
-      {comment.user_id.id !== parseInt(userId) ? (
-        null
-      ) : (
-          <button
-            onClick={() => this.handleDeleteComment(comment.id)}
-            className="InnerDtcCommentListItem__delete">
-            Delete
-          </button>
+      {comment.user_id.id !== parseInt(userId) ? null : (
+        <button
+          className="InnerDtcCommentListItem__delete"
+          onClick={() => handleDeleteComment(comment.id, userId)}
+        >
+          Delete
+        </button>
       )}
     </span>
-  )
+  );
+}
+
+function handleDeleteComment(commentId, userId) {
+  console.log(commentId)
+  console.log(userId)
+
+  MechApiService.deleteComment(commentId, userId)
+    // .then(this.context.deleteComment(commentId))
+    //.catch(this.context.setError);
 }

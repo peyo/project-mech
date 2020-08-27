@@ -6,15 +6,9 @@ import "./FilteredDtcCommentListItem.css";
 export default class FilteredDtcCommentListItem extends Component {
   static contextType = MechContext;
 
-  handleDeleteComment(commentId) {
-    const { user } = this.context;
-
-    MechApiService.deleteComment(commentId, user)
-  };
-
   render() {
     const { comment } = this.props;
-    const { user } = this.context;
+    const { user_id } = this.context;
 
     return (
       <div className="FilteredDtcCommentListItem__comment-wrapper">
@@ -24,7 +18,7 @@ export default class FilteredDtcCommentListItem extends Component {
         <footer className="FilteredDtcCommentListItem__footer">
           <DtcCommentNickname comment={comment} />
           <DtcCommentCreated comment={comment} />
-          <DtcCommentDeleteButton comment={comment} userId={user} />
+          <DtcCommentDeleteButton comment={comment} userId={user_id} />
         </footer>
       </div>
     );
@@ -51,19 +45,26 @@ function DtcCommentCreated({ comment }) {
   );
 }
 
-
 function DtcCommentDeleteButton({ comment, userId }) {
   return (
     <span className="FilteredDtcCommentListItem__button">
-      {comment.user.id !== parseInt(userId) ? (
-        null
-      ): (
-          <button
-            onClick={() => this.handleDeleteComment(comment.id)}
-            className="FilteredDtcCommentListItem__delete">
-            Delete
-          </button>
+      {comment.user_id.id !== userId ? null : (
+        <button
+          className="FilteredDtcCommentListItem__delete"
+          onClick={() => handleDeleteComment(comment.id, userId)}
+        >
+          Delete
+        </button>
       )}
     </span>
-  )
+  );
+}
+
+function handleDeleteComment(commentId, userId) {
+  console.log(commentId);
+  console.log(userId);
+
+  MechApiService.deleteComment(commentId, userId);
+  // .then(this.context.deleteComment(commentId))
+  //.catch(this.context.setError);
 }
