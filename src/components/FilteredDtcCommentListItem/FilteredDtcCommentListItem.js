@@ -61,10 +61,8 @@ function DtcCommentDeleteButton({ comment, userId }) {
 }
 
 function handleDeleteComment(commentId, userId) {
-  console.log(commentId);
-  console.log(userId);
 
-  MechApiService.deleteComment(commentId, userId);
-  // .then(this.context.deleteComment(commentId))
-  //.catch(this.context.setError);
+  MechApiService.deleteComment(commentId, userId)
+    .then(this.context.deleteComment(commentId))
+    .catch(this.context.setError);
 }

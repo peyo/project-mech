@@ -13,6 +13,7 @@ const MechContext = React.createContext({
   headerDtc: [],
   specificDtcCommentList: [],
   specificDtc: [],
+  setUser: [],
   user_id: localStorage.user_id || null,
   setError: () => {},
   clearError: () => {},
@@ -21,7 +22,7 @@ const MechContext = React.createContext({
   setCarVinMakeId: () => {},
   setCarList: () => {},
   addCar: () => {},
-  deleteCar: () => {},
+  deleteCar: () => { },
   selectCar: () => {},
   setDtcSearch: () => {},
   setFilteredCommentList: () => {},
@@ -29,7 +30,7 @@ const MechContext = React.createContext({
   setSpecificDtcCommentList: () => {},
   setSpecificDtc: () => {},
   addComment: () => { },
-  setUser: [],
+  deleteComment: () => { }
 });
 
 export default MechContext;
@@ -126,6 +127,11 @@ export class MechProvider extends Component {
     localStorage.user_id = payload.user_id;
   };
 
+  deleteComment = (commentId) => {
+    const newCommentList = this.state.dtcCommentList.filter((comment) => comment.id !== commentId);
+    this.setState({ dtcCommentList: newCommentList });
+  };
+
   render() {
     const contextValue = {
       error: this.state.error,
@@ -156,7 +162,8 @@ export class MechProvider extends Component {
       setSpecificDtcCommentList: this.setSpecificDtcCommentList,
       setSpecificDtc: this.setSpecificDtc,
       addComment: this.addComment,
-      setUser: this.setUser
+      setUser: this.setUser,
+      deleteComment: this.deleteComment
     };
     return (
       <MechContext.Provider value={contextValue}>

@@ -23,7 +23,7 @@ export default class CommentForm extends Component {
       vinmake_id: headerDtc.vinmake_id,
       comment: comment.value,
     })
-      .then(addComment)
+      .then((res) => addComment(res))
       .then(document.getElementById("CommentForm__form").reset())
       .catch(setError);
   }

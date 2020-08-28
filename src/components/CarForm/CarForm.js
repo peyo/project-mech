@@ -28,7 +28,7 @@ export default class CarForm extends Component {
       model: modelValue,
       vinmake_id: carVinMakeId[0].id,
     })
-      .then(addCar)
+      .then((res) => addCar(res))
       .then(document.getElementById("CarForm__form").reset())
       .catch(setError);
   }

@@ -72,7 +72,9 @@ const MechApiService = {
         "content-type": "application/json",
         Authorization: "bearer " + TokenService.getAuthToken(),
       },
-    });
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
   },
   deleteComment(commentId) {
     return fetch(`${config.API_ENDPOINT}/comments/${commentId}`, {
@@ -81,7 +83,9 @@ const MechApiService = {
         "content-type": "application/json",
         Authorization: "bearer " + TokenService.getAuthToken(),
       },
-    });
+    }).then((res) =>
+      !res.ok ? res.json().then((e) => Promise.reject(e)) : res.json()
+    );
   }, 
 };
 
