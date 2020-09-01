@@ -48,7 +48,7 @@ function DtcCommentCreated({ comment }) {
 function DtcCommentDeleteButton({ comment, userId }) {
   return (
     <span className="FilteredDtcCommentListItem__button">
-      {comment.user_id.id !== userId ? null : (
+      {comment.user_id.id !== parseInt(userId) ? null : (
         <button
           className="FilteredDtcCommentListItem__delete"
           onClick={() => handleDeleteComment(comment.id, userId)}
