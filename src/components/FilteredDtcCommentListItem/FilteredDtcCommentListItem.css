@@ -23,3 +23,10 @@
   border-radius: .5em;
   padding: 9px;
 }
+
+.FilteredDtcCommentListItem__button {
+  margin: 3px;
+  background-color: #E8E8E8;
+  border-radius: .3em;
+  border: 1px solid;
+}

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import MechContext from "../../contexts/MechContext";
 import MechApiService from "../../services/mech-api-service";
 import "./FilteredDtcCommentListItem.css";
@@ -8,18 +8,32 @@ export default class FilteredDtcCommentListItem extends Component {
 
   render() {
     const { comment } = this.props;
-    const { user_id } = this.context;
+    const { user_id, deleteComment, editComment, setError } = this.context;
 
     return (
       <div className="FilteredDtcCommentListItem__comment-wrapper">
         <div className="FilteredDtcCommentListItem__comment">
           {comment.comment}
         </div>
-        <footer className="FilteredDtcCommentListItem__footer">
+        <div className="FilteredDtcCommentListItem__footer">
           <DtcCommentNickname comment={comment} />
           <DtcCommentCreated comment={comment} />
-          <DtcCommentDeleteButton comment={comment} userId={user_id} />
-        </footer>
+        </div>
+        <div className="FilteredDtcCommentListItem__buttons">
+          {/* Add up and down vote buttons here */}
+          <DtcCommentDeleteButton
+            comment={comment}
+            userId={user_id}
+            deleteComment={deleteComment}
+            setError={setError}
+          />
+          <DtcCommentEditButton
+            comment={comment}
+            userId={user_id}
+            editComment={editComment}
+            setError={setError}
+          />
+        </div>
       </div>
     );
   }
@@ -45,13 +59,15 @@ function DtcCommentCreated({ comment }) {
   );
 }
 
-function DtcCommentDeleteButton({ comment, userId }) {
+function DtcCommentDeleteButton({ comment, userId, deleteComment, setError }) {
   return (
-    <span className="FilteredDtcCommentListItem__button">
+    <span className="FilteredDtcCommentListItem__span">
       {comment.user_id.id !== parseInt(userId) ? null : (
         <button
-          className="FilteredDtcCommentListItem__delete"
-          onClick={() => handleDeleteComment(comment.id, userId)}
+          className="FilteredDtcCommentListItem__button"
+          onClick={() =>
+            handleDeleteComment(comment.id, deleteComment, setError)
+          }
         >
           Delete
         </button>
@@ -60,9 +76,42 @@ function DtcCommentDeleteButton({ comment, userId }) {
   );
 }
 
-function handleDeleteComment(commentId, userId) {
-
-  MechApiService.deleteComment(commentId, userId)
-    .then(this.context.deleteComment(commentId))
-    .catch(this.context.setError);
+function handleDeleteComment(commentId, deleteComment, setError) {
+  MechApiService.deleteComment(commentId)
+    .then(deleteComment(commentId))
+    .catch(setError);
 }
+
+function DtcCommentEditButton({ comment, userId, editComment, setError }) {
+  const [ editing, setEditing ] = useState(false);
+  const [ text, setText ] = useState(comment.comment);
+
+  return (
+    <span className="FilteredDtcCommentListItem__span">
+      {comment.user_id.id !== parseInt(userId) ? null : (
+        <div>
+          {editing ? (
+            <p>{text}</p>
+          ) : (
+            <textarea
+              value={text}
+              onChange={({ target }) => setText(target.value)}
+            ></textarea>
+          )}
+          <button
+            className="FilteredDtcCommentListItem__button"
+            onClick={() => setEditing(!editing)}>
+            {editing ? "Edit" : "Submit"}
+          </button>
+        </div>
+      )}
+    </span>
+  );
+}
+
+/*function handleEditComment(commentId, editComment, setError) {
+  MechApiService.editComment(commentId)
+    .then(editComment(commentId))
+    .catch(setError);
+}
+*/

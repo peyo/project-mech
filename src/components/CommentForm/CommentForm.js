@@ -53,7 +53,7 @@ export default class CommentForm extends Component {
         />
         <div className="CommentForm__button-div">
           <button className="CommentForm__button" type="submit">
-            Comment
+            Submit
           </button>
         </div>
       </form>

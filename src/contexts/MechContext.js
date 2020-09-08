@@ -22,15 +22,15 @@ const MechContext = React.createContext({
   setCarVinMakeId: () => {},
   setCarList: () => {},
   addCar: () => {},
-  deleteCar: () => { },
+  deleteCar: () => {},
   selectCar: () => {},
   setDtcSearch: () => {},
   setFilteredCommentList: () => {},
   setHeaderDtc: () => {},
   setSpecificDtcCommentList: () => {},
   setSpecificDtc: () => {},
-  addComment: () => { },
-  deleteComment: () => { }
+  addComment: () => {},
+  deleteComment: () => {},
 });
 
 export default MechContext;
@@ -128,7 +128,9 @@ export class MechProvider extends Component {
   };
 
   deleteComment = (commentId) => {
-    const newCommentList = this.state.dtcCommentList.filter((comment) => comment.id !== commentId);
+    const newCommentList = this.state.dtcCommentList.filter(
+      (comment) => comment.id !== commentId
+    );
     this.setState({ dtcCommentList: newCommentList });
   };
 
@@ -163,7 +165,7 @@ export class MechProvider extends Component {
       setSpecificDtc: this.setSpecificDtc,
       addComment: this.addComment,
       setUser: this.setUser,
-      deleteComment: this.deleteComment
+      deleteComment: this.deleteComment,
     };
     return (
       <MechContext.Provider value={contextValue}>
