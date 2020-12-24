@@ -17,7 +17,7 @@ export default class WelcomePage extends Component {
             <h4>
               You may use
               <br />
-              l: testaccount@gmail.com / p: @ABCabc123
+              l: tester@gmail.com / p: Test!123
               <br />
               for the login credentials.
             </h4>
