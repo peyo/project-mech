@@ -7,8 +7,15 @@
   border-radius: .5em;
   border-color: #686868;
   font-size: smaller;
+  width: 240px;
   margin: 12px 0;
   padding: 3px 21px 3px 3px;
+}
+
+.LoginForm__input-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .LoginForm__button {
@@ -24,7 +31,8 @@
 
 .LoginForm__orange {
   color: #FB4D3D;
-  width: 90%;
+  width: 240px;
+  margin: 0 0 12px 0;
 }
 
 .LoginForm__button-div, .LoginForm__forgot-div {

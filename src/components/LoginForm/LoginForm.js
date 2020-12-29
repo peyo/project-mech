@@ -46,22 +46,24 @@ export default class LoginForm extends Component {
         onSubmit={(e) => this.handleSubmitJwtAuth(e)}
       >
         <div role="alert">
-          {error && <div className="LoginForm__orange">{error}</div>}
+          {error && <div className="LoginForm__orange">{error.message}</div>}
         </div>
-        <div className="LoginForm__username">Username (Use Email)</div>
-        <input
-          required
-          type="text"
-          id="LoginForm__username-input"
-          name="username"
-        />
-        <div className="password">Password</div>
-        <input
-          required
-          type="password"
-          id="LoginForm__password-input"
-          name="password"
-        />
+        <div className="LoginForm__input-section">
+          <div className="LoginForm__username">Username (Use Email)</div>
+          <input
+            required
+            type="text"
+            id="LoginForm__username-input"
+            name="username"
+          />
+          <div className="password">Password</div>
+          <input
+            required
+            type="password"
+            id="LoginForm__password-input"
+            name="password"
+          />
+        </div>
         <div className="LoginForm__button-div">
           <button className="LoginForm__button" type="submit">
             Submit

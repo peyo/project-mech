@@ -33,20 +33,6 @@ export default class RegistrationForm extends Component {
       });
   }
 
-  handleError = (error) => {
-    if (error) {
-      return (
-        /*(
-          <div className="RegistrationForm__orange">
-            Error: {error.message}.{" "}
-          </div>
-        ) ||*/ <div className="RegistrationForm__orange">Error: {error}</div>
-      );
-    } else {
-      return null;
-    }
-  };
-
   render() {
     const { error } = this.state;
 
@@ -55,28 +41,34 @@ export default class RegistrationForm extends Component {
         className="RegistrationForm__username-form"
         onSubmit={(e) => this.handleSubmit(e)}
       >
-        <div role="alert">{this.handleError(error)}</div>
-        <div className="RegistrationForm__username">Username (Use Email)</div>
-        <input
-          required
-          type="text"
-          id="RegistrationForm__username-input"
-          name="username"
-        />
-        <div className="RegistrationForm__nickname-label">Nickname</div>
-        <input
-          required
-          type="text"
-          id="RegistrationForm__nickname-input"
-          name="nickname"
-        />
-        <div className="RegistrationForm__password">Password</div>
-        <input
-          required
-          type="text"
-          id="RegistrationForm__password-input"
-          name="password"
-        />
+        <div role="alert">
+          {error && (
+            <div className="RegistrationForm__orange">{error.message}</div>
+          )}
+        </div>
+        <div className="RegistrationForm__input-section">
+          <div className="RegistrationForm__username">Username (Use Email)</div>
+          <input
+            required
+            type="text"
+            id="RegistrationForm__username-input"
+            name="username"
+          />
+          <div className="RegistrationForm__nickname-label">Nickname</div>
+          <input
+            required
+            type="text"
+            id="RegistrationForm__nickname-input"
+            name="nickname"
+          />
+          <div className="RegistrationForm__password">Password</div>
+          <input
+            required
+            type="text"
+            id="RegistrationForm__password-input"
+            name="password"
+          />
+        </div>
         <div className="RegistrationForm__button-div">
           <button className="RegistrationForm__button" type="submit">
             Submit

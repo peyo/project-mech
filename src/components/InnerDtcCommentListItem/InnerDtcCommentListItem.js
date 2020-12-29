@@ -54,7 +54,7 @@ function DtcCommentCreated({ comment }) {
 function DtcCommentDeleteButton({ comment, userId }) {
   return (
     <span className="InnerDtcCommentListItem__button">
-      {comment.user_id.id != userId ? (
+      {comment.user_id.id !== userId ? (
         null
       ) : (
           <button

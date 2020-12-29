@@ -7,8 +7,15 @@
   border-radius: .5em;
   border-color: #686868;
   font-size: smaller;
+  width: 240px;
   margin: 12px 0;
   padding: 3px 21px 3px 3px;
+}
+
+.RegistrationForm__input-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .RegistrationForm__button-div {
