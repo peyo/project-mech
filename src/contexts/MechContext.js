@@ -121,6 +121,13 @@ export class MechProvider extends Component {
     });
   };
 
+  deleteComment = (commentId) => {
+    const newCommentList = this.state.filteredDtcCommentList.filter(
+      (comment) => comment.id !== commentId
+    );
+    this.setState({ filteredDtcCommentList: newCommentList });
+  };
+
   setUser = (payload) => {
     this.setState({ user_id: payload.user_id });
     localStorage.user_id = payload.user_id;
@@ -156,7 +163,8 @@ export class MechProvider extends Component {
       setSpecificDtcCommentList: this.setSpecificDtcCommentList,
       setSpecificDtc: this.setSpecificDtc,
       addComment: this.addComment,
-      setUser: this.setUser
+      deleteComment: this.deleteComment,
+      setUser: this.setUser,
     };
     return (
       <MechContext.Provider value={contextValue}>
