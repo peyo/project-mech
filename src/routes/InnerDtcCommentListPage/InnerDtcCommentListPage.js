@@ -1,20 +1,28 @@
 import React, { Component } from "react";
 import MechContext from "../../contexts/MechContext";
 import MechApiService from "../../services/mech-api-service";
-import { Section } from "../../components/Utility/Utility";
 import InnerDtcCommentListItem from "../../components/InnerDtcCommentListItem/InnerDtcCommentListItem";
 import InnerDtcCommentListItemHeader from "../../components/InnerDtcCommentListItemHeader/InnerDtcCommentListItemHeader";
+import { Section } from "../../components/Utility/Utility";
 import "./InnerDtcCommentListPage.css";
 
 export default class InnerDtcCommentListPage extends Component {
   static contextType = MechContext;
 
   componentDidMount() {
+    const {
+      setSpecificDtcCommentList,
+      setSpecificDtc,
+      setError,
+      clearError,
+    } = this.context;
     const { dtc_id } = this.props.match.params;
 
-    const { setSpecificDtcCommentList, setError, clearError } = this.context;
-
     clearError();
+
+    MechApiService.getDtcById(dtc_id)
+      .then((res) => setSpecificDtc(res))
+      .catch(setError);
 
     MechApiService.getSpecificDtcCommentList(dtc_id)
       .then((res) => setSpecificDtcCommentList(res))

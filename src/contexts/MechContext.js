@@ -111,8 +111,8 @@ export class MechProvider extends Component {
     this.setSpecificDtc(specificDtcCommentList);
   };
 
-  setSpecificDtc = (specificDtcCommentList) => {
-    this.setState({ specificDtc: specificDtcCommentList[0] });
+  setSpecificDtc = (specificDtc) => {
+    this.setState({ specificDtc });
   };
 
   addComment = (post) => {
@@ -122,10 +122,14 @@ export class MechProvider extends Component {
   };
 
   deleteComment = (commentId) => {
-    const newCommentList = this.state.filteredDtcCommentList.filter(
+    const newCommentListA = this.state.filteredDtcCommentList.filter(
       (comment) => comment.id !== commentId
     );
-    this.setState({ filteredDtcCommentList: newCommentList });
+    const newCommentListB = this.state.specificDtcCommentList.filter(
+      (comment) => comment.id !== commentId
+    );
+    this.setState({ filteredDtcCommentList: newCommentListA });
+    this.setState({ specificDtcCommentList: newCommentListB });
   };
 
   setUser = (payload) => {

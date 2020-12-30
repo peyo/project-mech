@@ -6,15 +6,9 @@ import "./InnerDtcCommentListItem.css";
 export default class InnerDtcCommentListItem extends Component {
   static contextType = MechContext;
 
-  handleDeleteComment(commentId) {
-    const { user_id } = this.context;
-
-    MechApiService.deleteComment(commentId, user_id)
-  };
-
   render() {
     const { comment } = this.props;
-    const { user_id } = this.context;
+    const { user_id, deleteComment, setError } = this.context;
 
     return (
       <div className="InnerDtcCommentListItem__comment-wrapper">
@@ -24,7 +18,12 @@ export default class InnerDtcCommentListItem extends Component {
         <footer className="InnerDtcCommentListItem__footer">
           <DtcCommentNickname comment={comment} />
           <DtcCommentCreated comment={comment} />
-          <DtcCommentDeleteButton comment={comment} userId={user_id} />
+          <DtcCommentDeleteButton
+            comment={comment}
+            userId={user_id}
+            deleteComment={deleteComment}
+            setError={setError}
+          />
         </footer>
       </div>
     );
@@ -34,10 +33,10 @@ export default class InnerDtcCommentListItem extends Component {
 function DtcCommentNickname({ comment }) {
   return (
     <span className="InnerDtcCommentListItem__nickname">
-      {comment.user_id.nickname === null ? (
-        <div>`[deleted]`</div>
-      ) : (
+      {comment.user_id.nickname ? (
         <div>{comment.user_id.nickname}</div>
+      ) : (
+        <div>[deleted]</div>
       )}
     </span>
   );
@@ -51,18 +50,26 @@ function DtcCommentCreated({ comment }) {
   );
 }
 
-function DtcCommentDeleteButton({ comment, userId }) {
+function handleDeleteComment(e, commentId, deleteComment, setError) {
+  e.preventDefault();
+  MechApiService.deleteComment(commentId)
+    .then(deleteComment(commentId))
+    .catch(setError);
+}
+
+function DtcCommentDeleteButton({ comment, userId, deleteComment, setError }) {
   return (
     <span className="InnerDtcCommentListItem__button">
-      {comment.user_id.id !== userId ? (
-        null
-      ) : (
-          <button
-            onClick={() => this.handleDeleteComment(comment.id)}
-            className="InnerDtcCommentListItem__delete">
-            Delete
-          </button>
-      )}
+      {comment.user_id.id === parseInt(userId) ? (
+        <button
+          onClick={(e) =>
+            handleDeleteComment(e, comment.id, deleteComment, setError)
+          }
+          className="InnerDtcCommentListItem__delete"
+        >
+          Delete
+        </button>
+      ) : null}
     </span>
-  )
+  );
 }

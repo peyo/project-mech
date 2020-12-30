@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import MechContext from "../../contexts/MechContext";
+import MechApiService from "../../services/mech-api-service";
 import FilteredDtcCommentListItem from "../../components/FilteredDtcCommentListItem/FilteredDtcCommentListItem";
 import FilteredDtcCommentListItemHeader from "../../components/FilteredDtcCommentListItemHeader/FilteredDtcCommentListItemHeader";
 import CommentForm from "../../components/CommentForm/CommentForm";
 import { Section } from "../../components/Utility/Utility";
-import MechContext from "../../contexts/MechContext";
-import MechApiService from "../../services/mech-api-service";
 import "./DtcSearchPage.css";
 
 export default class DtcSearchPage extends Component {
@@ -49,6 +49,7 @@ export default class DtcSearchPage extends Component {
 
   render() {
     const { error } = this.context;
+
     return (
       <main className="DtcSearchPage__main">
         <div className="DtcSearchPage__screen-wrapper">

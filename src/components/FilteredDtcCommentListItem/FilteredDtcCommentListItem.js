@@ -31,7 +31,6 @@ export default class FilteredDtcCommentListItem extends Component {
 }
 
 function DtcCommentNickname({ comment }) {
-  console.log(comment.user_id.nickname);
   return (
     <span className="FilteredDtcCommentListItem__nickname">
       {comment.user_id.nickname ? (
@@ -59,12 +58,13 @@ function handleDeleteComment(e, commentId, deleteComment, setError) {
 }
 
 function DtcCommentDeleteButton({ comment, userId, deleteComment, setError }) {
-  console.log(comment.id);
   return (
     <span className="FilteredDtcCommentListItem__button">
       {comment.user_id.id === parseInt(userId) ? (
         <button
-          onClick={(e) => handleDeleteComment(e, comment.id, deleteComment, setError)}
+          onClick={(e) =>
+            handleDeleteComment(e, comment.id, deleteComment, setError)
+          }
           className="FilteredDtcCommentListItem__delete"
         >
           Delete
