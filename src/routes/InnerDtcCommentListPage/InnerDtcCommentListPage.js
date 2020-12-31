@@ -32,7 +32,10 @@ export default class InnerDtcCommentListPage extends Component {
   renderSpecificDtcCommentListHeader() {
     const { headerDtc = [] } = this.context;
     return (
-      <InnerDtcCommentListItemHeader key={headerDtc.id} headerDtc={headerDtc} />
+      <InnerDtcCommentListItemHeader
+        key={headerDtc.id}
+        headerDtc={headerDtc}
+      />
     );
   }
 

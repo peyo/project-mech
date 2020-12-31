@@ -82,7 +82,7 @@ const MechApiService = {
         Authorization: "bearer " + TokenService.getAuthToken(),
       },
     });
-  }, 
+  },
 };
 
 export default MechApiService;
