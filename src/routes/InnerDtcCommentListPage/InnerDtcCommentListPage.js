@@ -12,7 +12,7 @@ export default class InnerDtcCommentListPage extends Component {
   componentDidMount() {
     const {
       setSpecificDtcCommentList,
-      setSpecificDtc,
+      setHeaderDtc,
       setError,
       clearError,
     } = this.context;
@@ -21,7 +21,7 @@ export default class InnerDtcCommentListPage extends Component {
     clearError();
 
     MechApiService.getDtcById(dtc_id)
-      .then((res) => setSpecificDtc(res))
+      .then((res) => setHeaderDtc(res))
       .catch(setError);
 
     MechApiService.getSpecificDtcCommentList(dtc_id)
@@ -30,12 +30,9 @@ export default class InnerDtcCommentListPage extends Component {
   }
 
   renderSpecificDtcCommentListHeader() {
-    const { specificDtc = [] } = this.context;
+    const { headerDtc = [] } = this.context;
     return (
-      <InnerDtcCommentListItemHeader
-        key={specificDtc.id}
-        specificDtc={specificDtc}
-      />
+      <InnerDtcCommentListItemHeader key={headerDtc.id} headerDtc={headerDtc} />
     );
   }
 

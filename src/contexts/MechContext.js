@@ -12,7 +12,6 @@ const MechContext = React.createContext({
   filteredDtcCommentList: [],
   headerDtc: [],
   specificDtcCommentList: [],
-  specificDtc: [],
   user_id: localStorage.user_id || null,
   setError: () => {},
   clearError: () => {},
@@ -27,7 +26,6 @@ const MechContext = React.createContext({
   setFilteredCommentList: () => {},
   setHeaderDtc: () => {},
   setSpecificDtcCommentList: () => {},
-  setSpecificDtc: () => {},
   addComment: () => { },
   setUser: [],
 });
@@ -46,7 +44,6 @@ export class MechProvider extends Component {
     filteredDtcCommentList: [],
     headerDtc: [],
     specificDtcCommentList: [],
-    specificDtc: [],
     user_id: localStorage.user_id || null,
     error: null,
   };
@@ -108,11 +105,6 @@ export class MechProvider extends Component {
 
   setSpecificDtcCommentList = (specificDtcCommentList) => {
     this.setState({ specificDtcCommentList });
-    this.setSpecificDtc(specificDtcCommentList);
-  };
-
-  setSpecificDtc = (specificDtc) => {
-    this.setState({ specificDtc });
   };
 
   addComment = (post) => {
@@ -150,7 +142,6 @@ export class MechProvider extends Component {
       filteredDtcCommentList: this.state.filteredDtcCommentList,
       headerDtc: this.state.headerDtc,
       specificDtcCommentList: this.state.specificDtcCommentList,
-      specificDtc: this.state.specificDtc,
       user_id: this.state.user_id,
       setError: this.setError,
       clearError: this.clearError,
@@ -165,7 +156,6 @@ export class MechProvider extends Component {
       setFilteredCommentList: this.setFilteredCommentList,
       setHeaderDtc: this.setHeaderDtc,
       setSpecificDtcCommentList: this.setSpecificDtcCommentList,
-      setSpecificDtc: this.setSpecificDtc,
       addComment: this.addComment,
       deleteComment: this.deleteComment,
       setUser: this.setUser,

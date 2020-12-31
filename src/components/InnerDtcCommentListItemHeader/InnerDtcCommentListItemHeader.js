@@ -3,14 +3,14 @@ import "./InnerDtcCommentListItemHeader.css";
 
 export default class InnerDtcCommentListItemHeader extends Component {
   render() {
-    const { specificDtc } = this.props;
+    const { headerDtc } = this.props;
     return (
       <div className="InnerDtcCommentListItemHeader__wrapper">
         <div className="InnerDtcCommentListItemHeader__dtc">
-          {Boolean(specificDtc) && specificDtc.dtc}
+          {Boolean(headerDtc) && headerDtc.dtc}
         </div>
         <div className="InnerDtcCommentListItemHeader__description">
-          {Boolean(specificDtc) && specificDtc.description}
+          {Boolean(headerDtc) && headerDtc.description}
         </div>
       </div>
     );
